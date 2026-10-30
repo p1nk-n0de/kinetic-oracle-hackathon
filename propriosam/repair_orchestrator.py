@@ -4,9 +4,11 @@ stage copy -> compile contract -> [capture -> SAM -> verify] -> if FAIL:
 diagnose/repair (turn k <= max, Wonder escalation after a failed Spark turn)
 -> relaunch -> [capture -> SAM -> verify] ... -> manifest.
 
-Only the verifier's status moves the machine. INCONCLUSIVE stops the loop
-(it is a sensing problem, not a scene fault). Everything is written to
-runs/<run_id>/ even when a step raises."""
+Only the verifier's status moves the machine. INCONCLUSIVE on the untouched
+scene stops the loop (a sensing problem is no reason to edit anything). After
+a repair, INCONCLUSIVE means the repair was not verified, for example because
+the patch broke the game, so it gets another bounded turn. Everything is
+written to runs/<run_id>/ even when a step raises."""
 from __future__ import annotations
 
 import platform
@@ -77,7 +79,8 @@ async def run_closed_loop(*, baseline: Path, scenario, run_id: str | None = None
 
             previous_turns: list[dict] = []
             turn = 0
-            while result.status == VerificationStatus.FAIL and turn < max_repair_turns:
+            while turn < max_repair_turns and (result.status == VerificationStatus.FAIL or
+                                               (turn > 0 and result.status == VerificationStatus.INCONCLUSIVE)):
                 turn += 1
                 mdl = model if turn == 1 or not escalation_model else escalation_model
                 tools = DiagnosisTools(studio, ws_path, S, run_dir / f"repair_turn_{turn}", max_patches=max_patches_per_turn)

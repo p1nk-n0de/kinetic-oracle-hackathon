@@ -70,7 +70,8 @@ def test_patch_refuses_non_source(project, rel):
 
 
 def test_no_tool_offers_a_shell_or_arbitrary_mcp_access():
-    assert {t["name"] for t in TOOL_SPECS} == {"inspect_scene", "inspect_physics", "drive", "list_source_files", "read_source", "patch_source"}
+    assert {t["name"] for t in TOOL_SPECS} == {"inspect_scene", "inspect_physics", "get_runtime_errors", "drive",
+                                               "list_source_files", "read_source", "patch_source"}
 
 
 def _failure() -> tuple[SensoryContract, VerificationResult]:

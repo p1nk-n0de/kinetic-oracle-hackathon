@@ -185,6 +185,9 @@ TOOL_SPECS = [
      "description": "Physics diagnostics for one node: transform, collision layer and mask bits, collision shapes "
                     "with world AABB, CharacterBody velocity / floor / wall / slide collisions, area overlaps.",
      "parameters": {"type": "object", "properties": {"node_path": {"type": "string"}}, "required": ["node_path"]}},
+    {"type": "function", "name": "get_runtime_errors",
+     "description": "Script errors, engine errors and warnings captured from the running game, with the tail of its log.",
+     "parameters": {"type": "object", "properties": {}}},
     {"type": "function", "name": "drive",
      "description": "Deliver real gameplay input to the running game and observe the player after each step. "
                     "steps: list of {\"input\": one of move_forward|move_back|move_left|move_right|jump, \"ticks\": N} "
@@ -263,6 +266,9 @@ class DiagnosisTools:
             elif name == "inspect_physics":
                 sid = await self._ensure_session()
                 out = await self.studio.call("godot_inspect_physics", session_id=sid, node_path=args["node_path"])
+            elif name == "get_runtime_errors":
+                sid = await self._ensure_session()
+                out = await self.studio.call("godot_get_runtime_errors", session_id=sid)
             elif name == "drive":
                 sid = await self._ensure_session()
                 out = await self.studio.call("godot_run_input_sequence", session_id=sid, steps=args["steps"])

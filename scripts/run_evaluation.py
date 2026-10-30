@@ -197,6 +197,17 @@ def write_report(summary: dict) -> None:
             L.append("")
             L.append("The contract's concept does not exist in this build, so SAM 3.1 returned no track. Verifier reasons: " + "; ".join(rows[0]["pass1"]["reasons"]) + ". No repair was attempted on a sensing failure.")
         L.append("")
+    broke = [r for r in (c.get("case3f") or []) if any(p["status"] == "INCONCLUSIVE" for p in r["passes"][1:])]
+    if broke:
+        L += ["## The repair that broke the game", "",
+              "With only one patch available, Muse Spark put all three fixes into the player script and called "
+              "`remove_collision_exception_from`, a method that does not exist. The script no longer loaded and the game froze at "
+              "spawn: no HUD, player at z = 0, never moving. The patch tool reported success, the input tool reported success, and "
+              "Muse's closing text said the contract was satisfied. A plain 'did it cross the hurdle?' check would have passed, "
+              "because the player never moved. The verifier returned INCONCLUSIVE because SAM 3.1 could no longer find the capsule, "
+              "and the engine's own record confirms the player never left spawn. The first run of this case is kept as recorded "
+              "(`" + broke[0]["run_id"] + "`); the loop then stopped on any INCONCLUSIVE. It now treats INCONCLUSIVE after a repair as "
+              "'repair not verified' and gives Muse another bounded turn, and Muse gained a runtime-errors tool.", ""]
     audit = [(r["run_id"], key, a) for key in CASE_ORDER for r in (c.get(key) or []) for a in r["truth_audit"]]
     tally = Counter(a["outcome"] for _, _, a in audit)
     L += ["## Hidden-truth audit", "",
