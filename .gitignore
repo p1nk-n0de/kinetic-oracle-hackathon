@@ -8,4 +8,8 @@ runs/*/pass*/frames/
 web/node_modules/
 web/dist/
 .DS_Store
+<<<<<<< HEAD
 runs/_baselines/
+=======
+*.egg-info/
+>>>>>>> dashboard-branch

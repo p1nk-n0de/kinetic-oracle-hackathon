@@ -54,7 +54,7 @@ def tree_sha256(root: str | Path, skip_dirs: tuple[str, ...] = HASH_SKIP_DIRS) -
     """Deterministic hash over sorted relative paths and bytes; `.godot/` excluded."""
     root = Path(root)
     h, n = hashlib.sha256(), 0
-    for r, ds, fs in sorted(os.walk(root)):
+    for r, ds, fs in os.walk(root):  # lazily: pruning `ds` in place only works before the walk descends
         ds[:] = sorted(d for d in ds if d not in skip_dirs)
         for f in sorted(fs):
             fp = Path(r) / f
@@ -184,7 +184,7 @@ class RunManifest(BaseModel):
 
 def hash_bundle_files(run_dir: Path, skip=("workspace", "run_manifest.json")) -> dict[str, str]:
     out: dict[str, str] = {}
-    for r, ds, fs in sorted(os.walk(run_dir)):
+    for r, ds, fs in os.walk(run_dir):
         ds[:] = sorted(d for d in ds if d not in skip and d not in HASH_SKIP_DIRS)
         for f in sorted(fs):
             if f in skip:
