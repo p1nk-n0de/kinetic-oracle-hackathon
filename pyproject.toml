@@ -8,6 +8,14 @@ dependencies = ["mcp", "pydantic>=2", "pillow", "numpy", "pyyaml", "meta-sam-par
 [project.optional-dependencies]
 dev = ["pytest"]
 
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+# Explicit list: setuptools' flat-layout auto-discovery refuses to guess once `runs/` (bundles) sits next to the packages.
+packages = ["propriosam", "scenarios", "scenarios.godot_hurdle"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
