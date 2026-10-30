@@ -9,8 +9,9 @@ module's rule code is recorded in every result):
     t_fail      =  first frame of the first such run
 
 Status: FAIL if a violation run exists; otherwise INCONCLUSIVE when any
-coverage gate is unmet (never PASS on missing evidence); otherwise PASS.
-ERROR when inputs are missing. No tool status and no model text is consulted."""
+coverage gate is unmet, including a concept SAM could not find at all (never
+PASS on missing evidence); otherwise PASS. ERROR only when no track object was
+supplied. No tool status and no model text is consulted."""
 from __future__ import annotations
 
 import hashlib
@@ -78,11 +79,11 @@ def verify(contract: SensoryContract, mover: Track | None, barrier: Track | None
     n = contract.frame_count
     base = dict(contract_id=contract.contract_id, contract_sha256=contract.frozen_sha256, rule_sha256=rule_sha256(),
                 frame_count=n)
-    if mover is None or barrier is None or mover.object_id is None or barrier.object_id is None:
-        missing = [name for name, tr in (("mover", mover), ("barrier", barrier)) if tr is None or tr.object_id is None]
+    if mover is None or barrier is None:
+        missing = [name for name, tr in (("mover", mover), ("barrier", barrier)) if tr is None]
         return VerificationResult(status=VerificationStatus.ERROR, residual=[None] * n, mover_bottom=[None] * n,
                                   barrier_bottom=[None] * n, coverage={}, evidence_rows=[],
-                                  reasons=[f"no track for {m}" for m in missing], **base)
+                                  reasons=[f"no track object supplied for {m}" for m in missing], **base)
     residual = _residual_series(contract, mover, barrier)
     win = tuple(contract.coverage.critical_window)
     both_total = sum(1 for e in residual if e is not None) / n
@@ -104,6 +105,9 @@ def verify(contract: SensoryContract, mover: Track | None, barrier: Track | None
         reasons.append(f"E(t) > {contract.rule.threshold_px}px for {len(run)} consecutive tracked frames starting at frame {run[0]}")
     elif not gates_ok:
         status = VerificationStatus.INCONCLUSIVE
+        for role, concept, tr in (("mover", contract.mover_concept, mover), ("barrier", contract.barrier_concept, barrier)):
+            if tr.object_id is None:
+                reasons.append(f"SAM 3.1 returned no track for {role} concept '{concept}'")
         if both_window < contract.coverage.min_window_coverage:
             reasons.append(f"both-tracked coverage in window {win} = {both_window:.2f} < {contract.coverage.min_window_coverage}")
         if mover.coverage() < contract.coverage.min_total_coverage:

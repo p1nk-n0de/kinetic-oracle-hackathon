@@ -97,7 +97,7 @@ def main() -> int:
     img = Image.new("RGB", (W, H), BG)
     d = ImageDraw.Draw(img)
     card(d, ["KINETIC-ORACLE (ProprioSAM)", "The agent that believed its tool",
-             f"Godot MCP action  →  SAM 3.1 tracks  →  frozen residual E(t)  →  Muse Spark blind repair  →  re-verified",
+             f"Godot MCP action  >>  SAM 3.1 tracks  >>  frozen residual E(t)  >>  Muse Spark blind repair  >>  re-verified",
              f"run {m.run_id}   ·   contract {contract['contract_id']}   ·   rule: {contract['rule']['definition'][:70]}…"],
          330, [f_title, f_h, f_cap, f_small], [FG, AMBER, DIM, DIM])
     for _ in range(int(a.title_seconds * a.fps)):
@@ -120,7 +120,7 @@ def main() -> int:
         d.text((x_l, y_p + PANEL_H + 16), "PASS 1 · open loop · MCP tool returned OK", font=f_h, fill=FG)
         d.text((x_l, y_p + PANEL_H + 56), f"E(t) = {e1:+.0f} px" if e1 is not None else "E(t) = n/a", font=f_cap, fill=FG)
         d.text((x_l, y_p + PANEL_H + 92), left_status, font=f_cap, fill=RED if "FAIL" in left_status else DIM)
-        rl = f"PASS {pl.index} · after {turn.model if turn else '—'} repair via Godot MCP ({len(turn.patches) if turn else 0} patch, {turn.tool_calls if turn else 0} tool calls)"
+        rl = f"PASS {pl.index} · after {turn.model if turn else '-'} repair via Godot MCP ({len(turn.patches) if turn else 0} patch)"
         d.text((x_r, y_p + PANEL_H + 16), rl, font=f_h, fill=FG)
         d.text((x_r, y_p + PANEL_H + 56), f"E(t) = {el:+.0f} px" if el is not None else "E(t) = n/a", font=f_cap, fill=FG)
         d.text((x_r, y_p + PANEL_H + 92), right_status, font=f_cap, fill=GREEN if "PASS" in right_status else DIM)
@@ -132,9 +132,9 @@ def main() -> int:
     img = Image.new("RGB", (W, H), BG)
     d = ImageDraw.Draw(img)
     patch = turn.patches[0] if turn and turn.patches else None
-    card(d, ["Pass 1: FAIL at frame %s   →   Pass %d: %s" % (v1.get("t_fail"), pl.index, vl["status"]),
-             f"max E(t): {v1.get('max_residual'):+.0f} px  →  {vl.get('max_residual'):+.0f} px     ·     coverage {vl['coverage']['both_window']:.2f} in window {vl['coverage']['critical_window']}",
-             f"Muse patch: {patch['path']}   {patch['find'][-28:]!r} → {patch['replace'][-18:]!r}" if patch else "no patch",
+    card(d, ["Pass 1: FAIL at frame %s   >>   Pass %d: %s" % (v1.get("t_fail"), pl.index, vl["status"]),
+             f"max E(t): {v1.get('max_residual'):+.0f} px  >>  {vl.get('max_residual'):+.0f} px     ·     coverage {vl['coverage']['both_window']:.2f} in window {vl['coverage']['critical_window']}",
+             f"Muse patch: {patch['path']}   {patch['find'][-12:]}  >>  {patch['replace'][-12:]}" if patch else "no patch",
              f"baseline unchanged: {m.baseline.get('unchanged')}   ·   {len(m.request_ids)} Meta request ids   ·   est. ${m.spend.get('est_cost_usd', 0):.3f}   ·   offline-replayable bundle"],
          360, [f_big, f_h, f_cap, f_small], [GREEN if vl["status"] == "PASS" else RED, FG, AMBER, DIM])
     for _ in range(int(a.hold_seconds * a.fps)):

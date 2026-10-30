@@ -18,6 +18,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from .artifacts import scrub
+
 BASE_URL = "https://api.meta.ai/v1"
 SAM_MODEL = "sam-3.1"
 SPARK = "muse-spark-1.3"
@@ -126,7 +128,7 @@ class MetaClient:
         if self.run_dir:
             self.run_dir.mkdir(parents=True, exist_ok=True)
             with open(self.run_dir / "api_calls.jsonl", "a") as f:
-                f.write(json.dumps(rec, sort_keys=True) + "\n")
+                f.write(json.dumps(scrub(rec), sort_keys=True) + "\n")
         if self.spent_usd > self.budget_usd:
             raise BudgetExceeded(f"estimated spend ${self.spent_usd:.2f} exceeds cap ${self.budget_usd:.2f}")
 

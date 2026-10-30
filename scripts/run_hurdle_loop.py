@@ -1,7 +1,8 @@
 """Run the live closed loop on a fresh copy of the Godot hurdle scene.
 
-  source scripts/env.sh && .venv/bin/python -m scripts.run_hurdle_loop            # defective baseline, up to 3 repair turns
-  .venv/bin/python -m scripts.run_hurdle_loop --known-good --max-turns 0          # true-negative check
+  source scripts/env.sh && .venv/bin/python -m scripts.run_hurdle_loop      # defective baseline, up to 3 repair turns
+  .venv/bin/python -m scripts.run_hurdle_loop --baseline runs/_baselines/known_good_capsule   # true-negative twin
+  .venv/bin/python -m scripts.run_hurdle_loop --scenario robot --known-good  # real robot build, generalisation check
 Exit code: 0 PASS, 2 FAIL/INCONCLUSIVE, 1 ERROR."""
 from __future__ import annotations
 
@@ -15,13 +16,17 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from propriosam.artifacts import load_manifest
 from propriosam.meta_client import SPARK, WONDER
 from propriosam.repair_orchestrator import run_closed_loop
-from scenarios.godot_hurdle import scenario as S
+from scenarios.godot_hurdle import scenario as capsule_scenario
+from scenarios.godot_hurdle import scenario_robot
+
+SCENARIOS = {"capsule": capsule_scenario, "robot": scenario_robot}
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
+    ap.add_argument("--scenario", choices=sorted(SCENARIOS), default="capsule")
     ap.add_argument("--baseline", default=None, help="Godot project to copy (default: the hurdle scene under test)")
-    ap.add_argument("--known-good", action="store_true", help="use the known-good scene instead")
+    ap.add_argument("--known-good", action="store_true", help="use the real game build instead of the fixture")
     ap.add_argument("--run-id", default=None)
     ap.add_argument("--max-turns", type=int, default=3)
     ap.add_argument("--model", default=SPARK)
@@ -31,7 +36,8 @@ def main() -> int:
     ap.add_argument("--no-contract-cache", action="store_true")
     ap.add_argument("--label", default="")
     a = ap.parse_args()
-    baseline = Path(a.baseline) if a.baseline else (S.KNOWN_GOOD_BASELINE if a.known_good else S.DEFECT_BASELINE)
+    S = SCENARIOS[a.scenario]
+    baseline = Path(a.baseline).resolve() if a.baseline else (S.KNOWN_GOOD_BASELINE if a.known_good else S.DEFECT_BASELINE)
     run_dir = asyncio.run(run_closed_loop(
         baseline=baseline, scenario=S, run_id=a.run_id, max_repair_turns=a.max_turns, model=a.model,
         escalation_model=None if a.escalation == "none" else a.escalation, budget_usd=a.budget_usd,

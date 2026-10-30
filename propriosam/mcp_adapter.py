@@ -25,7 +25,7 @@ from pathlib import Path
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 
-from .artifacts import tree_sha256, write_json
+from .artifacts import scrub, tree_sha256, write_json
 from .meta_client import utc_now
 from .vision_tracker import encode_frames
 
@@ -99,7 +99,7 @@ class GodotStudio:
             self.calls += 1
             if self.log_path:
                 with open(self.log_path, "a") as f:
-                    f.write(json.dumps(rec, default=str) + "\n")
+                    f.write(json.dumps(scrub(json.loads(json.dumps(rec, default=str)))) + "\n")
 
 
 # ----------------------------------------------------------------------------- working copy
@@ -277,6 +277,7 @@ class DiagnosisTools:
             out = {"error": str(e)}
         except Exception as e:
             out = {"error": f"{type(e).__name__}: {e}"}
+        out = scrub(out)
         self.calls.append({"ts": utc_now(), "tool": name, "args": args, "latency_s": round(time.time() - t0, 3),
                            "result_chars": len(json.dumps(out, default=str))})
         return out

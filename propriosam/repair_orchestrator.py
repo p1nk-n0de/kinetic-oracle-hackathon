@@ -71,7 +71,7 @@ async def run_closed_loop(*, baseline: Path, scenario, run_id: str | None = None
                                               project_tree_sha256=tree_sha256(ws_path)[0],
                                               overlay_title=f"Pass {pass_i}: the agent's tool said OK — SAM 3.1 under contract {contract.contract_id}")
             m.passes.append(rec)
-            log(f"[pass{pass_i}] verifier: {result.status.value} t_fail={result.t_fail} maxE={result.max_residual} cov={result.coverage['both_window']}")
+            log(f"[pass{pass_i}] verifier: {result.status.value} t_fail={result.t_fail} maxE={result.max_residual} cov={result.coverage.get('both_window')}")
 
             previous_turns: list[dict] = []
             turn = 0
@@ -100,7 +100,7 @@ async def run_closed_loop(*, baseline: Path, scenario, run_id: str | None = None
                                                   project_tree_sha256=tree_sha256(ws_path)[0],
                                                   overlay_title=f"Pass {pass_i}: after {mdl} repair (turn {turn}) — SAM 3.1 re-verification")
                 m.passes.append(rec)
-                log(f"[pass{pass_i}] verifier: {result.status.value} t_fail={result.t_fail} maxE={result.max_residual} cov={result.coverage['both_window']}")
+                log(f"[pass{pass_i}] verifier: {result.status.value} t_fail={result.t_fail} maxE={result.max_residual} cov={result.coverage.get('both_window')}")
                 previous_turns.append({"turn": turn, "model": mdl, "patches": rt.patches,
                                        "result_after": f"status={result.status.value} t_fail={result.t_fail} max_E={result.max_residual}"})
         m.final_verdict = result.status.value

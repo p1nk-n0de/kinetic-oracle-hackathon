@@ -38,8 +38,12 @@ def _fmt(v, nd=1):
     return "n/a" if v is None else (f"{v:+.{nd}f}" if isinstance(v, float) else str(v))
 
 
-def format_evidence(contract: SensoryContract, result: VerificationResult, open_loop: dict,
-                    previous_turns: list[dict]) -> str:
+TASK = ("TASK: diagnose the root cause with the tools, then patch the working copy so that the objective holds "
+        "under this contract. Start with list_source_files / inspect_scene.")
+
+
+def format_evidence(contract: SensoryContract, result: VerificationResult, open_loop: dict) -> str:
+    """The screened part of the prompt: everything here is authored by this system."""
     c = contract
     lines = [f"OBJECTIVE\n{c.objective}", "",
              "SENSORY CONTRACT (frozen before measurement)",
@@ -68,14 +72,19 @@ def format_evidence(contract: SensoryContract, result: VerificationResult, open_
                   "player its bottom edge is above the player's feet (E < 0). E rising above the threshold and staying "
                   "there means the barrier's bottom edge went below the player's feet: the player went past the barrier "
                   "instead of being stopped by it."]
-    if previous_turns:
-        lines += ["", "PREVIOUS REPAIR ATTEMPTS IN THIS RUN (your own; the verifier re-measured after each)"]
-        for t in previous_turns:
-            for p in t.get("patches", []):
-                lines.append(f"turn {t['turn']} ({t['model']}): {p['path']}: {json.dumps(p['find'])} -> {json.dumps(p['replace'])}  reason: {p.get('reason','')}")
-            lines.append(f"  -> re-measured: {t.get('result_after')}")
-    lines += ["", "TASK: diagnose the root cause with the tools, then patch the working copy so that the objective holds "
-                  "under this contract. Start with list_source_files / inspect_scene."]
+    return "\n".join(lines)
+
+
+def format_own_history(previous_turns: list[dict]) -> str:
+    """Muse's own earlier patches and what the verifier measured after them. This is the model's own output
+    from this run, so it is kept apart from the screened evidence."""
+    if not previous_turns:
+        return ""
+    lines = ["PREVIOUS REPAIR ATTEMPTS IN THIS RUN (your own; the verifier re-measured after each)"]
+    for t in previous_turns:
+        for p in t.get("patches", []):
+            lines.append(f"turn {t['turn']} ({t['model']}): {p['path']}: {json.dumps(p['find'])} -> {json.dumps(p['replace'])}  reason: {p.get('reason','')}")
+        lines.append(f"  -> re-measured: {t.get('result_after')}")
     return "\n".join(lines)
 
 
@@ -90,17 +99,20 @@ async def diagnose_and_repair(client: MetaClient, tools: DiagnosisTools, *, cont
                               reasoning_effort: str = "medium", verbose: bool = True) -> RepairTurnRecord:
     turn_dir = Path(turn_dir)
     turn_dir.mkdir(parents=True, exist_ok=True)
-    evidence = format_evidence(contract, result, open_loop, previous_turns)
-    screened = INSTRUCTIONS + "\n" + evidence + "\n" + json.dumps(TOOL_SPECS)
+    evidence = format_evidence(contract, result, open_loop)
+    history = format_own_history(previous_turns)
+    user_text = "\n\n".join(x for x in (evidence, history, TASK) if x)
+    screened = "\n".join((INSTRUCTIONS, evidence, TASK, json.dumps(TOOL_SPECS)))
     found = banned_terms_found(screened, scenario.BANNED_PROMPT_TERMS)
-    prompt_rec = {"turn": turn, "model": model, "instructions": INSTRUCTIONS, "user": evidence, "tools": TOOL_SPECS,
-                  "prompt_sha256": sha256_bytes(screened.encode()), "banned_terms_checked": list(scenario.BANNED_PROMPT_TERMS),
+    prompt_rec = {"turn": turn, "model": model, "instructions": INSTRUCTIONS, "user": user_text, "own_history": history,
+                  "tools": TOOL_SPECS, "prompt_sha256": sha256_bytes((INSTRUCTIONS + user_text + json.dumps(TOOL_SPECS)).encode()),
+                  "banned_terms_checked": list(scenario.BANNED_PROMPT_TERMS),
                   "banned_terms_found": found, "mentions_source_filenames": ".gd" in evidence or ".tscn" in evidence}
     prompt_path = write_json(turn_dir / "prompt.json", prompt_rec)
     if found:
         raise AntiCheatViolation(f"banned terms in outgoing prompt: {found}")
 
-    items: list = [{"role": "user", "content": evidence}]
+    items: list = [{"role": "user", "content": user_text}]
     transcript: list[dict] = []
     request_ids, response_ids, names = [], [], []
     n_calls, final_text, max_tokens, nudged = 0, "", 8000, False

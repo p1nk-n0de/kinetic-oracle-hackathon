@@ -67,10 +67,39 @@ def _default(o: Any):
     raise TypeError(f"not serialisable: {type(o)}")
 
 
+def _scrub_pairs() -> list[tuple[str, str]]:
+    studio = Path("~/Projects/godot-studio").expanduser()
+    pairs = [(str(REPO_ROOT), "<repo>")]
+    pairs += [(p, "<godot-studio>") for p in sorted({os.path.realpath(studio), str(studio)}, key=len, reverse=True)]
+    pairs.append((str(Path.home()), "~"))
+    return pairs
+
+
+_PAIRS = _scrub_pairs()
+
+
+def scrub(o: Any) -> Any:
+    """Replace machine-specific path prefixes, so bundles and what Muse sees carry no local paths."""
+    if isinstance(o, str):
+        for a, b in _PAIRS:
+            o = o.replace(a, b)
+        return o
+    if isinstance(o, dict):
+        return {scrub(k) if isinstance(k, str) else k: scrub(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [scrub(x) for x in o]
+    return o
+
+
+def unscrub(s: str) -> str:
+    return str(Path(s.replace("<repo>", str(REPO_ROOT)).replace("<godot-studio>", "~/Projects/godot-studio")).expanduser())
+
+
 def write_json(path: str | Path, obj: Any) -> Path:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(obj, indent=1, sort_keys=True, default=_default))
+    plain = json.loads(json.dumps(obj, default=_default))
+    path.write_text(json.dumps(scrub(plain), indent=1, sort_keys=True))
     return path
 
 

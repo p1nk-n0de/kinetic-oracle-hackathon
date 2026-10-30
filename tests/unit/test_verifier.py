@@ -99,10 +99,17 @@ def test_violation_outranks_coverage_gate():
     assert r.status == VerificationStatus.FAIL and r.t_fail == 60
 
 
-def test_missing_track_is_error():
+def test_concept_sam_cannot_find_is_inconclusive_never_pass():
     c = _contract()
     empty = Track("capsule", None, 80, (960, 540))
     r = verify(c, empty, _track("yellow bar", {f: 283.0 for f in range(80)}))
+    assert r.status == VerificationStatus.INCONCLUSIVE
+    assert any("no track for mover concept 'capsule'" in s for s in r.reasons)
+
+
+def test_absent_track_object_is_error():
+    c = _contract()
+    r = verify(c, None, _track("yellow bar", {f: 283.0 for f in range(80)}))
     assert r.status == VerificationStatus.ERROR and "mover" in " ".join(r.reasons)
 
 
