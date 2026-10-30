@@ -1,0 +1,15 @@
+{
+ "cached": false,
+ "clip_sha256": "d98318401667d34b1537e3fda062b5d3c448b9ab7df4c5a2143c76dce46cfa9f",
+ "concept": "capsule",
+ "frames_processed": 80,
+ "metadata": {
+  "include_confidence": "true",
+  "mask_encoding": "one_bit"
+ },
+ "model": "sam-3.1",
+ "raw_text": "",
+ "request_id": "2d4b4d99-26a8-4a2a-b348-066d42babc3b",
+ "response_id": "resp_6ae49bc51108dd71d3e24eb1",
+ "role": "mover"
+}

@@ -1,0 +1,20 @@
+[
+ {
+  "diff": "--- a/scripts/arena_builder.gd\n+++ b/scripts/arena_builder.gd\n@@ -50,14 +50,14 @@\n \tvar body := StaticBody3D.new()\n \tbody.name = b[\"name\"]\n \tbody.position = b[\"pos\"]\n-\tbody.collision_layer = int(b.get(\"layer\", 1))\n+\tbody.collision_layer = 1\n \tbody.collision_mask = 0\n \tvar shape := CollisionShape3D.new()\n \tshape.name = \"Shape\"\n \tvar bs := BoxShape3D.new()\n \tbs.size = size\n \tshape.shape = bs\n-\tshape.disabled = kind == \"hurdle\"\n+\tshape.disabled = false\n \tbody.add_child(shape)\n \tbody.add_child(mesh)\n \tbody.add_to_group(\"arena_block\")\n",
+  "find": "\tbody.collision_layer = int(b.get(\"layer\", 1))\n\tbody.collision_mask = 0\n\tvar shape := CollisionShape3D.new()\n\tshape.name = \"Shape\"\n\tvar bs := BoxShape3D.new()\n\tbs.size = size\n\tshape.shape = bs\n\tshape.disabled = kind == \"hurdle\"",
+  "path": "scripts/arena_builder.gd",
+  "reason": "Hurdle shape was disabled and placed on layer 2 while player mask is 1, so no collision. Force world layer 1 and enabled shape.",
+  "replace": "\tbody.collision_layer = 1\n\tbody.collision_mask = 0\n\tvar shape := CollisionShape3D.new()\n\tshape.name = \"Shape\"\n\tvar bs := BoxShape3D.new()\n\tbs.size = size\n\tshape.shape = bs\n\tshape.disabled = false",
+  "ts": "2026-10-30T13:36:05+00:00",
+  "turn_patch_index": 1
+ },
+ {
+  "diff": "--- a/scripts/player.gd\n+++ b/scripts/player.gd\n@@ -35,9 +35,7 @@\n \tzone = \"spawn\"\n \tfacing_yaw_deg = 0.0\n \tvisual.rotation.y = 0.0\n-\tfor block in get_tree().get_nodes_in_group(\"arena_block\"):\n-\t\tif block.name == \"Hurdle\":\n-\t\t\tadd_collision_exception_with(block)\n+\tremove_collision_exception_with(get_node_or_null(\"../Arena/Hurdle\"))\n \n \n func _physics_process(delta: float) -> void:\n",
+  "find": "\tvisual.rotation.y = 0.0\n\tfor block in get_tree().get_nodes_in_group(\"arena_block\"):\n\t\tif block.name == \"Hurdle\":\n\t\t\tadd_collision_exception_with(block)",
+  "path": "scripts/player.gd",
+  "reason": "reset_to_spawn added a collision exception for the Hurdle, letting player pass through. Remove it so hurdle collides.",
+  "replace": "\tvisual.rotation.y = 0.0\n\tremove_collision_exception_with(get_node_or_null(\"../Arena/Hurdle\"))",
+  "ts": "2026-10-30T13:36:11+00:00",
+  "turn_patch_index": 2
+ }
+]

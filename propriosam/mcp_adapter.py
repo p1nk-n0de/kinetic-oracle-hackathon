@@ -207,8 +207,9 @@ TOOL_SPECS = [
 
 
 class DiagnosisTools:
-    def __init__(self, studio: GodotStudio, project: Path, scenario, turn_dir: Path):
+    def __init__(self, studio: GodotStudio, project: Path, scenario, turn_dir: Path, max_patches: int = MAX_PATCHES_PER_TURN):
         self.studio, self.project, self.S, self.turn_dir = studio, Path(project), scenario, Path(turn_dir)
+        self.max_patches = max_patches
         self.session_id: str | None = None
         self.patches: list[dict] = []
         self.calls: list[dict] = []
@@ -288,8 +289,8 @@ class DiagnosisTools:
 
     async def _patch(self, args: dict) -> dict:
         rel, find, repl, reason = args["path"], args["find"], args["replace"], args.get("reason", "")
-        if len(self.patches) >= MAX_PATCHES_PER_TURN:
-            return {"error": f"patch limit reached ({MAX_PATCHES_PER_TURN} per turn). End your turn: the verifier "
+        if len(self.patches) >= self.max_patches:
+            return {"error": f"patch limit reached ({self.max_patches} per turn). End your turn: the verifier "
                              "re-measures now, and you get another turn if the contract still fails."}
         if not self._allowed(rel) or Path(rel).suffix not in (".gd", ".tscn"):
             return {"error": f"not patchable: {rel}"}

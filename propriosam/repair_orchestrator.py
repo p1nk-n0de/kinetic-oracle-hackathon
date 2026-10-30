@@ -17,7 +17,7 @@ from . import __version__
 from .artifacts import RUNS_DIR, RunManifest, git_state, new_run_id, save_manifest, tree_sha256, write_json
 from .diagnosis import diagnose_and_repair
 from .evaluation import track_and_verify
-from .mcp_adapter import DiagnosisTools, GodotStudio, capture_clip, stage_working_copy
+from .mcp_adapter import MAX_PATCHES_PER_TURN, DiagnosisTools, GodotStudio, capture_clip, stage_working_copy
 from .meta_client import SAM_MODEL, SPARK, WONDER, MetaClient, utc_now
 from .sensory_contract import compile_contract
 from .verifier import VerificationStatus, rule_sha256
@@ -26,7 +26,7 @@ from .verifier import VerificationStatus, rule_sha256
 async def run_closed_loop(*, baseline: Path, scenario, run_id: str | None = None, max_repair_turns: int = 3,
                           model: str = SPARK, escalation_model: str | None = WONDER, budget_usd: float = 40.0,
                           capture_timeout_s: float = 30.0, use_contract_cache: bool = True, verbose: bool = True,
-                          label: str = "") -> Path:
+                          label: str = "", max_patches_per_turn: int = MAX_PATCHES_PER_TURN) -> Path:
     S = scenario
     run_id = run_id or new_run_id("run")
     run_dir = RUNS_DIR / run_id
@@ -36,7 +36,8 @@ async def run_closed_loop(*, baseline: Path, scenario, run_id: str | None = None
     m = RunManifest(run_id=run_id, kind="closed_loop", created_at=utc_now(),
                     models={"contract": model, "diagnosis": model, "escalation": escalation_model, "sam": SAM_MODEL},
                     environment={"propriosam": __version__, "python": platform.python_version(), "host": platform.platform(),
-                                 "git": git_state()},
+                                 "git": git_state(),
+                                 "repair_bounds": {"max_turns": max_repair_turns, "max_patches_per_turn": max_patches_per_turn}},
                     anti_cheat={"banned_terms": list(S.BANNED_PROMPT_TERMS), "turns": []},
                     notes=[label] if label else [])
     base_sha, base_n = tree_sha256(baseline)
@@ -79,7 +80,7 @@ async def run_closed_loop(*, baseline: Path, scenario, run_id: str | None = None
             while result.status == VerificationStatus.FAIL and turn < max_repair_turns:
                 turn += 1
                 mdl = model if turn == 1 or not escalation_model else escalation_model
-                tools = DiagnosisTools(studio, ws_path, S, run_dir / f"repair_turn_{turn}")
+                tools = DiagnosisTools(studio, ws_path, S, run_dir / f"repair_turn_{turn}", max_patches=max_patches_per_turn)
                 log(f"[turn {turn}] diagnosis by {mdl}")
                 rt = await diagnose_and_repair(client, tools, contract=contract, result=result, open_loop=rec.open_loop,
                                                previous_turns=previous_turns, scenario=S, model=mdl, turn=turn,

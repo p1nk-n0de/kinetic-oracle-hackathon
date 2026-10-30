@@ -29,7 +29,7 @@ INSTRUCTIONS = (
     "cause from evidence and apply the smallest source patch that makes the objective hold under the same contract.\n"
     "Rules: inspect before you patch, and reason from measured values (physics state, node properties, source). Do "
     "not modify the camera, the barrier's position or size, the verifier, or the capture; do not add new scripts; "
-    "at most two patches per turn. You never declare success: after your turn the patched game is relaunched, "
+    "at most {limit} patch(es) per turn. You never declare success: after your turn the patched game is relaunched, "
     "re-captured and re-measured by the verifier. Finish with three short lines: root cause, patch, why it satisfies "
     "the contract.")
 
@@ -102,10 +102,11 @@ async def diagnose_and_repair(client: MetaClient, tools: DiagnosisTools, *, cont
     evidence = format_evidence(contract, result, open_loop)
     history = format_own_history(previous_turns)
     user_text = "\n\n".join(x for x in (evidence, history, TASK) if x)
-    screened = "\n".join((INSTRUCTIONS, evidence, TASK, json.dumps(TOOL_SPECS)))
+    instructions = INSTRUCTIONS.format(limit=tools.max_patches)
+    screened = "\n".join((instructions, evidence, TASK, json.dumps(TOOL_SPECS)))
     found = banned_terms_found(screened, scenario.BANNED_PROMPT_TERMS)
-    prompt_rec = {"turn": turn, "model": model, "instructions": INSTRUCTIONS, "user": user_text, "own_history": history,
-                  "tools": TOOL_SPECS, "prompt_sha256": sha256_bytes((INSTRUCTIONS + user_text + json.dumps(TOOL_SPECS)).encode()),
+    prompt_rec = {"turn": turn, "model": model, "instructions": instructions, "user": user_text, "own_history": history,
+                  "tools": TOOL_SPECS, "prompt_sha256": sha256_bytes((instructions + user_text + json.dumps(TOOL_SPECS)).encode()),
                   "banned_terms_checked": list(scenario.BANNED_PROMPT_TERMS),
                   "banned_terms_found": found, "mentions_source_filenames": ".gd" in evidence or ".tscn" in evidence}
     prompt_path = write_json(turn_dir / "prompt.json", prompt_rec)
@@ -119,7 +120,7 @@ async def diagnose_and_repair(client: MetaClient, tools: DiagnosisTools, *, cont
     purpose = f"diagnosis_turn{turn}"
     try:
         while True:
-            resp = client.muse(model, items, instructions=INSTRUCTIONS, tools=TOOL_SPECS, reasoning_effort=reasoning_effort,
+            resp = client.muse(model, items, instructions=instructions, tools=TOOL_SPECS, reasoning_effort=reasoning_effort,
                                max_output_tokens=max_tokens, purpose=purpose)
             request_ids.append(resp.get("_request_id") or "")
             response_ids.append(resp.get("id") or "")
@@ -156,7 +157,7 @@ async def diagnose_and_repair(client: MetaClient, tools: DiagnosisTools, *, cont
                                    "output": out_s if truncated else out})
             if n_calls >= max_tool_calls:
                 items.append({"role": "user", "content": "Tool budget exhausted. Give the final three lines now; no more tool calls."})
-                resp = client.muse(model, items, instructions=INSTRUCTIONS, reasoning_effort="low", max_output_tokens=4000, purpose=purpose)
+                resp = client.muse(model, items, instructions=instructions, reasoning_effort="low", max_output_tokens=4000, purpose=purpose)
                 request_ids.append(resp.get("_request_id") or ""); response_ids.append(resp.get("id") or "")
                 final_text = client.output_text(resp) or final_text
                 transcript.append({"type": "assistant", "text": final_text, "calls": [], "response_id": resp.get("id"),

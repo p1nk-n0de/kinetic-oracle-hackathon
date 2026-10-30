@@ -14,6 +14,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from propriosam.artifacts import load_manifest
+from propriosam.mcp_adapter import MAX_PATCHES_PER_TURN
 from propriosam.meta_client import SPARK, WONDER
 from propriosam.repair_orchestrator import run_closed_loop
 from scenarios.godot_hurdle import scenario as capsule_scenario
@@ -29,6 +30,7 @@ def main() -> int:
     ap.add_argument("--known-good", action="store_true", help="use the real game build instead of the fixture")
     ap.add_argument("--run-id", default=None)
     ap.add_argument("--max-turns", type=int, default=3)
+    ap.add_argument("--max-patches-per-turn", type=int, default=MAX_PATCHES_PER_TURN)
     ap.add_argument("--model", default=SPARK)
     ap.add_argument("--escalation", default=WONDER, help="model for turns >= 2, or 'none'")
     ap.add_argument("--budget-usd", type=float, default=40.0)
@@ -41,7 +43,8 @@ def main() -> int:
     run_dir = asyncio.run(run_closed_loop(
         baseline=baseline, scenario=S, run_id=a.run_id, max_repair_turns=a.max_turns, model=a.model,
         escalation_model=None if a.escalation == "none" else a.escalation, budget_usd=a.budget_usd,
-        capture_timeout_s=a.capture_timeout, use_contract_cache=not a.no_contract_cache, label=a.label))
+        capture_timeout_s=a.capture_timeout, use_contract_cache=not a.no_contract_cache, label=a.label,
+        max_patches_per_turn=a.max_patches_per_turn))
     m = load_manifest(run_dir)
     print(f"bundle: {run_dir}")
     if m.status != "COMPLETE":

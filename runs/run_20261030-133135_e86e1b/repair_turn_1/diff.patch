@@ -1,0 +1,11 @@
+--- a/scripts/arena_builder.gd
++++ b/scripts/arena_builder.gd
+@@ -57,7 +57,7 @@
+ 	var bs := BoxShape3D.new()
+ 	bs.size = size
+ 	shape.shape = bs
+-	shape.disabled = kind == "hurdle"
++	shape.disabled = false
+ 	body.add_child(shape)
+ 	body.add_child(mesh)
+ 	body.add_to_group("arena_block")

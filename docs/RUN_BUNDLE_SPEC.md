@@ -32,6 +32,8 @@ workspace/hurdle_scene/  staged Godot project (NOT in git; tree hash recorded at
 | field | meaning |
 |---|---|
 | `kind` | `closed_loop` (capture + repair) or `clip_evaluation` (pre-captured clips) |
+| `notes[0]` | run label, e.g. `case3d: three faults in three files`; the evaluation groups runs by the part before the colon |
+| `environment.git` | `{commit, source_dirty}` of the code that produced the bundle |
 | `status` | `COMPLETE` or `ERROR` (a partial bundle is still written) |
 | `final_verdict` | last pass verification status: `PASS` / `FAIL` / `INCONCLUSIVE` / `ERROR` |
 | `verdict_basis` | fixed sentence: verdict comes only from the verifier over SAM tracks under the frozen contract |
@@ -47,7 +49,13 @@ workspace/hurdle_scene/  staged Godot project (NOT in git; tree hash recorded at
 ## Residual semantics (frozen; `propriosam/verifier.py`)
 `E(t) = y_bottom(barrier, t) − y_bottom(mover, t)` in source pixels, y downward. `null` where either concept is
 untracked. VIOLATION when `E(t) > threshold_px` for `persistence_frames` consecutive tracked frames; `t_fail` is the
-first frame of that run. FAIL ⇐ violation; INCONCLUSIVE ⇐ no violation but a coverage gate unmet; PASS otherwise.
+first frame of that run.
+
+- FAIL ⇐ a violation run exists.
+- INCONCLUSIVE ⇐ no violation, and either a coverage gate is unmet (including a concept SAM could not find) or the
+  approach gate is unmet: `max E(t)` never reached `−approach_body_heights × median mover box height`, so the contract
+  was not exercised and "it did not cross" proves nothing. `verification.json.approach` records the numbers.
+- PASS otherwise. ERROR only when no track object was supplied.
 
 ## Offline replay (what `scripts/replay_run.py` must do, no API spend)
 1. Load the manifest; recompute sha256 of every present file and compare with `files` (frames are optional).

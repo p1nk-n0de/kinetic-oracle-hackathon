@@ -30,7 +30,7 @@ from scenarios.godot_hurdle import scenario as S
 REPORT = Path(__file__).resolve().parents[1] / "docs" / "EVALUATION_REPORT.md"
 VLM_REPEATS = 3
 HURDLE_CENTRE_Z, REACHED_Z = -12.0, -11.0  # engine coordinates, used only by the hidden-truth audit
-CASE_ORDER = ("case1", "case2a", "case2b", "case2c", "case3a", "case3b", "case3c", "case3d", "case3e")
+CASE_ORDER = ("case1", "case2a", "case2b", "case2c", "case3a", "case3b", "case3c", "case3d", "case3e", "case3f")
 CASE_TITLES = {
     "case1": "Case 1: defective scene, full closed loop (independent trials)",
     "case2a": "Case 2a: known-good twin of the capsule scene (true negative)",
@@ -39,8 +39,9 @@ CASE_TITLES = {
     "case3a": "Case 3a: a different wrong layer",
     "case3b": "Case 3b: a different root cause (collision shape disabled in the builder)",
     "case3c": "Case 3c: two simultaneous faults",
-    "case3d": "Case 3d: three faults in three files, more than one bounded repair turn can fix",
+    "case3d": "Case 3d: three faults in three files, two patches per turn",
     "case3e": "Case 3e: the real robot build with the hurdle on the wrong layer",
+    "case3f": "Case 3f: the same three faults, bounded to one patch per turn, so one turn cannot be enough",
 }
 
 

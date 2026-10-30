@@ -1,0 +1,11 @@
+[
+ {
+  "diff": "--- a/scenes/player.tscn\n+++ b/scenes/player.tscn\n@@ -16,7 +16,7 @@\n \n [node name=\"Player\" type=\"CharacterBody3D\" groups=[\"mcp_watch\"]]\n collision_layer = 2\n-collision_mask = 1\n+collision_mask = 3\n script = ExtResource(\"1\")\n \n [node name=\"Shape\" type=\"CollisionShape3D\" parent=\".\"]\n",
+  "find": "[node name=\"Player\" type=\"CharacterBody3D\" groups=[\"mcp_watch\"]]\ncollision_layer = 2\ncollision_mask = 1",
+  "path": "scenes/player.tscn",
+  "reason": "Player mask=1 ignores Hurdle on layer 2, so move_and_slide never collides and the capsule walks through. Mask=3 scans both world(1) and hurdle(2) layers.",
+  "replace": "[node name=\"Player\" type=\"CharacterBody3D\" groups=[\"mcp_watch\"]]\ncollision_layer = 2\ncollision_mask = 3",
+  "ts": "2026-10-30T13:22:38+00:00",
+  "turn_patch_index": 1
+ }
+]

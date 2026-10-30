@@ -1,0 +1,898 @@
+{
+ "approach": {
+  "approach_body_heights": 1.0,
+  "exercised": false,
+  "max_E_px": null,
+  "mover_body_px": null,
+  "required_max_E_px": null
+ },
+ "barrier_bottom": [
+  52.0,
+  57.0,
+  62.0,
+  67.0,
+  71.0,
+  74.0,
+  79.0,
+  81.0,
+  83.0,
+  87.0,
+  88.0,
+  91.0,
+  93.0,
+  95.0,
+  97.0,
+  99.0,
+  101.0,
+  104.0,
+  106.0,
+  109.0,
+  113.0,
+  114.0,
+  118.0,
+  120.0,
+  124.0,
+  127.0,
+  131.0,
+  133.0,
+  136.0,
+  139.0,
+  142.0,
+  145.0,
+  149.0,
+  152.0,
+  156.0,
+  160.0,
+  164.0,
+  168.0,
+  172.0,
+  176.0,
+  181.0,
+  185.0,
+  190.0,
+  195.0,
+  199.0,
+  204.0,
+  210.0,
+  216.0,
+  221.0,
+  227.0,
+  233.0,
+  239.0,
+  246.0,
+  253.0,
+  260.0,
+  267.0,
+  275.0,
+  283.0,
+  284.0,
+  283.0,
+  283.0,
+  283.0,
+  283.0,
+  283.0,
+  283.0,
+  283.0,
+  283.0,
+  283.0,
+  283.0,
+  283.0,
+  283.0,
+  283.0,
+  283.0,
+  283.0,
+  283.0,
+  283.0,
+  283.0,
+  283.0,
+  283.0,
+  283.0
+ ],
+ "contract_id": "hurdle-walk-f03c1c8b",
+ "contract_sha256": "194aa42228a55290be121316acf49d01c00662a35436f24d6797167cf6eabe10",
+ "coverage": {
+  "barrier_total": 1.0,
+  "barrier_window": 1.0,
+  "both_total": 0.0,
+  "both_window": 0.0,
+  "critical_window": [
+   20,
+   70
+  ],
+  "min_total_coverage": 0.7,
+  "min_window_coverage": 0.8,
+  "mover_total": 0.0,
+  "mover_window": 0.0
+ },
+ "evidence_rows": [
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 113.0,
+    "cx": 537.5,
+    "cy": 100.0,
+    "vx": 0.5,
+    "vy": 4.0
+   },
+   "frame": 20,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 114.0,
+    "cx": 538.5,
+    "cy": 101.0,
+    "vx": 1.0,
+    "vy": 1.0
+   },
+   "frame": 21,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 118.0,
+    "cx": 539.5,
+    "cy": 105.0,
+    "vx": 1.0,
+    "vy": 4.0
+   },
+   "frame": 22,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 120.0,
+    "cx": 540.5,
+    "cy": 107.0,
+    "vx": 1.0,
+    "vy": 2.0
+   },
+   "frame": 23,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 124.0,
+    "cx": 540.5,
+    "cy": 110.0,
+    "vx": 0.0,
+    "vy": 3.0
+   },
+   "frame": 24,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 127.0,
+    "cx": 541.5,
+    "cy": 113.5,
+    "vx": 1.0,
+    "vy": 3.5
+   },
+   "frame": 25,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 131.0,
+    "cx": 542.0,
+    "cy": 117.0,
+    "vx": 0.5,
+    "vy": 3.5
+   },
+   "frame": 26,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 133.0,
+    "cx": 543.0,
+    "cy": 119.0,
+    "vx": 1.0,
+    "vy": 2.0
+   },
+   "frame": 27,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 136.0,
+    "cx": 544.0,
+    "cy": 122.0,
+    "vx": 1.0,
+    "vy": 3.0
+   },
+   "frame": 28,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 139.0,
+    "cx": 545.0,
+    "cy": 124.5,
+    "vx": 1.0,
+    "vy": 2.5
+   },
+   "frame": 29,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 142.0,
+    "cx": 546.0,
+    "cy": 127.0,
+    "vx": 1.0,
+    "vy": 2.5
+   },
+   "frame": 30,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 145.0,
+    "cx": 547.0,
+    "cy": 130.5,
+    "vx": 1.0,
+    "vy": 3.5
+   },
+   "frame": 31,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 149.0,
+    "cx": 547.5,
+    "cy": 134.5,
+    "vx": 0.5,
+    "vy": 4.0
+   },
+   "frame": 32,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 152.0,
+    "cx": 549.0,
+    "cy": 137.5,
+    "vx": 1.5,
+    "vy": 3.0
+   },
+   "frame": 33,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 156.0,
+    "cx": 550.0,
+    "cy": 140.5,
+    "vx": 1.0,
+    "vy": 3.0
+   },
+   "frame": 34,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 160.0,
+    "cx": 550.5,
+    "cy": 144.5,
+    "vx": 0.5,
+    "vy": 4.0
+   },
+   "frame": 35,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 164.0,
+    "cx": 552.0,
+    "cy": 148.5,
+    "vx": 1.5,
+    "vy": 4.0
+   },
+   "frame": 36,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 168.0,
+    "cx": 553.0,
+    "cy": 152.0,
+    "vx": 1.0,
+    "vy": 3.5
+   },
+   "frame": 37,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 172.0,
+    "cx": 554.0,
+    "cy": 156.0,
+    "vx": 1.0,
+    "vy": 4.0
+   },
+   "frame": 38,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 176.0,
+    "cx": 554.5,
+    "cy": 160.5,
+    "vx": 0.5,
+    "vy": 4.5
+   },
+   "frame": 39,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 181.0,
+    "cx": 556.5,
+    "cy": 164.5,
+    "vx": 2.0,
+    "vy": 4.0
+   },
+   "frame": 40,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 185.0,
+    "cx": 558.0,
+    "cy": 168.5,
+    "vx": 1.5,
+    "vy": 4.0
+   },
+   "frame": 41,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 190.0,
+    "cx": 559.0,
+    "cy": 173.0,
+    "vx": 1.0,
+    "vy": 4.5
+   },
+   "frame": 42,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 195.0,
+    "cx": 560.0,
+    "cy": 177.5,
+    "vx": 1.0,
+    "vy": 4.5
+   },
+   "frame": 43,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 199.0,
+    "cx": 561.5,
+    "cy": 181.5,
+    "vx": 1.5,
+    "vy": 4.0
+   },
+   "frame": 44,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 204.0,
+    "cx": 563.5,
+    "cy": 186.5,
+    "vx": 2.0,
+    "vy": 5.0
+   },
+   "frame": 45,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 210.0,
+    "cx": 565.0,
+    "cy": 191.5,
+    "vx": 1.5,
+    "vy": 5.0
+   },
+   "frame": 46,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 216.0,
+    "cx": 566.0,
+    "cy": 197.5,
+    "vx": 1.0,
+    "vy": 6.0
+   },
+   "frame": 47,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 221.0,
+    "cx": 568.0,
+    "cy": 202.5,
+    "vx": 2.0,
+    "vy": 5.0
+   },
+   "frame": 48,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 227.0,
+    "cx": 569.0,
+    "cy": 208.0,
+    "vx": 1.0,
+    "vy": 5.5
+   },
+   "frame": 49,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 233.0,
+    "cx": 571.0,
+    "cy": 214.0,
+    "vx": 2.0,
+    "vy": 6.0
+   },
+   "frame": 50,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 239.0,
+    "cx": 572.5,
+    "cy": 220.0,
+    "vx": 1.5,
+    "vy": 6.0
+   },
+   "frame": 51,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 246.0,
+    "cx": 574.0,
+    "cy": 226.5,
+    "vx": 1.5,
+    "vy": 6.5
+   },
+   "frame": 52,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 253.0,
+    "cx": 576.0,
+    "cy": 232.5,
+    "vx": 2.0,
+    "vy": 6.0
+   },
+   "frame": 53,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 260.0,
+    "cx": 577.5,
+    "cy": 239.0,
+    "vx": 1.5,
+    "vy": 6.5
+   },
+   "frame": 54,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 267.0,
+    "cx": 599.5,
+    "cy": 246.5,
+    "vx": 22.0,
+    "vy": 7.5
+   },
+   "frame": 55,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 275.0,
+    "cx": 604.0,
+    "cy": 254.0,
+    "vx": 4.5,
+    "vy": 7.5
+   },
+   "frame": 56,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 283.0,
+    "cx": 608.5,
+    "cy": 261.5,
+    "vx": 4.5,
+    "vy": 7.5
+   },
+   "frame": 57,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 284.0,
+    "cx": 611.0,
+    "cy": 262.0,
+    "vx": 2.5,
+    "vy": 0.5
+   },
+   "frame": 58,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 283.0,
+    "cx": 613.5,
+    "cy": 261.0,
+    "vx": 2.5,
+    "vy": -1.0
+   },
+   "frame": 59,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 283.0,
+    "cx": 614.5,
+    "cy": 260.5,
+    "vx": 1.0,
+    "vy": -0.5
+   },
+   "frame": 60,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 283.0,
+    "cx": 615.0,
+    "cy": 260.5,
+    "vx": 0.5,
+    "vy": 0.0
+   },
+   "frame": 61,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 283.0,
+    "cx": 615.5,
+    "cy": 260.5,
+    "vx": 0.5,
+    "vy": 0.0
+   },
+   "frame": 62,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 283.0,
+    "cx": 616.0,
+    "cy": 260.0,
+    "vx": 0.5,
+    "vy": -0.5
+   },
+   "frame": 63,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 283.0,
+    "cx": 616.5,
+    "cy": 260.0,
+    "vx": 0.5,
+    "vy": 0.0
+   },
+   "frame": 64,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 283.0,
+    "cx": 616.0,
+    "cy": 260.0,
+    "vx": -0.5,
+    "vy": 0.0
+   },
+   "frame": 65,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 283.0,
+    "cx": 615.5,
+    "cy": 260.0,
+    "vx": -0.5,
+    "vy": 0.0
+   },
+   "frame": 66,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 283.0,
+    "cx": 616.0,
+    "cy": 260.0,
+    "vx": 0.5,
+    "vy": 0.0
+   },
+   "frame": 67,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 283.0,
+    "cx": 616.0,
+    "cy": 260.0,
+    "vx": 0.0,
+    "vy": 0.0
+   },
+   "frame": 68,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 283.0,
+    "cx": 616.0,
+    "cy": 260.0,
+    "vx": 0.0,
+    "vy": 0.0
+   },
+   "frame": 69,
+   "mover": null
+  },
+  {
+   "E_px": null,
+   "barrier": {
+    "bottom": 283.0,
+    "cx": 615.5,
+    "cy": 260.0,
+    "vx": -0.5,
+    "vy": 0.0
+   },
+   "frame": 70,
+   "mover": null
+  }
+ ],
+ "frame_count": 80,
+ "margin_px": null,
+ "max_residual": null,
+ "max_residual_frame": null,
+ "mover_bottom": [
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null
+ ],
+ "reasons": [
+  "SAM 3.1 returned no track for mover concept 'capsule'",
+  "both-tracked coverage in window (20, 70) = 0.00 < 0.8",
+  "mover coverage 0.00 < 0.7"
+ ],
+ "residual": [
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null
+ ],
+ "rule_sha256": "35dd508645d9282b5682b0bd63ecf58f0becfe9ae9341d67032de874b1d12263",
+ "status": "INCONCLUSIVE",
+ "t_fail": null,
+ "violation_run": null
+}

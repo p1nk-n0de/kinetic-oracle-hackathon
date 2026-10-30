@@ -12,7 +12,7 @@ New hackathon contributions: SAM 3.1 integration and temporal tracking; visual-s
 | Hurdle test scene + deliberately defective fixture | same repo (`example_game/proving_ground`, `tests/fixtures/pg_defect_hurdle`) | The system under test. Its tree hashes are recorded in every bundle and re-checked after each run. |
 | Godot 4.6.2, ffmpeg, Python toolchain | this Mac | Runtime. |
 
-Everything under `propriosam/`, `scenarios/`, `scripts/`, `tests/`, `web/` and `docs/` in this repository was written during the hackathon window (see the git history, which starts 2026-10-30).
+Everything under `propriosam/`, `scenarios/`, `scripts/`, `tests/`, `web/` and `docs/` in this repository was written during the hackathon window, by Claude Code under the entrant's direction (see the git history, which starts 2026-10-30).
 
 ## Dataflow
 ```
@@ -36,6 +36,10 @@ runs/<run_id>/: manifest, contract, passes, repair turns, api_calls.jsonl (reque
 - **Verdict source**: only `propriosam/verifier.py` sets PASS/FAIL/INCONCLUSIVE; `RunManifest.verdict_basis` states this; the orchestrator never reads tool status or model text to decide.
 - **Frozen before measurement**: the contract is hashed when compiled (`frozen_sha256`), the rule source is hashed (`rule_sha256`), both are recorded per run; `check_frozen()` fails on tampering.
 - **Coverage honesty**: missing tracks → INCONCLUSIVE, never PASS (`tests/unit/test_verifier.py`).
+- **No vacuous pass**: a PASS needs the mover to have come within one body height of the barrier, otherwise the contract was not exercised → INCONCLUSIVE. Added after the hidden-truth audit caught a real run that passed only because its input was lost and the player never reached the hurdle; that run's SAM output is a regression fixture (`tests/fixtures/dropped_input_walk`).
+- **Bounded repair**: at most 2 patches per turn and 3 turns, enforced in code (`MAX_PATCHES_PER_TURN`, `max_repair_turns`). A repair the verifier rejects is fed back as measured evidence; the model never declares success.
+- **Actuation is re-asserted**: the capture re-sends the held input before every step, so a silently lost press cannot persist.
+- **Hidden-truth audit**: after the runs, every verdict is compared with the engine's own record (`docs/EVALUATION_REPORT.md`). Evaluation only; nothing in the loop reads it.
 - **Blind diagnosis**: every outgoing Muse prompt is screened against `BANNED_PROMPT_TERMS`, hashed, and stored in `repair_turn_N/prompt.json`; the turn-1 prompt names no source file; Muse's tool surface cannot read `*.md`, scenario files or any absolute path (`tests/integration/test_anti_cheat_e2e.py`).
 - **Baseline integrity**: the original project's tree hash is recorded before and after every run; the staged copy must hash-match the baseline before pass 1.
 - **No fabrication**: raw SAM wire text and every Meta request id are stored; `scripts/replay_run.py` recomputes every verdict offline from that text.

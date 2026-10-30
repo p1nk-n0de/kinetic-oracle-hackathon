@@ -1,0 +1,33 @@
+--- a/scripts/arena_builder.gd
++++ b/scripts/arena_builder.gd
+@@ -50,14 +50,14 @@
+ 	var body := StaticBody3D.new()
+ 	body.name = b["name"]
+ 	body.position = b["pos"]
+-	body.collision_layer = int(b.get("layer", 1))
++	body.collision_layer = 1
+ 	body.collision_mask = 0
+ 	var shape := CollisionShape3D.new()
+ 	shape.name = "Shape"
+ 	var bs := BoxShape3D.new()
+ 	bs.size = size
+ 	shape.shape = bs
+-	shape.disabled = kind == "hurdle"
++	shape.disabled = false
+ 	body.add_child(shape)
+ 	body.add_child(mesh)
+ 	body.add_to_group("arena_block")
+
+--- a/scripts/player.gd
++++ b/scripts/player.gd
+@@ -35,9 +35,7 @@
+ 	zone = "spawn"
+ 	facing_yaw_deg = 0.0
+ 	visual.rotation.y = 0.0
+-	for block in get_tree().get_nodes_in_group("arena_block"):
+-		if block.name == "Hurdle":
+-			add_collision_exception_with(block)
++	remove_collision_exception_with(get_node_or_null("../Arena/Hurdle"))
+ 
+ 
+ func _physics_process(delta: float) -> void:

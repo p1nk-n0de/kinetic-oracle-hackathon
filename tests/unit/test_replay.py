@@ -44,8 +44,9 @@ def test_audit_table_labels_verdicts_by_source(bundle: Path):
     text = render_report(replay(bundle))
     assert "REPLAY OK" in text and VERDICT_BASIS in text
     assert "[4] PASSES" in text and "[5] REPAIR TURNS" in text and "[6] SPEND" in text
-    for status in ("FAIL", "PASS"):
-        assert status in text  # both committed bundles go FAIL -> PASS
+    manifest = json.loads((bundle / "run_manifest.json").read_text())
+    for p in manifest["passes"]:
+        assert p["verification_status"] in text
 
 
 def test_cli_exit_code_and_json(bundle: Path):
