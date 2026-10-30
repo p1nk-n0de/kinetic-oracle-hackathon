@@ -4,8 +4,8 @@ kind `clip_evaluation`. No Godot and no repair: this exercises the measurement
 half end to end and gives the dashboard real data before the closed loop runs.
 
   MODEL_API_KEY=... .venv/bin/python -m scripts.evaluate_clips \
-      --clip docs/prior_evidence/2026-10-30/clips/defect.mp4:before_repair \
-      --clip docs/prior_evidence/2026-10-30/clips/repaired.mp4:after_repair"""
+      --clip path/to/before.mp4:before_repair --clip path/to/after.mp4:after_repair
+(Frames are expected in a directory named after the clip, without the suffix.)"""
 from __future__ import annotations
 
 import argparse

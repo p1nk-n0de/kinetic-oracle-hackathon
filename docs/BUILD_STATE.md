@@ -5,7 +5,7 @@ Deadline: Wed 4 Nov 2026 21:00 ET = **Thu 5 Nov 02:00 UTC**. Budget cap for the 
 ## Gate status
 | Gate | Status | Evidence |
 |---|---|---|
-| Phase 0 audit | **DONE 2026-10-30** | `docs/ENVIRONMENT_AUDIT.md`, `docs/prior_evidence/2026-10-30/` |
+| Phase 0 audit | **DONE 2026-10-30** | `docs/ENVIRONMENT_AUDIT.md` |
 | P0 closed loop | **DONE 2026-10-30 12:23** | `runs/run_20261030-122149_3091ef/`: fresh copy (tree hash == baseline) → Muse-compiled contract `hurdle-walk-1cccad8f` (thr 5 px, persistence 3, window 25–75) → pass 1 capture 11.8 s, tool said OK, verifier **FAIL t_fail=60** → Muse Spark blind diagnosis, 10 tool calls (`list_source_files`, `inspect_scene`, 5× `read_source`, 2× `inspect_physics`, `patch_source`), patch `"layer": 2 → 1` with a correct causal reason → pass 2 **PASS** (max E −13 px, coverage 1.0). 15 Meta request ids, 233 hashed files, $0.124, baseline unchanged. Anti-cheat screen: 0 banned terms, turn-1 prompt names no source file. `tests/` 17 passed. |
 | P1 CLI + tests + dashboard | in progress | verifier unit tests + anti-cheat e2e done locally; replay CLI + React dashboard delegated to cloud session `ko-dashboard` (PR against main) |
 | P2 evaluation + docs + demo video | in progress | trials 2–3, known-good true negative, layer-4 perturbation queued; evaluation script, VLM baseline, provenance docs, demo compositor next |

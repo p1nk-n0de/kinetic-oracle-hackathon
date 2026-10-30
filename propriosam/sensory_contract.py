@@ -17,11 +17,13 @@ from pydantic import BaseModel, Field, ValidationError
 
 from .meta_client import SPARK, MetaClient, utc_now
 
-PROMPT_VERSION = "contract-compiler-v1"
+PROMPT_VERSION = "contract-compiler-v2"
 
 RULE_DEFINITION = ("E(t) = y_bottom(barrier, t) - y_bottom(mover, t) in source pixels (y grows downward). "
                    "The mover is judged to have crossed the barrier when E(t) > threshold_px for "
-                   "persistence_frames consecutive tracked frames.")
+                   "persistence_frames consecutive tracked frames. A PASS also requires the interaction to have "
+                   "happened: max E(t) must reach at least -(approach_body_heights x the mover's median box height). "
+                   "If the mover never came that close, the contract was not exercised and the result is INCONCLUSIVE.")
 
 
 class CrossingRule(BaseModel):
@@ -31,6 +33,7 @@ class CrossingRule(BaseModel):
     definition: str = RULE_DEFINITION
     threshold_px: int = Field(ge=0, le=20)
     persistence_frames: int = Field(ge=2, le=6)
+    approach_body_heights: float = Field(default=1.0, ge=0.25, le=3.0)
 
 
 class CoverageGate(BaseModel):

@@ -13,6 +13,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import subprocess
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
@@ -23,6 +24,14 @@ from pydantic import BaseModel, Field
 REPO_ROOT = Path(__file__).resolve().parents[1]
 RUNS_DIR = REPO_ROOT / "runs"
 HASH_SKIP_DIRS = (".godot",)
+
+
+def git_state() -> dict:
+    def git(*a):
+        return subprocess.run(["git", "-C", str(REPO_ROOT), *a], capture_output=True, text=True).stdout.strip()
+    # Bundles are written into this tree while runs are in progress, so only source paths count as dirty.
+    dirty = git("status", "--porcelain", "--", "propriosam", "scenarios", "scripts")
+    return {"commit": git("rev-parse", "HEAD"), "source_dirty": bool(dirty)}
 
 
 def new_run_id(prefix: str = "run") -> str:

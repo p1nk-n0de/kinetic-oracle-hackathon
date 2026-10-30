@@ -1,9 +1,12 @@
 """Frozen-rule verifier tests on SYNTHETIC_UNIT_TEST_FIXTURE tracks (no API, no Godot)."""
 from __future__ import annotations
 
+import json
+from pathlib import Path
+
 from propriosam.sensory_contract import CoverageGate, CrossingRule, SensoryContract
 from propriosam.verifier import VerificationStatus, rule_sha256, verify
-from propriosam.vision_tracker import Track, TrackPoint
+from propriosam.vision_tracker import Track, TrackPoint, build_track, parse_sam_text
 
 
 def _contract(threshold=0, persistence=3, window=(45, 70), min_window=0.9, min_total=0.6) -> SensoryContract:
@@ -111,6 +114,37 @@ def test_absent_track_object_is_error():
     c = _contract()
     r = verify(c, None, _track("yellow bar", {f: 283.0 for f in range(80)}))
     assert r.status == VerificationStatus.ERROR and "mover" in " ".join(r.reasons)
+
+
+def test_never_reaching_the_barrier_is_inconclusive_not_pass():
+    c = _contract()
+    mover = _track("capsule", {f: 296.0 for f in range(80)})
+    barrier = _track("yellow bar", {f: 150.0 for f in range(80)})  # 146px short, body height is 71px
+    r = verify(c, mover, barrier)
+    assert r.status == VerificationStatus.INCONCLUSIVE
+    assert any("contract not exercised" in s for s in r.reasons)
+    assert r.approach["exercised"] is False and r.approach["mover_body_px"] == 71
+
+
+def test_approach_gate_scales_with_body_height():
+    c = _contract()
+    mover = _track("capsule", {f: 296.0 for f in range(80)})
+    assert verify(c, mover, _track("yellow bar", {f: 225.0 for f in range(80)})).status == VerificationStatus.PASS  # exactly -71
+    assert verify(c, mover, _track("yellow bar", {f: 224.0 for f in range(80)})).status == VerificationStatus.INCONCLUSIVE
+
+
+def test_real_dropped_input_run_no_longer_passes():
+    # REAL SAM 3.1 output, tests/fixtures/dropped_input_walk: the input was lost at frame 38, the robot stopped at
+    # z=-7.13 about 4.3 m short of the hurdle, and the verifier without the approach gate returned PASS.
+    d = Path(__file__).resolve().parents[1] / "fixtures" / "dropped_input_walk"
+    meta = json.loads((d / "meta.json").read_text())
+    c = _contract(threshold=meta["threshold_px"], persistence=meta["persistence_frames"], window=tuple(meta["critical_window"]),
+                  min_window=meta["min_window_coverage"], min_total=meta["min_total_coverage"])
+    mover = build_track(meta["mover_concept"], parse_sam_text((d / "mover.txt").read_text()), 80)
+    barrier = build_track(meta["barrier_concept"], parse_sam_text((d / "barrier.txt").read_text()), 80)
+    r = verify(c, mover, barrier)
+    assert r.status == VerificationStatus.INCONCLUSIVE and r.approach["exercised"] is False
+    assert r.t_fail is None
 
 
 def test_contract_freeze_detects_tampering():

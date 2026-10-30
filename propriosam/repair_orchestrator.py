@@ -14,7 +14,7 @@ import traceback
 from pathlib import Path
 
 from . import __version__
-from .artifacts import RUNS_DIR, RunManifest, new_run_id, save_manifest, tree_sha256, write_json
+from .artifacts import RUNS_DIR, RunManifest, git_state, new_run_id, save_manifest, tree_sha256, write_json
 from .diagnosis import diagnose_and_repair
 from .evaluation import track_and_verify
 from .mcp_adapter import DiagnosisTools, GodotStudio, capture_clip, stage_working_copy
@@ -35,7 +35,8 @@ async def run_closed_loop(*, baseline: Path, scenario, run_id: str | None = None
     client = MetaClient(run_dir, budget_usd=budget_usd)
     m = RunManifest(run_id=run_id, kind="closed_loop", created_at=utc_now(),
                     models={"contract": model, "diagnosis": model, "escalation": escalation_model, "sam": SAM_MODEL},
-                    environment={"propriosam": __version__, "python": platform.python_version(), "host": platform.platform()},
+                    environment={"propriosam": __version__, "python": platform.python_version(), "host": platform.platform(),
+                                 "git": git_state()},
                     anti_cheat={"banned_terms": list(S.BANNED_PROMPT_TERMS), "turns": []},
                     notes=[label] if label else [])
     base_sha, base_n = tree_sha256(baseline)

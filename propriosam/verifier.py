@@ -9,9 +9,10 @@ module's rule code is recorded in every result):
     t_fail      =  first frame of the first such run
 
 Status: FAIL if a violation run exists; otherwise INCONCLUSIVE when any
-coverage gate is unmet, including a concept SAM could not find at all (never
-PASS on missing evidence); otherwise PASS. ERROR only when no track object was
-supplied. No tool status and no model text is consulted."""
+coverage gate is unmet, including a concept SAM could not find at all, or when
+the mover never came within the approach gate of the barrier (the contract was
+not exercised, so "it did not cross" proves nothing); otherwise PASS. ERROR only
+when no track object was supplied. No tool status and no model text is consulted."""
 from __future__ import annotations
 
 import hashlib
@@ -46,6 +47,7 @@ class VerificationResult(BaseModel):
     max_residual_frame: int | None = None
     margin_px: float | None = None
     coverage: dict
+    approach: dict | None = None
     evidence_rows: list[dict]
     reasons: list[str]
 
@@ -70,8 +72,19 @@ def _scan_violation(residual: list[float | None], threshold_px: int, persistence
     return None
 
 
+def _approach_gate(contract: SensoryContract, mover: Track, max_e: float | None) -> dict:
+    """A rule of the form 'must not cross' is vacuously true if the mover never got there. The mover has to
+    come within approach_body_heights of the barrier before a PASS means anything."""
+    heights = sorted(p.y2 - p.y1 + 1 for p in mover.points.values())
+    body_px = heights[len(heights) // 2] if heights else None
+    required = None if body_px is None else -contract.rule.approach_body_heights * body_px
+    return {"mover_body_px": body_px, "approach_body_heights": contract.rule.approach_body_heights,
+            "required_max_E_px": required, "max_E_px": max_e,
+            "exercised": max_e is not None and required is not None and max_e >= required}
+
+
 def rule_sha256() -> str:
-    src = inspect.getsource(_residual_series) + inspect.getsource(_scan_violation) + inspect.getsource(verify)
+    src = "".join(inspect.getsource(f) for f in (_residual_series, _scan_violation, _approach_gate, verify))
     return hashlib.sha256(src.encode()).hexdigest()
 
 
@@ -100,6 +113,7 @@ def verify(contract: SensoryContract, mover: Track | None, barrier: Track | None
     gates_ok = (both_window >= contract.coverage.min_window_coverage
                 and mover.coverage() >= contract.coverage.min_total_coverage
                 and barrier.coverage() >= contract.coverage.min_total_coverage)
+    approach = _approach_gate(contract, mover, max_e)
     if run:
         status = VerificationStatus.FAIL
         reasons.append(f"E(t) > {contract.rule.threshold_px}px for {len(run)} consecutive tracked frames starting at frame {run[0]}")
@@ -114,6 +128,10 @@ def verify(contract: SensoryContract, mover: Track | None, barrier: Track | None
             reasons.append(f"mover coverage {mover.coverage():.2f} < {contract.coverage.min_total_coverage}")
         if barrier.coverage() < contract.coverage.min_total_coverage:
             reasons.append(f"barrier coverage {barrier.coverage():.2f} < {contract.coverage.min_total_coverage}")
+    elif not approach["exercised"]:
+        status = VerificationStatus.INCONCLUSIVE
+        reasons.append(f"contract not exercised: closest approach max E(t) = {max_e:+.1f}px, needed at least "
+                       f"{approach['required_max_E_px']:+.1f}px ({contract.rule.approach_body_heights} body heights)")
     else:
         status = VerificationStatus.PASS
         reasons.append(f"no crossing: max E(t) = {max_e:+.1f}px at frame {max_t}; coverage gates met")
@@ -134,4 +152,4 @@ def verify(contract: SensoryContract, mover: Track | None, barrier: Track | None
                               barrier_bottom=[barrier.bottom(t) for t in range(n)], t_fail=run[0] if run else None,
                               violation_run=run, max_residual=max_e, max_residual_frame=max_t,
                               margin_px=(None if max_e is None else round(-max_e, 2)), coverage=coverage,
-                              evidence_rows=rows, reasons=reasons, **base)
+                              approach=approach, evidence_rows=rows, reasons=reasons, **base)

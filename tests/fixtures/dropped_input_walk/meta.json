@@ -1,0 +1,16 @@
+{
+ "source_run": "run_20261030-130716_b22a79",
+ "note": "REAL SAM 3.1 output from a run where the held forward input was lost at frame 38: the robot stopped at z=-7.13, about 4.3 m short of the hurdle, and the original verifier returned PASS. Kept as a regression fixture.",
+ "mover_concept": "small robot",
+ "barrier_concept": "yellow bar",
+ "threshold_px": 8,
+ "persistence_frames": 3,
+ "critical_window": [
+  30,
+  70
+ ],
+ "min_window_coverage": 0.7,
+ "min_total_coverage": 0.6,
+ "truth_final_z": -7.13332986831665,
+ "truth_stop_frame": 38
+}

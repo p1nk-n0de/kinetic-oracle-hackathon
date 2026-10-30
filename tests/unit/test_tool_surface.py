@@ -55,6 +55,15 @@ def test_patch_requires_exactly_one_match_and_records_a_diff(project):
     assert "var a := 9" in (project / "scripts/a.gd").read_text()
 
 
+def test_patches_are_bounded_per_turn(project):
+    t = tools(project)
+    for find, repl in (("var a := 1", "var a := 7"), ("var b2 := 2", "var b2 := 8")):
+        assert asyncio.run(t.dispatch("patch_source", {"path": "scripts/a.gd", "find": find, "replace": repl, "reason": "r"}))["ok"]
+    over = asyncio.run(t.dispatch("patch_source", {"path": "scripts/a.gd", "find": "var b := 2", "replace": "var b := 9", "reason": "r"}))
+    assert "patch limit reached" in over["error"] and len(t.patches) == 2
+    assert "var b := 2" in (project / "scripts/a.gd").read_text()
+
+
 @pytest.mark.parametrize("rel", ["project.godot", "README.md", "oracle.yaml"])
 def test_patch_refuses_non_source(project, rel):
     assert "error" in asyncio.run(tools(project).dispatch("patch_source", {"path": rel, "find": "x", "replace": "y", "reason": "r"}))

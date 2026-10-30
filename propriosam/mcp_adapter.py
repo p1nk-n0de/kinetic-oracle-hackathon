@@ -33,6 +33,7 @@ UV = "uv"
 STUDIO = Path("~/Projects/godot-studio").expanduser()
 SERVER = [UV, "run", "--directory", str(STUDIO), "godot-studio-mcp"]
 PLAYER = "/root/Main/Player"
+MAX_PATCHES_PER_TURN = 2
 
 
 class ToolError(RuntimeError):
@@ -141,6 +142,9 @@ async def capture_clip(studio: GodotStudio, project: Path, out_dir: Path, *, lab
                           "note": "The MCP tool reports success. Nothing in this result says whether the hurdle "
                                   "stopped the player; only the rendered clip can."})
         for i in range(frame_count):
+            # Re-assert the held input every step. A press can be lost silently (one real run stopped walking at
+            # frame 38 with no tool error), and the verifier must judge the action that was asked for.
+            await studio.call("godot_send_input", **args)
             await studio.call("godot_time_control", session_id=sid, action="step_ticks", ticks=every_ticks)
             st = await studio.call("godot_inspect_runtime", session_id=sid, node_path=PLAYER,
                                    properties=["global_position", "velocity"])
@@ -284,6 +288,9 @@ class DiagnosisTools:
 
     async def _patch(self, args: dict) -> dict:
         rel, find, repl, reason = args["path"], args["find"], args["replace"], args.get("reason", "")
+        if len(self.patches) >= MAX_PATCHES_PER_TURN:
+            return {"error": f"patch limit reached ({MAX_PATCHES_PER_TURN} per turn). End your turn: the verifier "
+                             "re-measures now, and you get another turn if the contract still fails."}
         if not self._allowed(rel) or Path(rel).suffix not in (".gd", ".tscn"):
             return {"error": f"not patchable: {rel}"}
         fp = self.project / rel

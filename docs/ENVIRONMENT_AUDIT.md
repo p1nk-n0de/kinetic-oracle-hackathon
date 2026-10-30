@@ -6,7 +6,7 @@ Machine: Apple M4 Pro, 24 GB, macOS (Darwin 27). All paths verified on disk toda
 
 | Item | Location | Notes |
 |---|---|---|
-| Godot MCP server | `~/Projects/godot-studio` → `<godot-studio>` (an external volume must be mounted) | 22 tools, MCP protocol 2025-06-18, starts in 0.3 s. Launch: `uv run --directory ~/Projects/godot-studio godot-studio-mcp` |
+| Godot MCP server | `<godot-studio>` = `~/Projects/godot-studio` (separate repository, external volume must be mounted) | 22 tools, MCP protocol 2025-06-18, starts in 0.3 s. Launch: `uv run --directory ~/Projects/godot-studio godot-studio-mcp` |
 | Allowed project roots | `configs/studio.toml` `[roots]` + env **`GODOT_STUDIO_EXTRA_ROOT`** (one extra root, `src/godot_studio/config.py:62`) | Set `GODOT_STUDIO_EXTRA_ROOT=~/Projects/kinetic-oracle/runs` on the spawned server so `runs/<run_id>/workspace/` is launchable |
 | Godot binary | `/Applications/Godot.app/Contents/MacOS/Godot` 4.6.2.stable | Screenshots need a windowed process: launch with `offscreen=true` (window off-desktop), never headless |
 | Defective fixture | `tests/fixtures/pg_defect_hurdle/` (51 files) | Hurdle declared on collision layer 2 in `scripts/arena_layout.gd:22`; player mask 1 → walks through |
@@ -19,12 +19,12 @@ Key MCP tools for the loop: `godot_launch_session(project, offscreen, label)`, `
 ### Anti-cheat leak audit of the fixture
 Files that reveal the bug (must be invisible to Muse): `DEFECT_FIXTURE.md`, `scenarios/hurdle_blocks_walking.yaml` (description names the layer), `README.md` (scenario docs). `scripts/arena_layout.gd` only documents the normal convention ("solid → layer 1 (world)") and lists the Hurdle with `"layer": 2` — ordinary source, fair to read. Tool surface for Muse therefore exposes **only** `scripts/*.gd`, `scenes/*.tscn`, `project.godot`, plus live runtime/physics inspection. Working-copy paths given to Muse are relative; the absolute path must not contain "defect".
 
-## 2. Prior proven evidence recovered → `docs/prior_evidence/2026-10-30/`
+## 2. Prior proven evidence (pre-build tests, 2026-10-30; raw logs archived outside the repo, superseded by the final bundles in `runs/`)
 
-**Muse Spark 3/3 repair (via Claude Code on Meta's Messages adapter).** `loop{1,2,3}.txt`, `live_loop{1,2,3}.jsonl`, `loop_summary.json`, `run_live.py`, `loop3.py`. Each run: `run_scenario` → launch → `inspect_runtime` / `inspect_physics` / read scripts → `apply_repair_copy` → `retest_repair`; verdict read from the retest JSON (fixed=true, regressions pass, baseline unchanged). 11–14 turns, 49–61 s, $0.14–0.19 each. Muse's patch: delete `, "layer": 2` from the Hurdle entry.
+**Muse Spark 3/3 repair (via Claude Code on Meta's Messages adapter).** Each run: `run_scenario` → launch → `inspect_runtime` / `inspect_physics` / read scripts → `apply_repair_copy` → `retest_repair`; verdict read from the retest JSON (fixed=true, regressions pass, baseline unchanged). 11–14 turns, 49–61 s, $0.14–0.19 each. Muse's patch: delete `, "layer": 2` from the Hurdle entry.
 *Correction to the directive's wording:* the "inline-tools fallback" is **native tool calling with the full tool array sent inline** (what `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1` does, instead of deferred `tool_reference` loading). It is not a prompt-and-parse-JSON scheme. Direct API tool calling (below) is the same mechanism.
 
-**SAM 3.1 discrimination.** `clips/{defect,repaired}.mp4` (80 frames, 960×540, H.264, 20 fps, faststart) + `clips/*/f_NNN.png` + `clips/*/truth.json` (true Player z per frame — hidden ground truth, never shown to Muse). `sam_raw/*.txt` = raw `output_text` lines. `sam_analyze.py` = the frozen rule.
+**SAM 3.1 discrimination.** Two clips (80 frames, 960×540, H.264, 20 fps, faststart) with per-frame ground truth (hidden, never shown to Muse).
 - Capture recipe (tick-locked): pause → step 40 → press `move_left` → step 25 → release → press `move_forward` → 80 × (step 3 ticks, inspect Player, capture frame). Frame i ↔ tick 3·(i+1) after the walk starts.
 - Frozen rule: `E(t) = bar.y2 − capsule.y2` (screen px, both bottom edges); VIOLATION = `E(t) > 0` for ≥ 3 consecutive frames; `t_fail` = first frame of that run.
 - Results: defect → VIOLATION @ 59 (truth: z < −11.8 at frame 60, z < −12.0 at 61); repaired → no violation, max E = −13 px (margin 13–17 px after the stop). Identical across repeat calls.
