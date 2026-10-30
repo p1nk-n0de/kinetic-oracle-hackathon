@@ -1,0 +1,1446 @@
+{
+ "note": "Ground truth from the engine for evaluation only. Never shown to any model and never read by the verifier.",
+ "project": "<repo>/runs/run_20261030-122149_3091ef/workspace/hurdle_scene",
+ "rows": [
+  {
+   "frame": 0,
+   "game_tick": 87,
+   "physics_frame": 92,
+   "player": {
+    "global_position": {
+     "x": -1.58333349227905,
+     "y": -5.21391630172729e-05,
+     "z": -0.0500000044703484
+    },
+    "velocity": {
+     "x": -2.5,
+     "y": 0.0,
+     "z": -1.5
+    }
+   },
+   "tick_offset": 3
+  },
+  {
+   "frame": 1,
+   "game_tick": 90,
+   "physics_frame": 99,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -0.175000011920929
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -3.0
+    }
+   },
+   "tick_offset": 6
+  },
+  {
+   "frame": 2,
+   "game_tick": 93,
+   "physics_frame": 106,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -0.366666674613953
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 9
+  },
+  {
+   "frame": 3,
+   "game_tick": 96,
+   "physics_frame": 112,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -0.566666662693024
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 12
+  },
+  {
+   "frame": 4,
+   "game_tick": 99,
+   "physics_frame": 119,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -0.766666650772095
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 15
+  },
+  {
+   "frame": 5,
+   "game_tick": 102,
+   "physics_frame": 124,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -0.966666638851166
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 18
+  },
+  {
+   "frame": 6,
+   "game_tick": 105,
+   "physics_frame": 131,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -1.16666674613953
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 21
+  },
+  {
+   "frame": 7,
+   "game_tick": 108,
+   "physics_frame": 138,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -1.36666691303253
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 24
+  },
+  {
+   "frame": 8,
+   "game_tick": 111,
+   "physics_frame": 147,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -1.56666707992554
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 27
+  },
+  {
+   "frame": 9,
+   "game_tick": 114,
+   "physics_frame": 153,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -1.76666724681854
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 30
+  },
+  {
+   "frame": 10,
+   "game_tick": 117,
+   "physics_frame": 160,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -1.96666741371155
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 33
+  },
+  {
+   "frame": 11,
+   "game_tick": 120,
+   "physics_frame": 166,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -2.16666722297668
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 36
+  },
+  {
+   "frame": 12,
+   "game_tick": 123,
+   "physics_frame": 173,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -2.36666703224182
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 39
+  },
+  {
+   "frame": 13,
+   "game_tick": 126,
+   "physics_frame": 180,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -2.56666684150696
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 42
+  },
+  {
+   "frame": 14,
+   "game_tick": 129,
+   "physics_frame": 187,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -2.76666665077209
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 45
+  },
+  {
+   "frame": 15,
+   "game_tick": 132,
+   "physics_frame": 194,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -2.96666646003723
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 48
+  },
+  {
+   "frame": 16,
+   "game_tick": 135,
+   "physics_frame": 202,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -3.16666626930237
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 51
+  },
+  {
+   "frame": 17,
+   "game_tick": 138,
+   "physics_frame": 208,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -3.3666660785675
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 54
+  },
+  {
+   "frame": 18,
+   "game_tick": 141,
+   "physics_frame": 216,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -3.56666588783264
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 57
+  },
+  {
+   "frame": 19,
+   "game_tick": 144,
+   "physics_frame": 224,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -3.76666569709778
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 60
+  },
+  {
+   "frame": 20,
+   "game_tick": 147,
+   "physics_frame": 230,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -3.96666550636292
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 63
+  },
+  {
+   "frame": 21,
+   "game_tick": 150,
+   "physics_frame": 237,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -4.16666555404663
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 66
+  },
+  {
+   "frame": 22,
+   "game_tick": 153,
+   "physics_frame": 245,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -4.36666536331177
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 69
+  },
+  {
+   "frame": 23,
+   "game_tick": 156,
+   "physics_frame": 252,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -4.5666651725769
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 72
+  },
+  {
+   "frame": 24,
+   "game_tick": 159,
+   "physics_frame": 257,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -4.76666498184204
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 75
+  },
+  {
+   "frame": 25,
+   "game_tick": 162,
+   "physics_frame": 264,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -4.96666479110718
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 78
+  },
+  {
+   "frame": 26,
+   "game_tick": 165,
+   "physics_frame": 271,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -5.16666460037231
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 81
+  },
+  {
+   "frame": 27,
+   "game_tick": 168,
+   "physics_frame": 279,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -5.36666440963745
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 84
+  },
+  {
+   "frame": 28,
+   "game_tick": 171,
+   "physics_frame": 286,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -5.56666421890259
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 87
+  },
+  {
+   "frame": 29,
+   "game_tick": 174,
+   "physics_frame": 292,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -5.76666402816772
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 90
+  },
+  {
+   "frame": 30,
+   "game_tick": 177,
+   "physics_frame": 298,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -5.96666383743286
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 93
+  },
+  {
+   "frame": 31,
+   "game_tick": 180,
+   "physics_frame": 305,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -6.166663646698
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 96
+  },
+  {
+   "frame": 32,
+   "game_tick": 183,
+   "physics_frame": 312,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -6.36666345596313
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 99
+  },
+  {
+   "frame": 33,
+   "game_tick": 186,
+   "physics_frame": 318,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -6.56666326522827
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 102
+  },
+  {
+   "frame": 34,
+   "game_tick": 189,
+   "physics_frame": 326,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -6.76666307449341
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 105
+  },
+  {
+   "frame": 35,
+   "game_tick": 192,
+   "physics_frame": 333,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -6.96666288375854
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 108
+  },
+  {
+   "frame": 36,
+   "game_tick": 195,
+   "physics_frame": 340,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -7.16666269302368
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 111
+  },
+  {
+   "frame": 37,
+   "game_tick": 198,
+   "physics_frame": 347,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -7.36666250228882
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 114
+  },
+  {
+   "frame": 38,
+   "game_tick": 201,
+   "physics_frame": 354,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -7.56666231155396
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 117
+  },
+  {
+   "frame": 39,
+   "game_tick": 204,
+   "physics_frame": 360,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -7.76666212081909
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 120
+  },
+  {
+   "frame": 40,
+   "game_tick": 207,
+   "physics_frame": 367,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -7.96666193008423
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 123
+  },
+  {
+   "frame": 41,
+   "game_tick": 210,
+   "physics_frame": 374,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -8.16666221618652
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 126
+  },
+  {
+   "frame": 42,
+   "game_tick": 213,
+   "physics_frame": 382,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -8.36666202545166
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 129
+  },
+  {
+   "frame": 43,
+   "game_tick": 216,
+   "physics_frame": 388,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -8.5666618347168
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 132
+  },
+  {
+   "frame": 44,
+   "game_tick": 219,
+   "physics_frame": 395,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -8.76666164398193
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 135
+  },
+  {
+   "frame": 45,
+   "game_tick": 222,
+   "physics_frame": 402,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -8.96666145324707
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 138
+  },
+  {
+   "frame": 46,
+   "game_tick": 225,
+   "physics_frame": 409,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -9.16666126251221
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 141
+  },
+  {
+   "frame": 47,
+   "game_tick": 228,
+   "physics_frame": 417,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -9.36666107177734
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 144
+  },
+  {
+   "frame": 48,
+   "game_tick": 231,
+   "physics_frame": 423,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -9.56666088104248
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 147
+  },
+  {
+   "frame": 49,
+   "game_tick": 234,
+   "physics_frame": 432,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -9.76666069030762
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 150
+  },
+  {
+   "frame": 50,
+   "game_tick": 237,
+   "physics_frame": 439,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -9.96666049957275
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 153
+  },
+  {
+   "frame": 51,
+   "game_tick": 240,
+   "physics_frame": 446,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -10.1666603088379
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 156
+  },
+  {
+   "frame": 52,
+   "game_tick": 243,
+   "physics_frame": 453,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -10.366660118103
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 159
+  },
+  {
+   "frame": 53,
+   "game_tick": 246,
+   "physics_frame": 460,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -10.5666599273682
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 162
+  },
+  {
+   "frame": 54,
+   "game_tick": 249,
+   "physics_frame": 467,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -10.7666597366333
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 165
+  },
+  {
+   "frame": 55,
+   "game_tick": 252,
+   "physics_frame": 475,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -10.9666595458984
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 168
+  },
+  {
+   "frame": 56,
+   "game_tick": 255,
+   "physics_frame": 480,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -11.1666593551636
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 171
+  },
+  {
+   "frame": 57,
+   "game_tick": 258,
+   "physics_frame": 488,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -11.3666591644287
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 174
+  },
+  {
+   "frame": 58,
+   "game_tick": 261,
+   "physics_frame": 497,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -11.5666589736938
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 177
+  },
+  {
+   "frame": 59,
+   "game_tick": 264,
+   "physics_frame": 505,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -11.766658782959
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 180
+  },
+  {
+   "frame": 60,
+   "game_tick": 267,
+   "physics_frame": 512,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -11.9666585922241
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 183
+  },
+  {
+   "frame": 61,
+   "game_tick": 270,
+   "physics_frame": 521,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -12.1666584014893
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 186
+  },
+  {
+   "frame": 62,
+   "game_tick": 273,
+   "physics_frame": 529,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -12.3666582107544
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 189
+  },
+  {
+   "frame": 63,
+   "game_tick": 276,
+   "physics_frame": 535,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -12.5666580200195
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 192
+  },
+  {
+   "frame": 64,
+   "game_tick": 279,
+   "physics_frame": 543,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -12.7666578292847
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 195
+  },
+  {
+   "frame": 65,
+   "game_tick": 282,
+   "physics_frame": 549,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -12.9666576385498
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 198
+  },
+  {
+   "frame": 66,
+   "game_tick": 285,
+   "physics_frame": 556,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -13.1666574478149
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 201
+  },
+  {
+   "frame": 67,
+   "game_tick": 288,
+   "physics_frame": 564,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -13.3666572570801
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 204
+  },
+  {
+   "frame": 68,
+   "game_tick": 291,
+   "physics_frame": 571,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -13.5666570663452
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 207
+  },
+  {
+   "frame": 69,
+   "game_tick": 294,
+   "physics_frame": 577,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -13.7666568756104
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 210
+  },
+  {
+   "frame": 70,
+   "game_tick": 297,
+   "physics_frame": 585,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -13.9666566848755
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 213
+  },
+  {
+   "frame": 71,
+   "game_tick": 300,
+   "physics_frame": 594,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -14.1666564941406
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 216
+  },
+  {
+   "frame": 72,
+   "game_tick": 303,
+   "physics_frame": 601,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -14.3666563034058
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 219
+  },
+  {
+   "frame": 73,
+   "game_tick": 306,
+   "physics_frame": 607,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -14.5666561126709
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 222
+  },
+  {
+   "frame": 74,
+   "game_tick": 309,
+   "physics_frame": 614,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -14.766655921936
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 225
+  },
+  {
+   "frame": 75,
+   "game_tick": 312,
+   "physics_frame": 621,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -14.9666557312012
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 228
+  },
+  {
+   "frame": 76,
+   "game_tick": 315,
+   "physics_frame": 629,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -15.1666555404663
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 231
+  },
+  {
+   "frame": 77,
+   "game_tick": 318,
+   "physics_frame": 635,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -15.3666553497314
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 234
+  },
+  {
+   "frame": 78,
+   "game_tick": 321,
+   "physics_frame": 641,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -15.5666551589966
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 237
+  },
+  {
+   "frame": 79,
+   "game_tick": 324,
+   "physics_frame": 650,
+   "player": {
+    "global_position": {
+     "x": -1.59906387329102,
+     "y": 0.000820125278551131,
+     "z": -15.7666549682617
+    },
+    "velocity": {
+     "x": 0.0,
+     "y": 0.0,
+     "z": -4.0
+    }
+   },
+   "tick_offset": 240
+  }
+ ]
+}
