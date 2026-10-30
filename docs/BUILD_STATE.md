@@ -1,7 +1,8 @@
 # BUILD STATE — KINETIC-ORACLE (ProprioSAM)
 
-Deadline: Wed 4 Nov 2026 21:00 ET = **Thu 5 Nov 02:00 UTC**. Budget cap for the build: $40 Meta API. Spent so far: about $4.20
-(final evidence set $3.05, evaluation $0.25, superseded runs and probes about $0.90).
+Deadline: Wed 4 Nov 2026 21:00 ET = **Thu 5 Nov 02:00 UTC**. Budget cap for the build: $40 Meta API. Spent so far: about $5.10 at
+published prices (final evidence set $3.05, superseded runs $1.58, evaluation $0.24, aborted batch and probes about $0.23), plus
+about $1.12 of pre-build tests.
 
 ## Gate status
 | Gate | Status | Evidence |
