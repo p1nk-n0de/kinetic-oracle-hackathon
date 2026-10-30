@@ -31,8 +31,3 @@ about $1.12 of pre-build tests.
 5. Frozen residual: `E(t) = y_bottom(barrier) − y_bottom(mover)`; VIOLATION when `E(t) > threshold_px` for `persistence_frames` consecutive tracked frames. PASS also needs coverage gates and the approach gate. The rule family is library code; Muse compiles the contract instance.
 6. Capture: tick-locked, 80 frames, every 3 ticks, 960×540, 20 fps, faststart, input re-asserted each step, hidden truth saved for evaluation only, 30 s timeout, session always stopped.
 7. Claude Code is the development harness only; the product never calls Anthropic.
-
-## Open items for the entrant
-- Confirm the new-work rule in the participant guide (behind the Cerebral Valley login). The provenance disclosure is written on the assumption that disclosed existing tools are acceptable.
-- Before making the repo public, clean the history: see the handoff report.
-- Record the 3-minute video from `docs/DEMO_SCRIPT.md`, and submit on the Cerebral Valley platform.

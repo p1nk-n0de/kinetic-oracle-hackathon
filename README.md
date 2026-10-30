@@ -82,4 +82,4 @@ New hackathon contributions: SAM 3.1 integration and temporal tracking; visual-s
 Every verdict in this repository comes from `propriosam/verifier.py` over SAM 3.1 tracks under a contract frozen before
 measurement. Tool statuses and model text are recorded but never consulted. Hidden engine ground truth is stored for evaluation
 only and is never shown to any model. This is one scene family with a small number of runs: it shows the mechanism, not a rate.
-Limitations are listed in the evaluation report.
+Limitations are listed in the evaluation report. This history was sanitized once before publication: see `docs/SANITIZATION.md`.

@@ -12,7 +12,11 @@ New hackathon contributions: SAM 3.1 integration and temporal tracking; visual-s
 | Hurdle test scene + deliberately defective fixture | same repo (`example_game/proving_ground`, `tests/fixtures/pg_defect_hurdle`) | The system under test. Its tree hashes are recorded in every bundle and re-checked after each run. |
 | Godot 4.6.2, ffmpeg, Python toolchain | this Mac | Runtime. |
 
-Everything under `propriosam/`, `scenarios/`, `scripts/`, `tests/`, `web/` and `docs/` in this repository was written during the hackathon window, by Claude Code under the entrant's direction (see the git history, which starts 2026-10-30).
+Everything under `propriosam/`, `scenarios/`, `scripts/`, `tests/`, `web/` and `docs/` in this repository, and every bundle under `runs/`, was produced during the hackathon window, on 2026-10-30, by Claude Code under the entrant's direction (see the git history and `docs/SANITIZATION.md`). None of it existed before the event.
+
+Two boundaries worth stating plainly:
+- Run bundles include excerpts of the pre-existing scene's source, because Muse read those files through its tools at runtime (`repair_turn_N/transcript.json`). That code is the system under test, not new work.
+- The Godot server ships its own rule-based repair proposer (`godot_propose_repair`). KINETIC-ORACLE does not use it: Muse's tool surface has no access to it, and every diagnosis and patch in a bundle comes from a Meta model.
 
 ## Dataflow
 ```

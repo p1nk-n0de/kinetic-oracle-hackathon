@@ -2,7 +2,7 @@
 
 A run bundle is the complete, offline-replayable record of one KINETIC-ORACLE execution. Pydantic models live in
 `propriosam/artifacts.py` (`RunManifest`, `PassRecord`, `RepairTurnRecord`). All paths inside the manifest are
-relative to the bundle directory. Example bundle: `runs/cliprun_20261030-121544_36e61f/` (kind `clip_evaluation`).
+relative to the bundle directory. Example bundle: `runs/run_20261030-140019_79d646/` (kind `closed_loop`).
 
 ```
 run_manifest.json        RunManifest (written last; `files` = sha256 of every other file in the bundle)
