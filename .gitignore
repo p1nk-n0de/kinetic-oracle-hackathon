@@ -4,6 +4,7 @@ __pycache__/
 .pytest_cache/
 .cache/
 runs/*/workspace/
+runs/*/pass*/frames/
 web/node_modules/
 web/dist/
 .DS_Store

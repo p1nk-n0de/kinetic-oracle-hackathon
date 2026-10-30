@@ -1,0 +1,14 @@
+[project]
+name = "kinetic-oracle"
+version = "0.1.0"
+description = "KINETIC-ORACLE (ProprioSAM): closed-loop visual verification and bounded repair for tool-using agents, on Meta Model API (SAM 3.1 + Muse)."
+requires-python = ">=3.12"
+dependencies = ["mcp", "pydantic>=2", "pillow", "numpy", "pyyaml", "meta-sam-parser"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = ["live: calls the real Meta API or launches Godot (deselect with -m 'not live')"]
