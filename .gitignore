@@ -5,11 +5,8 @@ __pycache__/
 .cache/
 runs/*/workspace/
 runs/*/pass*/frames/
+runs/_baselines/
 web/node_modules/
 web/dist/
 .DS_Store
-<<<<<<< HEAD
-runs/_baselines/
-=======
 *.egg-info/
->>>>>>> dashboard-branch
