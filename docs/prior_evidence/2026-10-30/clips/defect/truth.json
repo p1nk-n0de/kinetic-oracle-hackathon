@@ -1,0 +1,2642 @@
+[
+{
+"i": 0,
+"tick": 3,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.58333349227905,
+"y": -5.21391630172729e-05,
+"z": -0.0500000044703484
+},
+"velocity": {
+"x": -2.5,
+"y": 0.0,
+"z": -1.5
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 89,
+"height": 540,
+"label": "f000",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f000_t000089_1863.png",
+"paused": true,
+"physics_frame": 94,
+"process_frame": 249,
+"size_bytes": 73157,
+"ticks_msec": 1895,
+"width": 960
+}
+},
+{
+"i": 1,
+"tick": 6,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -0.175000011920929
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -3.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 92,
+"height": 540,
+"label": "f001",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f001_t000092_1980.png",
+"paused": true,
+"physics_frame": 101,
+"process_frame": 260,
+"size_bytes": 73177,
+"ticks_msec": 2006,
+"width": 960
+}
+},
+{
+"i": 2,
+"tick": 9,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -0.366666674613953
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 95,
+"height": 540,
+"label": "f002",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f002_t000095_2104.png",
+"paused": true,
+"physics_frame": 108,
+"process_frame": 271,
+"size_bytes": 74336,
+"ticks_msec": 2129,
+"width": 960
+}
+},
+{
+"i": 3,
+"tick": 12,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -0.566666662693024
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 98,
+"height": 540,
+"label": "f003",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f003_t000098_2212.png",
+"paused": true,
+"physics_frame": 115,
+"process_frame": 281,
+"size_bytes": 75974,
+"ticks_msec": 2239,
+"width": 960
+}
+},
+{
+"i": 4,
+"tick": 15,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -0.766666650772095
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 101,
+"height": 540,
+"label": "f004",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f004_t000101_2323.png",
+"paused": true,
+"physics_frame": 121,
+"process_frame": 291,
+"size_bytes": 78031,
+"ticks_msec": 2348,
+"width": 960
+}
+},
+{
+"i": 5,
+"tick": 18,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -0.966666638851166
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 104,
+"height": 540,
+"label": "f005",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f005_t000104_2437.png",
+"paused": true,
+"physics_frame": 129,
+"process_frame": 303,
+"size_bytes": 80356,
+"ticks_msec": 2463,
+"width": 960
+}
+},
+{
+"i": 6,
+"tick": 21,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -1.16666674613953
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 107,
+"height": 540,
+"label": "f006",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f006_t000107_2574.png",
+"paused": true,
+"physics_frame": 136,
+"process_frame": 317,
+"size_bytes": 82135,
+"ticks_msec": 2603,
+"width": 960
+}
+},
+{
+"i": 7,
+"tick": 24,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -1.36666691303253
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 110,
+"height": 540,
+"label": "f007",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f007_t000110_2693.png",
+"paused": true,
+"physics_frame": 144,
+"process_frame": 330,
+"size_bytes": 83844,
+"ticks_msec": 2721,
+"width": 960
+}
+},
+{
+"i": 8,
+"tick": 27,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -1.56666707992554
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 113,
+"height": 540,
+"label": "f008",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f008_t000113_2819.png",
+"paused": true,
+"physics_frame": 151,
+"process_frame": 342,
+"size_bytes": 86111,
+"ticks_msec": 2849,
+"width": 960
+}
+},
+{
+"i": 9,
+"tick": 30,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -1.76666724681854
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 116,
+"height": 540,
+"label": "f009",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f009_t000116_2950.png",
+"paused": true,
+"physics_frame": 158,
+"process_frame": 357,
+"size_bytes": 90334,
+"ticks_msec": 2978,
+"width": 960
+}
+},
+{
+"i": 10,
+"tick": 33,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -1.96666741371155
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 119,
+"height": 540,
+"label": "f010",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f010_t000119_3050.png",
+"paused": true,
+"physics_frame": 165,
+"process_frame": 367,
+"size_bytes": 92614,
+"ticks_msec": 3080,
+"width": 960
+}
+},
+{
+"i": 11,
+"tick": 36,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -2.16666722297668
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 122,
+"height": 540,
+"label": "f011",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f011_t000122_3175.png",
+"paused": true,
+"physics_frame": 172,
+"process_frame": 378,
+"size_bytes": 96245,
+"ticks_msec": 3207,
+"width": 960
+}
+},
+{
+"i": 12,
+"tick": 39,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -2.36666703224182
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 125,
+"height": 540,
+"label": "f012",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f012_t000125_3315.png",
+"paused": true,
+"physics_frame": 181,
+"process_frame": 391,
+"size_bytes": 99857,
+"ticks_msec": 3348,
+"width": 960
+}
+},
+{
+"i": 13,
+"tick": 42,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -2.56666684150696
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 128,
+"height": 540,
+"label": "f013",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f013_t000128_3463.png",
+"paused": true,
+"physics_frame": 189,
+"process_frame": 407,
+"size_bytes": 103553,
+"ticks_msec": 3498,
+"width": 960
+}
+},
+{
+"i": 14,
+"tick": 45,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -2.76666665077209
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 131,
+"height": 540,
+"label": "f014",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f014_t000131_3598.png",
+"paused": true,
+"physics_frame": 198,
+"process_frame": 420,
+"size_bytes": 107181,
+"ticks_msec": 3632,
+"width": 960
+}
+},
+{
+"i": 15,
+"tick": 48,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -2.96666646003723
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 134,
+"height": 540,
+"label": "f015",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f015_t000134_3724.png",
+"paused": true,
+"physics_frame": 206,
+"process_frame": 432,
+"size_bytes": 111132,
+"ticks_msec": 3760,
+"width": 960
+}
+},
+{
+"i": 16,
+"tick": 51,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -3.16666626930237
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 137,
+"height": 540,
+"label": "f016",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f016_t000137_3852.png",
+"paused": true,
+"physics_frame": 213,
+"process_frame": 445,
+"size_bytes": 116428,
+"ticks_msec": 3889,
+"width": 960
+}
+},
+{
+"i": 17,
+"tick": 54,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -3.3666660785675
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 140,
+"height": 540,
+"label": "f017",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f017_t000140_3974.png",
+"paused": true,
+"physics_frame": 221,
+"process_frame": 457,
+"size_bytes": 121123,
+"ticks_msec": 4011,
+"width": 960
+}
+},
+{
+"i": 18,
+"tick": 57,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -3.56666588783264
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 143,
+"height": 540,
+"label": "f018",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f018_t000143_4091.png",
+"paused": true,
+"physics_frame": 227,
+"process_frame": 467,
+"size_bytes": 120899,
+"ticks_msec": 4128,
+"width": 960
+}
+},
+{
+"i": 19,
+"tick": 60,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -3.76666569709778
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 146,
+"height": 540,
+"label": "f019",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f019_t000146_4199.png",
+"paused": true,
+"physics_frame": 234,
+"process_frame": 477,
+"size_bytes": 120996,
+"ticks_msec": 4235,
+"width": 960
+}
+},
+{
+"i": 20,
+"tick": 63,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -3.96666550636292
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 149,
+"height": 540,
+"label": "f020",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f020_t000149_4324.png",
+"paused": true,
+"physics_frame": 242,
+"process_frame": 487,
+"size_bytes": 121734,
+"ticks_msec": 4362,
+"width": 960
+}
+},
+{
+"i": 21,
+"tick": 66,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -4.16666555404663
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 152,
+"height": 540,
+"label": "f021",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f021_t000152_4441.png",
+"paused": true,
+"physics_frame": 249,
+"process_frame": 497,
+"size_bytes": 122242,
+"ticks_msec": 4479,
+"width": 960
+}
+},
+{
+"i": 22,
+"tick": 69,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -4.36666536331177
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 155,
+"height": 540,
+"label": "f022",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f022_t000155_4568.png",
+"paused": true,
+"physics_frame": 256,
+"process_frame": 507,
+"size_bytes": 122018,
+"ticks_msec": 4607,
+"width": 960
+}
+},
+{
+"i": 23,
+"tick": 72,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -4.5666651725769
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 158,
+"height": 540,
+"label": "f023",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f023_t000158_4702.png",
+"paused": true,
+"physics_frame": 264,
+"process_frame": 519,
+"size_bytes": 122603,
+"ticks_msec": 4739,
+"width": 960
+}
+},
+{
+"i": 24,
+"tick": 75,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -4.76666498184204
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 161,
+"height": 540,
+"label": "f024",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f024_t000161_4819.png",
+"paused": true,
+"physics_frame": 272,
+"process_frame": 529,
+"size_bytes": 121924,
+"ticks_msec": 4857,
+"width": 960
+}
+},
+{
+"i": 25,
+"tick": 78,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -4.96666479110718
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 164,
+"height": 540,
+"label": "f025",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f025_t000164_4933.png",
+"paused": true,
+"physics_frame": 278,
+"process_frame": 538,
+"size_bytes": 121711,
+"ticks_msec": 4970,
+"width": 960
+}
+},
+{
+"i": 26,
+"tick": 81,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -5.16666460037231
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 167,
+"height": 540,
+"label": "f026",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f026_t000167_5052.png",
+"paused": true,
+"physics_frame": 286,
+"process_frame": 549,
+"size_bytes": 122081,
+"ticks_msec": 5090,
+"width": 960
+}
+},
+{
+"i": 27,
+"tick": 84,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -5.36666440963745
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 170,
+"height": 540,
+"label": "f027",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f027_t000170_5150.png",
+"paused": true,
+"physics_frame": 291,
+"process_frame": 559,
+"size_bytes": 122603,
+"ticks_msec": 5186,
+"width": 960
+}
+},
+{
+"i": 28,
+"tick": 87,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -5.56666421890259
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 173,
+"height": 540,
+"label": "f028",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f028_t000173_5273.png",
+"paused": true,
+"physics_frame": 299,
+"process_frame": 572,
+"size_bytes": 121914,
+"ticks_msec": 5310,
+"width": 960
+}
+},
+{
+"i": 29,
+"tick": 90,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -5.76666402816772
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 176,
+"height": 540,
+"label": "f029",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f029_t000176_5395.png",
+"paused": true,
+"physics_frame": 305,
+"process_frame": 582,
+"size_bytes": 120925,
+"ticks_msec": 5433,
+"width": 960
+}
+},
+{
+"i": 30,
+"tick": 93,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -5.96666383743286
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 179,
+"height": 540,
+"label": "f030",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f030_t000179_5526.png",
+"paused": true,
+"physics_frame": 314,
+"process_frame": 594,
+"size_bytes": 119672,
+"ticks_msec": 5561,
+"width": 960
+}
+},
+{
+"i": 31,
+"tick": 96,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -6.166663646698
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 182,
+"height": 540,
+"label": "f031",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f031_t000182_5635.png",
+"paused": true,
+"physics_frame": 320,
+"process_frame": 604,
+"size_bytes": 118968,
+"ticks_msec": 5670,
+"width": 960
+}
+},
+{
+"i": 32,
+"tick": 99,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -6.36666345596313
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 185,
+"height": 540,
+"label": "f032",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f032_t000185_5757.png",
+"paused": true,
+"physics_frame": 328,
+"process_frame": 615,
+"size_bytes": 118247,
+"ticks_msec": 5792,
+"width": 960
+}
+},
+{
+"i": 33,
+"tick": 102,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -6.56666326522827
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 188,
+"height": 540,
+"label": "f033",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f033_t000188_5882.png",
+"paused": true,
+"physics_frame": 335,
+"process_frame": 627,
+"size_bytes": 117505,
+"ticks_msec": 5917,
+"width": 960
+}
+},
+{
+"i": 34,
+"tick": 105,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -6.76666307449341
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 191,
+"height": 540,
+"label": "f034",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f034_t000191_6009.png",
+"paused": true,
+"physics_frame": 343,
+"process_frame": 640,
+"size_bytes": 116875,
+"ticks_msec": 6043,
+"width": 960
+}
+},
+{
+"i": 35,
+"tick": 108,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -6.96666288375854
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 194,
+"height": 540,
+"label": "f035",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f035_t000194_6143.png",
+"paused": true,
+"physics_frame": 350,
+"process_frame": 652,
+"size_bytes": 116290,
+"ticks_msec": 6179,
+"width": 960
+}
+},
+{
+"i": 36,
+"tick": 111,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -7.16666269302368
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 197,
+"height": 540,
+"label": "f036",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f036_t000197_6262.png",
+"paused": true,
+"physics_frame": 358,
+"process_frame": 664,
+"size_bytes": 116451,
+"ticks_msec": 6298,
+"width": 960
+}
+},
+{
+"i": 37,
+"tick": 114,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -7.36666250228882
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 200,
+"height": 540,
+"label": "f037",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f037_t000200_6396.png",
+"paused": true,
+"physics_frame": 366,
+"process_frame": 677,
+"size_bytes": 116305,
+"ticks_msec": 6433,
+"width": 960
+}
+},
+{
+"i": 38,
+"tick": 117,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -7.56666231155396
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 203,
+"height": 540,
+"label": "f038",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f038_t000203_6527.png",
+"paused": true,
+"physics_frame": 374,
+"process_frame": 690,
+"size_bytes": 115947,
+"ticks_msec": 6562,
+"width": 960
+}
+},
+{
+"i": 39,
+"tick": 120,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -7.76666212081909
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 206,
+"height": 540,
+"label": "f039",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f039_t000206_6638.png",
+"paused": true,
+"physics_frame": 381,
+"process_frame": 700,
+"size_bytes": 115976,
+"ticks_msec": 6672,
+"width": 960
+}
+},
+{
+"i": 40,
+"tick": 123,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -7.96666193008423
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 209,
+"height": 540,
+"label": "f040",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f040_t000209_6753.png",
+"paused": true,
+"physics_frame": 388,
+"process_frame": 711,
+"size_bytes": 116216,
+"ticks_msec": 6788,
+"width": 960
+}
+},
+{
+"i": 41,
+"tick": 126,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -8.16666221618652
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 212,
+"height": 540,
+"label": "f041",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f041_t000212_6872.png",
+"paused": true,
+"physics_frame": 394,
+"process_frame": 721,
+"size_bytes": 116147,
+"ticks_msec": 6908,
+"width": 960
+}
+},
+{
+"i": 42,
+"tick": 129,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -8.36666202545166
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 215,
+"height": 540,
+"label": "f042",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f042_t000215_7000.png",
+"paused": true,
+"physics_frame": 402,
+"process_frame": 733,
+"size_bytes": 117072,
+"ticks_msec": 7035,
+"width": 960
+}
+},
+{
+"i": 43,
+"tick": 132,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -8.5666618347168
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 218,
+"height": 540,
+"label": "f043",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f043_t000218_7116.png",
+"paused": true,
+"physics_frame": 409,
+"process_frame": 745,
+"size_bytes": 117861,
+"ticks_msec": 7152,
+"width": 960
+}
+},
+{
+"i": 44,
+"tick": 135,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -8.76666164398193
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 221,
+"height": 540,
+"label": "f044",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f044_t000221_7245.png",
+"paused": true,
+"physics_frame": 417,
+"process_frame": 755,
+"size_bytes": 117888,
+"ticks_msec": 7281,
+"width": 960
+}
+},
+{
+"i": 45,
+"tick": 138,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -8.96666145324707
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 224,
+"height": 540,
+"label": "f045",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f045_t000224_7384.png",
+"paused": true,
+"physics_frame": 425,
+"process_frame": 770,
+"size_bytes": 119028,
+"ticks_msec": 7422,
+"width": 960
+}
+},
+{
+"i": 46,
+"tick": 141,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -9.16666126251221
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 227,
+"height": 540,
+"label": "f046",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f046_t000227_7509.png",
+"paused": true,
+"physics_frame": 433,
+"process_frame": 781,
+"size_bytes": 119712,
+"ticks_msec": 7547,
+"width": 960
+}
+},
+{
+"i": 47,
+"tick": 144,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -9.36666107177734
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 230,
+"height": 540,
+"label": "f047",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f047_t000230_7622.png",
+"paused": true,
+"physics_frame": 440,
+"process_frame": 791,
+"size_bytes": 121054,
+"ticks_msec": 7659,
+"width": 960
+}
+},
+{
+"i": 48,
+"tick": 147,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -9.56666088104248
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 233,
+"height": 540,
+"label": "f048",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f048_t000233_7737.png",
+"paused": true,
+"physics_frame": 447,
+"process_frame": 802,
+"size_bytes": 121150,
+"ticks_msec": 7774,
+"width": 960
+}
+},
+{
+"i": 49,
+"tick": 150,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -9.76666069030762
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 236,
+"height": 540,
+"label": "f049",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f049_t000236_7860.png",
+"paused": true,
+"physics_frame": 453,
+"process_frame": 812,
+"size_bytes": 121668,
+"ticks_msec": 7899,
+"width": 960
+}
+},
+{
+"i": 50,
+"tick": 153,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -9.96666049957275
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 239,
+"height": 540,
+"label": "f050",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f050_t000239_7992.png",
+"paused": true,
+"physics_frame": 462,
+"process_frame": 824,
+"size_bytes": 123648,
+"ticks_msec": 8031,
+"width": 960
+}
+},
+{
+"i": 51,
+"tick": 156,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -10.1666603088379
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 242,
+"height": 540,
+"label": "f051",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f051_t000242_8120.png",
+"paused": true,
+"physics_frame": 469,
+"process_frame": 839,
+"size_bytes": 124826,
+"ticks_msec": 8159,
+"width": 960
+}
+},
+{
+"i": 52,
+"tick": 159,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -10.366660118103
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 245,
+"height": 540,
+"label": "f052",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f052_t000245_8262.png",
+"paused": true,
+"physics_frame": 477,
+"process_frame": 851,
+"size_bytes": 124747,
+"ticks_msec": 8302,
+"width": 960
+}
+},
+{
+"i": 53,
+"tick": 162,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -10.5666599273682
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 248,
+"height": 540,
+"label": "f053",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f053_t000248_8404.png",
+"paused": true,
+"physics_frame": 486,
+"process_frame": 864,
+"size_bytes": 125322,
+"ticks_msec": 8444,
+"width": 960
+}
+},
+{
+"i": 54,
+"tick": 165,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -10.7666597366333
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 251,
+"height": 540,
+"label": "f054",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f054_t000251_8521.png",
+"paused": true,
+"physics_frame": 494,
+"process_frame": 874,
+"size_bytes": 126288,
+"ticks_msec": 8559,
+"width": 960
+}
+},
+{
+"i": 55,
+"tick": 168,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -10.9666595458984
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 254,
+"height": 540,
+"label": "f055",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f055_t000254_8631.png",
+"paused": true,
+"physics_frame": 500,
+"process_frame": 884,
+"size_bytes": 126248,
+"ticks_msec": 8668,
+"width": 960
+}
+},
+{
+"i": 56,
+"tick": 171,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -11.1666593551636
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 257,
+"height": 540,
+"label": "f056",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f056_t000257_8759.png",
+"paused": true,
+"physics_frame": 508,
+"process_frame": 896,
+"size_bytes": 127169,
+"ticks_msec": 8797,
+"width": 960
+}
+},
+{
+"i": 57,
+"tick": 174,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -11.3666591644287
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 260,
+"height": 540,
+"label": "f057",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f057_t000260_8879.png",
+"paused": true,
+"physics_frame": 515,
+"process_frame": 906,
+"size_bytes": 127125,
+"ticks_msec": 8917,
+"width": 960
+}
+},
+{
+"i": 58,
+"tick": 177,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -11.5666589736938
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 263,
+"height": 540,
+"label": "f058",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f058_t000263_9007.png",
+"paused": true,
+"physics_frame": 523,
+"process_frame": 917,
+"size_bytes": 127553,
+"ticks_msec": 9047,
+"width": 960
+}
+},
+{
+"i": 59,
+"tick": 180,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -11.766658782959
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 266,
+"height": 540,
+"label": "f059",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f059_t000266_9122.png",
+"paused": true,
+"physics_frame": 530,
+"process_frame": 929,
+"size_bytes": 127889,
+"ticks_msec": 9160,
+"width": 960
+}
+},
+{
+"i": 60,
+"tick": 183,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -11.9666585922241
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 269,
+"height": 540,
+"label": "f060",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f060_t000269_9244.png",
+"paused": true,
+"physics_frame": 536,
+"process_frame": 938,
+"size_bytes": 128688,
+"ticks_msec": 9282,
+"width": 960
+}
+},
+{
+"i": 61,
+"tick": 186,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -12.1666584014893
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 272,
+"height": 540,
+"label": "f061",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f061_t000272_9372.png",
+"paused": true,
+"physics_frame": 545,
+"process_frame": 950,
+"size_bytes": 128815,
+"ticks_msec": 9410,
+"width": 960
+}
+},
+{
+"i": 62,
+"tick": 189,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -12.3666582107544
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 275,
+"height": 540,
+"label": "f062",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f062_t000275_9501.png",
+"paused": true,
+"physics_frame": 551,
+"process_frame": 961,
+"size_bytes": 129067,
+"ticks_msec": 9540,
+"width": 960
+}
+},
+{
+"i": 63,
+"tick": 192,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -12.5666580200195
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 278,
+"height": 540,
+"label": "f063",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f063_t000278_9641.png",
+"paused": true,
+"physics_frame": 560,
+"process_frame": 973,
+"size_bytes": 128717,
+"ticks_msec": 9681,
+"width": 960
+}
+},
+{
+"i": 64,
+"tick": 195,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -12.7666578292847
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 281,
+"height": 540,
+"label": "f064",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f064_t000281_9774.png",
+"paused": true,
+"physics_frame": 569,
+"process_frame": 986,
+"size_bytes": 129380,
+"ticks_msec": 9813,
+"width": 960
+}
+},
+{
+"i": 65,
+"tick": 198,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -12.9666576385498
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 284,
+"height": 540,
+"label": "f065",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f065_t000284_9886.png",
+"paused": true,
+"physics_frame": 576,
+"process_frame": 996,
+"size_bytes": 130054,
+"ticks_msec": 9924,
+"width": 960
+}
+},
+{
+"i": 66,
+"tick": 201,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -13.1666574478149
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 287,
+"height": 540,
+"label": "f066",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f066_t000287_9998.png",
+"paused": true,
+"physics_frame": 582,
+"process_frame": 1007,
+"size_bytes": 131393,
+"ticks_msec": 10036,
+"width": 960
+}
+},
+{
+"i": 67,
+"tick": 204,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -13.3666572570801
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 290,
+"height": 540,
+"label": "f067",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f067_t000290_10129.png",
+"paused": true,
+"physics_frame": 590,
+"process_frame": 1019,
+"size_bytes": 131534,
+"ticks_msec": 10168,
+"width": 960
+}
+},
+{
+"i": 68,
+"tick": 207,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -13.5666570663452
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 293,
+"height": 540,
+"label": "f068",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f068_t000293_10253.png",
+"paused": true,
+"physics_frame": 598,
+"process_frame": 1031,
+"size_bytes": 131786,
+"ticks_msec": 10292,
+"width": 960
+}
+},
+{
+"i": 69,
+"tick": 210,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -13.7666568756104
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 296,
+"height": 540,
+"label": "f069",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f069_t000296_10385.png",
+"paused": true,
+"physics_frame": 605,
+"process_frame": 1043,
+"size_bytes": 130889,
+"ticks_msec": 10424,
+"width": 960
+}
+},
+{
+"i": 70,
+"tick": 213,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -13.9666566848755
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 299,
+"height": 540,
+"label": "f070",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f070_t000299_10516.png",
+"paused": true,
+"physics_frame": 613,
+"process_frame": 1054,
+"size_bytes": 130383,
+"ticks_msec": 10555,
+"width": 960
+}
+},
+{
+"i": 71,
+"tick": 216,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -14.1666564941406
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 302,
+"height": 540,
+"label": "f071",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f071_t000302_10635.png",
+"paused": true,
+"physics_frame": 621,
+"process_frame": 1065,
+"size_bytes": 131259,
+"ticks_msec": 10673,
+"width": 960
+}
+},
+{
+"i": 72,
+"tick": 219,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -14.3666563034058
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 305,
+"height": 540,
+"label": "f072",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f072_t000305_10755.png",
+"paused": true,
+"physics_frame": 627,
+"process_frame": 1076,
+"size_bytes": 130927,
+"ticks_msec": 10792,
+"width": 960
+}
+},
+{
+"i": 73,
+"tick": 222,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -14.5666561126709
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 308,
+"height": 540,
+"label": "f073",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f073_t000308_10877.png",
+"paused": true,
+"physics_frame": 635,
+"process_frame": 1087,
+"size_bytes": 130723,
+"ticks_msec": 10916,
+"width": 960
+}
+},
+{
+"i": 74,
+"tick": 225,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -14.766655921936
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 311,
+"height": 540,
+"label": "f074",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f074_t000311_11017.png",
+"paused": true,
+"physics_frame": 643,
+"process_frame": 1100,
+"size_bytes": 130550,
+"ticks_msec": 11057,
+"width": 960
+}
+},
+{
+"i": 75,
+"tick": 228,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -14.9666557312012
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 314,
+"height": 540,
+"label": "f075",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f075_t000314_11145.png",
+"paused": true,
+"physics_frame": 651,
+"process_frame": 1112,
+"size_bytes": 130128,
+"ticks_msec": 11183,
+"width": 960
+}
+},
+{
+"i": 76,
+"tick": 231,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -15.1666555404663
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 317,
+"height": 540,
+"label": "f076",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f076_t000317_11271.png",
+"paused": true,
+"physics_frame": 659,
+"process_frame": 1123,
+"size_bytes": 130535,
+"ticks_msec": 11310,
+"width": 960
+}
+},
+{
+"i": 77,
+"tick": 234,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -15.3666553497314
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 320,
+"height": 540,
+"label": "f077",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f077_t000320_11390.png",
+"paused": true,
+"physics_frame": 665,
+"process_frame": 1132,
+"size_bytes": 130055,
+"ticks_msec": 11428,
+"width": 960
+}
+},
+{
+"i": 78,
+"tick": 237,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -15.5666551589966
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 323,
+"height": 540,
+"label": "f078",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f078_t000323_11495.png",
+"paused": true,
+"physics_frame": 672,
+"process_frame": 1142,
+"size_bytes": 130266,
+"ticks_msec": 11532,
+"width": 960
+}
+},
+{
+"i": 79,
+"tick": 240,
+"state": {
+"node_path": "/root/Main/Player",
+"properties": {
+"global_position": {
+"x": -1.59906387329102,
+"y": 0.000820125278551131,
+"z": -15.7666549682617
+},
+"velocity": {
+"x": 0.0,
+"y": 0.0,
+"z": -4.0
+}
+}
+},
+"frame_meta": {
+"full_height": 540,
+"full_width": 960,
+"game_tick": 326,
+"height": 540,
+"label": "f079",
+"path": "<godot-studio>/artifacts/sessions/20261030-112957-4945d4/screenshots/f079_t000326_11621.png",
+"paused": true,
+"physics_frame": 680,
+"process_frame": 1152,
+"size_bytes": 130168,
+"ticks_msec": 11659,
+"width": 960
+}
+}
+]
