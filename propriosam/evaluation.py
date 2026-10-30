@@ -30,7 +30,8 @@ def track_and_verify(client: MetaClient, pass_dir: Path, *, index: int, label: s
     truth_dst = None
     if truth_hidden and Path(truth_hidden).exists():
         truth_dst = pass_dir / "truth_hidden.json"
-        shutil.copy(truth_hidden, truth_dst)
+        if Path(truth_hidden).resolve() != truth_dst.resolve():
+            shutil.copy(truth_hidden, truth_dst)
 
     sam_dir = pass_dir / "sam"
     sam_dir.mkdir(exist_ok=True)
