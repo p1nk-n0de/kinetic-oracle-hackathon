@@ -1,0 +1,23 @@
+  + Exception Group Traceback (most recent call last):
+  |   File "<repo>/propriosam/repair_orchestrator.py", line 60, in run_closed_loop
+  |     async with GodotStudio(extra_root=RUNS_DIR, log_path=run_dir / "mcp_calls.jsonl") as studio:
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "<repo>/propriosam/mcp_adapter.py", line 85, in __aexit__
+  |     await self._cm.__aexit__(*exc)
+  |   File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/contextlib.py", line 231, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "<repo>/.venv/lib/python3.12/site-packages/mcp/client/stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "<repo>/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "<repo>/.venv/lib/python3.12/site-packages/mcp/client/stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "<repo>/propriosam/repair_orchestrator.py", line 74, in run_closed_loop
+    |     log(f"[pass{pass_i}] verifier: {result.status.value} t_fail={result.t_fail} maxE={result.max_residual} cov={result.coverage['both_window']}")
+    |                                                                                                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+    | KeyError: 'both_window'
+    +------------------------------------

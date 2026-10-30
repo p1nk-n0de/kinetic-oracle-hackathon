@@ -1,0 +1,11 @@
+[
+ {
+  "diff": "--- a/scripts/arena_layout.gd\n+++ b/scripts/arena_layout.gd\n@@ -19,7 +19,7 @@\n \t# physical obstacle: a crate in the middle of the corridor, gaps of 1.2 m either side\n \t{\"name\": \"Crate\", \"pos\": Vector3(0, 0.6, -6), \"size\": Vector3(1.6, 1.2, 1.6), \"kind\": \"obstacle\"},\n \t# collision challenge: a hurdle across the whole corridor, must be jumped (0.55 m tall)\n-\t{\"name\": \"Hurdle\", \"pos\": Vector3(0, 0.275, -12), \"size\": Vector3(4, 0.55, 0.4), \"kind\": \"hurdle\", \"layer\": 2},\n+\t{\"name\": \"Hurdle\", \"pos\": Vector3(0, 0.275, -12), \"size\": Vector3(4, 0.55, 0.4), \"kind\": \"hurdle\"},\n \t# --- gate room (z -14 .. -20), wider, with the pressure plate on the east side\n \t{\"name\": \"FloorGateRoom\", \"pos\": Vector3(0, -0.25, -17), \"size\": Vector3(8, 0.5, 6), \"kind\": \"floor\"},\n \t{\"name\": \"WallGateWest\", \"pos\": Vector3(-4.25, 1.5, -17), \"size\": Vector3(0.5, 3, 6), \"kind\": \"wall\"},\n",
+  "find": "{\"name\": \"Hurdle\", \"pos\": Vector3(0, 0.275, -12), \"size\": Vector3(4, 0.55, 0.4), \"kind\": \"hurdle\", \"layer\": 2},",
+  "path": "scripts/arena_layout.gd",
+  "reason": "Hurdle on layer 2 while Player mask=1, so no collision and pass-through; restore to world layer 1.",
+  "replace": "{\"name\": \"Hurdle\", \"pos\": Vector3(0, 0.275, -12), \"size\": Vector3(4, 0.55, 0.4), \"kind\": \"hurdle\"},",
+  "ts": "2026-10-30T12:28:42+00:00",
+  "turn_patch_index": 1
+ }
+]
