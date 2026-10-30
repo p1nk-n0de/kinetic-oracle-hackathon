@@ -1,0 +1,301 @@
+{
+ "anti_cheat": {
+  "banned_terms": [
+   "defect",
+   "defective",
+   "pg_defect",
+   "DEFECT_FIXTURE",
+   "collision_layer",
+   "collision_mask",
+   "layer 2",
+   "\"layer\": 2",
+   "hurdle_blocks_walking",
+   "truth_hidden",
+   "truth.json",
+   "<godot-studio>/tests/fixtures/pg_defect_hurdle",
+   "<redacted:studio>-godot-studio",
+   "<redacted:volume>"
+  ],
+  "turns": []
+ },
+ "baseline": {
+  "files": 45,
+  "path": "<repo>/runs/_baselines/known_good_capsule",
+  "tree_sha256": "54bfa1b51435ffa6be95503364cf9fb194a4bae1eb71f0bf65f5749c47b7e258",
+  "tree_sha256_after_run": "54bfa1b51435ffa6be95503364cf9fb194a4bae1eb71f0bf65f5749c47b7e258",
+  "unchanged": true
+ },
+ "contract_path": "contract.json",
+ "contract_sha256": "194aa42228a55290be121316acf49d01c00662a35436f24d6797167cf6eabe10",
+ "created_at": "2026-10-30T13:27:50+00:00",
+ "environment": {
+  "git": {
+   "commit": "20a69c996fdf1ca4240e294afc011b2966b36d21",
+   "source_dirty": false
+  },
+  "godot": {
+   "binary": "/Applications/Godot.app/Contents/MacOS/Godot",
+   "error": "",
+   "ok": true,
+   "supported": true,
+   "version": "4.6.2.stable.official.71f334935"
+  },
+  "host": "macOS-27.0.1-arm64-arm-64bit",
+  "propriosam": "0.1.0",
+  "python": "3.12.12"
+ },
+ "files": {
+  "api_calls.jsonl": "09010f3afd697f5d99cd3afe3a0131e8e5240ad60b6982c4dcb3ccfbb77325e8",
+  "contract.json": "3368eccfda8979f3ae077db7f40adfef33d26f1068d8854e3ed80a2e581cdb9a",
+  "mcp_calls.jsonl": "219e233d837d680e7b736910af459e60cddaff972ead53051f39fcdf4b03e0e8",
+  "pass1/clip.mp4": "16ccee49474b35c4449e8e4ca71da6623e0b98f68ec2892bc01ab42637761622",
+  "pass1/frames/f_000.png": "4d5663598a6f0d98124c402258a448ba9ce8bb887fdbe98a82f303e7b1a317c2",
+  "pass1/frames/f_001.png": "4f0742eaacc3923050401656c898a210fa4c81729a625955c97f0da1714dd013",
+  "pass1/frames/f_002.png": "fc9f16f0e394d8c50fd19ff5f782ea34f44295501708dcd221c8c515c4336f88",
+  "pass1/frames/f_003.png": "de525f336df306b92c30253241f00e7ecf4307419dcc7062bca368a217952c64",
+  "pass1/frames/f_004.png": "aeddf9d99135d609eff06ed0f22b3a6d53dc136665b55176b9b14156063141b7",
+  "pass1/frames/f_005.png": "28aad41de58948cec7ec1cb34fd25e57837c7ed7ba60f069f293816c46c44328",
+  "pass1/frames/f_006.png": "cc9379f4e6b9f7177b181061226dc7d60885a17242bfc42713677221d622214a",
+  "pass1/frames/f_007.png": "1e5e4a954a5aac9c94b9d8fc5e37271f1ad0985a06afe369a3e50634aa002c97",
+  "pass1/frames/f_008.png": "2ec1e2224d9c66aa54001eaa753818a4151eacadf96eda5f481a5e18d4262390",
+  "pass1/frames/f_009.png": "a84ab655133b39fd12ce5e109638cdad0a351d8ac6c3fa73674244c8a4af4104",
+  "pass1/frames/f_010.png": "b70a327d65a9587dad40da2bc399ce0250209865c2785c3c7c4827220c318c2d",
+  "pass1/frames/f_011.png": "cd44b672e8e9c72a9cd95a78bc1f427d2b7a367d6cc8c2cf70002ce3e74a5260",
+  "pass1/frames/f_012.png": "cb75d1509e02a39b42851bf979b5fbafd9c7691ca990381e39f3e3bec88dd5da",
+  "pass1/frames/f_013.png": "7a0daa66186f89292ca99118a9336e5f6febbf1a62bf6e2a96420ab101c90bb2",
+  "pass1/frames/f_014.png": "25afcca1303993a1855fb93ad5731b5119e8fefde147f0be60f79dd245ce6a43",
+  "pass1/frames/f_015.png": "2b52a9ad754e01ae1310425f78dc839886e9795e48e0d1c6f1147f59ee02d6ee",
+  "pass1/frames/f_016.png": "f5f7f6b141d8ebd432efc1fa583116a9d0988e64ead819088b6acd91c0d1114f",
+  "pass1/frames/f_017.png": "ce229ee12b8079b35a92699308280475a159ae9afac9696762379b013a7a677e",
+  "pass1/frames/f_018.png": "73020b732ab063d77c1bb8a26bbe8e509dd5460c9c86c806f9644384a450ed39",
+  "pass1/frames/f_019.png": "5f563d97b5b6c5f8e7a84be4f7f5fb1be1329b4300c390fd2924b3e98a24339e",
+  "pass1/frames/f_020.png": "279370ec9768d550b4e705c648ba4ab0e53a083133c7419edd4a66db6fbf5072",
+  "pass1/frames/f_021.png": "e12e8e667656f82331c867872e6e1368d7e5e5c87c8101d46e874d352ebe694a",
+  "pass1/frames/f_022.png": "bedd76c99e7d29b3e1124a2f3d5c0a2343c26f1eb54f3d3adfefe0e77abd1709",
+  "pass1/frames/f_023.png": "61b0abed545a9b3ee15578da76d17299d6a2b0a185e6ecb2d49adb9f1c453f0e",
+  "pass1/frames/f_024.png": "fd729ba18fcb3ade4360a2c9327f96fab2199efbe2fbb19e500bdaf3daa7cf4e",
+  "pass1/frames/f_025.png": "57ffffe7019fc63cc04efa7e5891d2f6c4ebfa2e3c96eb1374b65aca20b9c134",
+  "pass1/frames/f_026.png": "83844963f6235a3d5d320320a11d36aa9fe4ccc2f22caf61cd5656eb8474773a",
+  "pass1/frames/f_027.png": "4288f851ab48606ce54ef9bd1d1ff2f0e0c6d33342a8d73d24bb642bcacdd46c",
+  "pass1/frames/f_028.png": "817ecc25e635e7aaaf76097e6c9a45a3a013431f22da7bc325ddb589bbb6eb06",
+  "pass1/frames/f_029.png": "e18dd9cf5e050ca09d768d7db14fa971029182401a56749b95181dcd2624981a",
+  "pass1/frames/f_030.png": "c9dd75216922f2374d36cb6061c20074c3270e081297ae56ab3d99a8562c29b9",
+  "pass1/frames/f_031.png": "bbe38ea09f5231c1609c4d091b8d866739cfc149deb330849d3b31050f4eb42b",
+  "pass1/frames/f_032.png": "51b5992cd8c3f1ba88be96c25e183a5ec9d8a073edb86b2f962a687576c96062",
+  "pass1/frames/f_033.png": "97ffcb56176e863b2adb596388b6e7aeaf9f8e9161003412ae996f7b98e55f30",
+  "pass1/frames/f_034.png": "c34b2b644bb74eca15ff8fe779ace510909d0ebb62e392572b530365f23ac966",
+  "pass1/frames/f_035.png": "3c88d7a8d05d8fa030a3b2e4f148f32a5c59feb560656e1bc8d1d0cd20a144f2",
+  "pass1/frames/f_036.png": "9329f0131144f4f8bd63babd92616018c9625eef57749782dfd668ebafe138d7",
+  "pass1/frames/f_037.png": "e305acc888f462767e763fcfc02a222a2006af8effe05c1a28d440e212ced720",
+  "pass1/frames/f_038.png": "39811ab00121024715e8ff8fe13d7ef66324d9ed13c80fda6ed679ea2e34d705",
+  "pass1/frames/f_039.png": "f0b5e080c3cf4ec8af4b6aa3bf2d92db2b306aac3c8afded29c718407d8008a3",
+  "pass1/frames/f_040.png": "6f050f6c66c872afdf2e6ecbca2b960055bd74cecb4055b5de168b6648cb43bf",
+  "pass1/frames/f_041.png": "37e6bb6be0fec73271fbf19783b27246da3e8398c311ed3a2a59a2d5c9ee4667",
+  "pass1/frames/f_042.png": "986132a8ac685de2730a19856ebf41051d22bd7b5722ec18bcdf3a336f6002f7",
+  "pass1/frames/f_043.png": "23f306c90762e588adf477284306d44e91325265fd082d7fd9ab1c1010c0cc4a",
+  "pass1/frames/f_044.png": "44bf27f1c2fb17f9cbafc27ed506a7176d488ad1d0f62b45ca38ff790a773c26",
+  "pass1/frames/f_045.png": "cea79d3dcee6872e698212b31f73d6d08f1d2085a9e20c38ffce3d038641511b",
+  "pass1/frames/f_046.png": "59f8b8e4b75d79e05f6940ca7a98f210c77bc9bb94889d34a1de96f225b436b7",
+  "pass1/frames/f_047.png": "27eeb6e1e9f38d6ae709b32ee5b0cb3e2420fba862c381a22c772c7b8731bd9f",
+  "pass1/frames/f_048.png": "a7672ffda576578230c8c6fa51af4b640e3126258e378b28eed4c302d11a2f0e",
+  "pass1/frames/f_049.png": "ea7200b11b5bd442dd2490ee77afb842523547354c9ef4de794f5eba40279531",
+  "pass1/frames/f_050.png": "ab7770f772611474ace5d857b011fa665c20f8015c802d2cd703d63b79163bf8",
+  "pass1/frames/f_051.png": "f14b21ca65327d65c9968637d42ceeac7ee03aa484a33fd43d3e749bde313ef5",
+  "pass1/frames/f_052.png": "3145e8ade856587d6946425444bd99bdad8e8221dfaa0f13095859e2b4e35947",
+  "pass1/frames/f_053.png": "ee065fafe997140b5b0ca11e8991b1cb182df89729aa89dd6cf0c664a41e14a8",
+  "pass1/frames/f_054.png": "a0718de21afe53d6ae6b5853b85cbe66fbae39d22cb163a43344b2abfadcd9b2",
+  "pass1/frames/f_055.png": "62c19b700733ef95955920728693afd0da7f72562e2d2f54b8e35b711e9a0c89",
+  "pass1/frames/f_056.png": "8c7c5a8bb9b59c83ccb40b3fab92f246f20ba699556f2aebd397e687347a8b3c",
+  "pass1/frames/f_057.png": "619bcedcb0c7f9aa5445c8cf668f20413572c594a63f6ed5d131441b170875b1",
+  "pass1/frames/f_058.png": "6e965b9abc3ed44bfc11e07d04b0d96477f181ff38a672c94eb7f6153cff3582",
+  "pass1/frames/f_059.png": "a751bf9d6cfaf151d1a024025070025c123d399c0ccce6354f6879da76277055",
+  "pass1/frames/f_060.png": "56ea52603354d3e5f65ad66b8d3a500d38e47ce09dc36479db3b6a3c4c3c3390",
+  "pass1/frames/f_061.png": "b26c1b4ac3a94b7bb10a12a7b4561e6ed9aea6cb484fdfe5c7246c363200289a",
+  "pass1/frames/f_062.png": "c2e9e320b5f49cf62e537e7d1e27f943c7bcab25db74b49f26539e89533fd50f",
+  "pass1/frames/f_063.png": "fba249ef35dcebe497e2e22bb159b02b8df42b9b70930e7c00c1039ba862b231",
+  "pass1/frames/f_064.png": "00448976bb1695ab58a266acb990ca793ea5906a3a9ecf09208098a2731afb9a",
+  "pass1/frames/f_065.png": "6c144886a58b8ffd71d2ddad84ef8c404498a4eb3829b814cdba6f4b15000d15",
+  "pass1/frames/f_066.png": "5a261a54791a14a8bb3e2d820f55b4fd827b924597f2c5490ac21d8f5b246998",
+  "pass1/frames/f_067.png": "7620efe9519f352d281bdb10f4caf037bc376571040e472f6ee662f879807db3",
+  "pass1/frames/f_068.png": "85906bf99ad5fc4d32669a6bfc0dad75aaeb5105b6b30176c028d56233abcc4a",
+  "pass1/frames/f_069.png": "d88de6356b5db347cc9af8b9cad86a6b87688a77abcd4dced07f3bafe8e6ace1",
+  "pass1/frames/f_070.png": "e532de3f1c57e78bb81859ce653e49a72c4dee3384b2ce2faebac9eafe9bdec1",
+  "pass1/frames/f_071.png": "a734cf6fe501479e830c12c87f0aa16fa26e0a6c8849d9595e57382d92a7f2bb",
+  "pass1/frames/f_072.png": "becdc919afcd238ebebf368e6a1d1a096d28bf47176e3a6ad71e69aa3ad1ab03",
+  "pass1/frames/f_073.png": "41b747888e2d063341454a2e53918dbbf8e7a250097dc77c2a2bd14b30926766",
+  "pass1/frames/f_074.png": "d5cb3652490e98c937399892041132bd278fe8d640f86ab715ef3f7076aa94df",
+  "pass1/frames/f_075.png": "124a8ec0e45204d93446f76a700cd4dbebf4566cc73414445f9b666bb18d92a0",
+  "pass1/frames/f_076.png": "5750d5f1a229b9554ca204a5e8f90ec0df2572c3c843a0744e6626d9573c0ec8",
+  "pass1/frames/f_077.png": "af963f7765ecfdf85c8b3b5ed20f9a7a56be3d64454da97ebb7f66b493d8fdde",
+  "pass1/frames/f_078.png": "b23c8e4222d4c345503b8ceba04784dc75fc159e832d861c2428c8eb898e8b0a",
+  "pass1/frames/f_079.png": "6e7b0c7951feb28761e2e689f5d65287bd8333201b79d6bce574b3cf3b2427ae",
+  "pass1/overlay.mp4": "965f40a67d4c01f92b1582d23e9fdcbb7ae650186026f40102908eb1156c4853",
+  "pass1/sam/barrier.json": "d3a4ae7ba15e64a7be0fc3582ded82bdda9799b96c3fc8e51c4ef93b51ac0619",
+  "pass1/sam/mover.json": "c78b40b8327276465fbc7d0ac5fb3f87940aed45b1b73013bbeb462f1ab8556b",
+  "pass1/tracks.json": "70a33da2b45c025598a208c3be48d67f9f1b300419e2e6141058b65497ae6eba",
+  "pass1/truth_hidden.json": "02fc1b5b6a8611ec1883f5ba386cccbb873e4e45d75814252867a061182438d5",
+  "pass1/verification.json": "ce99aaa3e8673e5142e9dd8cbb9c67a017bf6f4cbdd2a43a3853599cd82a2f28"
+ },
+ "final_verdict": "PASS",
+ "finished_at": "2026-10-30T13:28:21+00:00",
+ "kind": "closed_loop",
+ "models": {
+  "contract": "muse-spark-1.3",
+  "diagnosis": "muse-spark-1.3",
+  "escalation": "muse-wonder-1.0",
+  "sam": "sam-3.1"
+ },
+ "notes": [
+  "case2a: known-good twin of the capsule scene"
+ ],
+ "passes": [
+  {
+   "capture": {
+    "duration_s": 12.5,
+    "every_ticks": 3,
+    "fps": 20,
+    "frame_count": 80,
+    "label": "run_20261030-132750_e09010-pass1",
+    "launch": {
+     "pid": 18662,
+     "port": 7401
+    },
+    "max_width": 960,
+    "session_id": "20261030-132751-aef0bf",
+    "settle_ticks": 40,
+    "sidestep_ticks": 25
+   },
+   "clip_path": "pass1/clip.mp4",
+   "clip_sha256": "16ccee49474b35c4449e8e4ca71da6623e0b98f68ec2892bc01ab42637761622",
+   "frame_count": 80,
+   "frames_dir": "pass1/frames",
+   "index": 1,
+   "label": "open-loop (before repair)",
+   "max_residual": -12.0,
+   "open_loop": {
+    "args": {
+     "action": "move_forward",
+     "mode": "press",
+     "observe": false,
+     "wait": false
+    },
+    "mcp_is_error": false,
+    "note": "The MCP tool reports success. Nothing in this result says whether the hurdle stopped the player; only the rendered clip can.",
+    "result": {
+     "input": {
+      "action": "move_forward",
+      "mode": "press",
+      "ms": 0,
+      "ticks": 30
+     },
+     "result": {}
+    },
+    "tool": "godot_send_input"
+   },
+   "overlay_info": {
+    "frames": 80,
+    "mask_decode_failures": 0,
+    "masks_drawn": 147,
+    "path": "<repo>/runs/run_20261030-132750_e09010/pass1/overlay.mp4"
+   },
+   "overlay_path": "pass1/overlay.mp4",
+   "overlay_sha256": "965f40a67d4c01f92b1582d23e9fdcbb7ae650186026f40102908eb1156c4853",
+   "project_tree_sha256": "54bfa1b51435ffa6be95503364cf9fb194a4bae1eb71f0bf65f5749c47b7e258",
+   "sam": {
+    "barrier": {
+     "cached": false,
+     "concept": "yellow bar",
+     "coverage_total": 1.0,
+     "frames_processed": 80,
+     "frames_tracked": 80,
+     "object_id_selected": "0",
+     "raw_path": "pass1/sam/barrier.json",
+     "request_id": "3b791c8a-d543-42a4-9cbd-fecbaf998d82",
+     "response_id": "resp_6ae49b7210bbc6d10a3b4d34",
+     "selection": {
+      "candidates": {
+       "0": {
+        "frames": 80,
+        "mean_area_px": 5494.8875,
+        "mean_confidence": 0.9139785170555115
+       },
+       "1": {
+        "frames": 62,
+        "mean_area_px": 831.9516129032259,
+        "mean_confidence": 0.7037037014961243
+       }
+      },
+      "rule": "max(mean_confidence, mean_area_px, frames)",
+      "selected": "0"
+     }
+    },
+    "mover": {
+     "cached": false,
+     "concept": "capsule",
+     "coverage_total": 0.8375,
+     "frames_processed": 80,
+     "frames_tracked": 67,
+     "object_id_selected": "0",
+     "raw_path": "pass1/sam/mover.json",
+     "request_id": "178582ea-f74e-4d0c-95aa-93897e9526c0",
+     "response_id": "resp_6ae49b6abf3bf86ad1e2491a",
+     "selection": {
+      "candidates": {
+       "0": {
+        "frames": 67,
+        "mean_area_px": 2940.6119402985073,
+        "mean_confidence": 0.8048780560493469
+       }
+      },
+      "rule": "max(mean_confidence, mean_area_px, frames)",
+      "selected": "0"
+     }
+    }
+   },
+   "t_fail": null,
+   "tracks_path": "pass1/tracks.json",
+   "truth_hidden_path": "pass1/truth_hidden.json",
+   "verification_path": "pass1/verification.json",
+   "verification_status": "PASS"
+  }
+ ],
+ "repair_turns": [],
+ "request_ids": [
+  "e018fe53-ee0b-412b-95ea-f99e125c36a6",
+  "178582ea-f74e-4d0c-95aa-93897e9526c0",
+  "9ba592c2-c318-432c-925e-f37dab8e4935",
+  "3b791c8a-d543-42a4-9cbd-fecbaf998d82"
+ ],
+ "rule_sha256": "35dd508645d9282b5682b0bd63ecf58f0becfe9ae9341d67032de874b1d12263",
+ "run_id": "run_20261030-132750_e09010",
+ "schema_version": "1.0",
+ "spend": {
+  "by_model": {
+   "None": {
+    "cached": 0,
+    "calls": 2,
+    "est_cost_usd": 0.0
+   },
+   "sam-3.1": {
+    "cached": 0,
+    "calls": 2,
+    "est_cost_usd": 0.032
+   }
+  },
+  "calls": 4,
+  "est_cost_usd": 0.032
+ },
+ "status": "COMPLETE",
+ "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted.",
+ "workspace": {
+  "baseline_match_at_stage": true,
+  "baseline_tree_sha256": "54bfa1b51435ffa6be95503364cf9fb194a4bae1eb71f0bf65f5749c47b7e258",
+  "files": 45,
+  "final_tree_sha256": "54bfa1b51435ffa6be95503364cf9fb194a4bae1eb71f0bf65f5749c47b7e258",
+  "modified_during_run": false,
+  "name": "hurdle_scene",
+  "path": "<repo>/runs/run_20261030-132750_e09010/workspace/hurdle_scene",
+  "staged_at": "2026-10-30T13:27:51+00:00",
+  "staged_tree_sha256": "54bfa1b51435ffa6be95503364cf9fb194a4bae1eb71f0bf65f5749c47b7e258"
+ }
+}

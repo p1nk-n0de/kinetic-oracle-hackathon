@@ -1,0 +1,13 @@
+--- a/scripts/player.gd
++++ b/scripts/player.gd
+@@ -35,9 +35,7 @@
+ 	zone = "spawn"
+ 	facing_yaw_deg = 0.0
+ 	visual.rotation.y = 0.0
+-	for block in get_tree().get_nodes_in_group("arena_block"):
+-		if block.name == "Hurdle":
+-			add_collision_exception_with(block)
++	remove_collision_exception_with(get_tree().get_first_node_in_group("arena_block")) if false else null
+ 
+ 
+ func _physics_process(delta: float) -> void:

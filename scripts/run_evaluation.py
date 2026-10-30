@@ -41,7 +41,7 @@ CASE_TITLES = {
     "case3c": "Case 3c: two simultaneous faults",
     "case3d": "Case 3d: three faults in three files, two patches per turn",
     "case3e": "Case 3e: the real robot build with the hurdle on the wrong layer",
-    "case3f": "Case 3f: the same three faults, bounded to one patch per turn, so one turn cannot be enough",
+    "case3f": "Case 3f: the same three faults, bounded to one patch per turn",
 }
 
 
@@ -81,6 +81,7 @@ def _trial_row(d: Path, m) -> dict:
             "passes": [{"index": p.index, "status": p.verification_status, "t_fail": p.t_fail, "max_E_px": p.max_residual} for p in m.passes],
             "repair_turns": [{"turn": t.turn, "model": t.model, "tool_calls": t.tool_calls, "patches": len(t.patches),
                               "patch_paths": [p["path"] for p in t.patches], "reasons": [p.get("reason", "") for p in t.patches],
+                              "closing_claim": " ".join((t.outcome_text or "").split())[:400],
                               "banned_terms_found": t.anti_cheat.get("banned_terms_found"), "est_cost_usd": t.est_cost_usd}
                              for t in m.repair_turns],
             "final": {"status": pl.verification_status, "t_fail": pl.t_fail, "max_E_px": pl.max_residual, "pass_index": pl.index},
@@ -129,10 +130,16 @@ VLM_PROMPT = ("You are checking whether a game action succeeded. Objective: {obj
 
 def vlm_baseline(client: MetaClient, bundle: Path, m, tmp: Path) -> list[dict]:
     rows = []
-    checks = [(m.passes[0], 40, "early frame, defective scene"), (m.passes[0], 79, "last frame, defective scene"),
-              (m.passes[-1], 40, "early frame, repaired scene"), (m.passes[-1], 79, "last frame, repaired scene")]
-    for rec, frame, why in checks:
-        png = _frame_png(bundle, rec, frame, tmp)
+    checks = [(bundle, m.passes[0], 40, "early frame, defective scene"), (bundle, m.passes[0], 79, "last frame, defective scene"),
+              (bundle, m.passes[-1], 40, "early frame, repaired scene"), (bundle, m.passes[-1], 79, "last frame, repaired scene")]
+    for d in sorted(RUNS_DIR.glob("run_*")):  # the hard case: a repair that froze the game, so nothing ever crossed
+        dm = load_manifest(d)
+        frozen = [p for p in dm.passes[1:] if p.verification_status == "INCONCLUSIVE"]
+        if frozen:
+            checks.append((d, frozen[0], 79, "last frame, game frozen by a broken repair"))
+            break
+    for src_bundle, rec, frame, why in checks:
+        png = _frame_png(src_bundle, rec, frame, tmp)
         img = base64.b64encode(png.read_bytes()).decode()
         answers, texts, ids = [], [], []
         for _ in range(VLM_REPEATS):
@@ -145,8 +152,9 @@ def vlm_baseline(client: MetaClient, bundle: Path, m, tmp: Path) -> list[dict]:
             answers.append(next((k for k in ("PASS", "FAIL", "UNSURE") if k in first), "UNPARSED"))
             texts.append(text[:400]); ids.append(resp.get("_request_id"))
         reference = rec.verification_status
+        correct = answers.count(reference) if reference != "INCONCLUSIVE" else sum(a in ("FAIL", "UNSURE") for a in answers)
         rows.append({"pass_index": rec.index, "frame": frame, "why": why, "answers": dict(Counter(answers)),
-                     "correct": answers.count(reference), "repeats": VLM_REPEATS, "reference_verdict_for_pass": reference,
+                     "correct": correct, "repeats": VLM_REPEATS, "reference_verdict_for_pass": reference,
                      "sample_text": texts[0], "request_ids": ids})
     return rows
 
@@ -197,7 +205,26 @@ def write_report(summary: dict) -> None:
             L.append("")
             L.append("The contract's concept does not exist in this build, so SAM 3.1 returned no track. Verifier reasons: " + "; ".join(rows[0]["pass1"]["reasons"]) + ". No repair was attempted on a sensing failure.")
         L.append("")
-    broke = [r for r in (c.get("case3f") or []) if any(p["status"] == "INCONCLUSIVE" for p in r["passes"][1:])]
+    trials3f = c.get("case3f") or []
+    multi = [r for r in trials3f if len(r["repair_turns"]) > 1]
+    if trials3f:
+        L += ["## How the one-patch case was sampled", "",
+              f"Case 3f ran {len(trials3f)} times: one run, then 3 more, then up to 8 more with a stopping rule set in advance: stop at the "
+              "first run that needs a second repair turn. All of them are in the table above. "
+              f"{sum(1 for r in trials3f if len(r['repair_turns']) == 1 and r['final_verdict'] == 'PASS')} were solved in a single turn, because Muse Spark put all three "
+              f"fixes into one patch; {len(multi)} needed a second turn; "
+              f"{sum(1 for r in trials3f if r['final_verdict'] == 'INCONCLUSIVE')} ended INCONCLUSIVE. The counts show how often this happened in this sample, not a rate.", ""]
+    if multi:
+        r = multi[0]
+        t1, t2 = r["repair_turns"][0], r["repair_turns"][1]
+        L += ["## The repair the verifier rejected", "",
+              f"In `{r['run_id']}` Muse Spark patched {', '.join(t1['patch_paths'])} and its closing text said the contract was satisfied:", "",
+              f"> {t1['closing_claim']}", "",
+              f"The game was relaunched and re-measured, and the verifier returned {r['passes'][1]['status']} at frame {r['passes'][1]['t_fail']} "
+              f"(max E {_e(r['passes'][1]['max_E_px'])}). The model's claim changed nothing. The next turn escalated to {t2['model']}, which found the "
+              f"remaining fault and patched {', '.join(t2['patch_paths'])}. The verifier then returned {r['passes'][2]['status']} (max E {_e(r['passes'][2]['max_E_px'])}). "
+              "This is the run the demo is built on.", ""]
+    broke = [r for r in trials3f if any(p["status"] == "INCONCLUSIVE" for p in r["passes"][1:])]
     if broke:
         L += ["## The repair that broke the game", "",
               "With only one patch available, Muse Spark put all three fixes into the player script and called "
@@ -241,8 +268,12 @@ def write_report(summary: dict) -> None:
         L.append(f"| (b) Static screenshot VLM ({SPARK}) | {v['why']} (frame {v['frame']}) | {v['answers']} over {v['repeats']} calls | {v['correct']}/{v['repeats']} (verifier: {v['reference_verdict_for_pass']}) |")
     ko = summary["kinetic_oracle"]
     L.append(f"| (c) KINETIC-ORACLE | 80-frame SAM 3.1 tracks + frozen residual | FAIL at frame {ko['t_fail']}, repaired, then {ko['final']} | the verifier itself |")
-    L += ["", "## Limitations", "",
-          "- One scene family and one defect family (the hurdle fails to collide), with a few variations. n is small: this shows the mechanism, not a rate.",
+    L += ["", "A static screenshot is not useless: shown the right frame, the model can get this scene right, and the table says how often it did. "
+              "The difference is that a screenshot needs someone to know when to look, gives no measured quantity to re-check, "
+              "and has no notion of an action that never happened. The temporal track gives a frame-accurate, replayable number.",
+          "", "## Limitations", "",
+          "- One scene family and one defect family (the hurdle fails to collide), with a few variations. The numbers show the mechanism, not a rate.",
+          "- Muse's repairs pass the visual contract but are not reviewed for code quality. Some are blunt: one forces layer 1 on every block.",
           "- The residual is specific to this chase camera: it compares the barrier's bottom edge with the player's feet. Other camera rigs need other invariants.",
           "- SAM concept phrases are scene-calibrated. `capsule` works and `blue capsule` returns nothing. The verifier reports that as INCONCLUSIVE and never guesses.",
           "- On the capsule scene the repaired margin is small (about 12 to 13 px) compared with box jitter (about 4 px).",

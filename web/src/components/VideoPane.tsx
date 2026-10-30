@@ -137,9 +137,9 @@ export function VideoPane({ title, subtitle, pass, contract, frame, source, boxe
           </div>
         )}
         <canvas ref={canvasRef} width={W} height={H} className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true" />
-        {pass && (
+        {pass && source !== 'overlay' && (
           <div className="pointer-events-none absolute left-2 top-2 rounded bg-plane/70 px-2 py-0.5 text-[11px] text-ink-2">
-            pass {pass.record.index} · {source === 'overlay' ? 'SAM 3.1 overlay (burned in)' : 'raw clip (what SAM received)'}
+            pass {pass.record.index} · raw clip (what SAM received)
             {boxes ? ' + live boxes from tracks.json' : ''}
           </div>
         )}

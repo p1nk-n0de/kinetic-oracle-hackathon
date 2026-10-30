@@ -8,6 +8,7 @@ export function CoverageBars({ pass }: { pass: LoadedPass }) {
   const minTotal = c.min_total_coverage ?? 0
   const minWindow = c.min_window_coverage ?? 0
   const win = c.critical_window ?? [0, 0]
+  const approach = pass.verification?.approach
   const rows: { label: string; color: string; total: number | undefined; window: number | undefined }[] = [
     { label: 'mover', color: CONCEPT.mover, total: c.mover_total, window: c.mover_window },
     { label: 'barrier', color: CONCEPT.barrier, total: c.barrier_total, window: c.barrier_window },
@@ -35,8 +36,20 @@ export function CoverageBars({ pass }: { pass: LoadedPass }) {
         </div>
       ))}
       <p className="text-[10px] leading-snug text-ink-3">gates: each concept ≥ {fmtPct(minTotal)} of all frames; both tracked in ≥ {fmtPct(minWindow)} of the critical window. Unmet ⇒ INCONCLUSIVE, never PASS.</p>
+      {approach && (
+        <p className="text-xs text-ink-2">
+          {approach.exercised ? 'contract exercised' : '⚠ contract not exercised'}
+          <span className="mono num text-ink-3">
+            {' '}· closest approach {fmtPx(approach.max_E_px)}, needed ≥ {fmtPx(approach.required_max_E_px)} ({approach.approach_body_heights} body height)
+          </span>
+        </p>
+      )}
     </div>
   )
+}
+
+function fmtPx(v: number | null): string {
+  return v == null ? 'n/a' : `${v > 0 ? '+' : ''}${Math.round(v)} px`
 }
 
 function Bar({ value, gate }: { value: number | undefined; gate: number | null }) {

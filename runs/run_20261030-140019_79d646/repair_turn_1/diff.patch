@@ -1,0 +1,19 @@
+--- a/scripts/arena_builder.gd
++++ b/scripts/arena_builder.gd
+@@ -50,14 +50,14 @@
+ 	var body := StaticBody3D.new()
+ 	body.name = b["name"]
+ 	body.position = b["pos"]
+-	body.collision_layer = int(b.get("layer", 1))
++	body.collision_layer = 1
+ 	body.collision_mask = 0
+ 	var shape := CollisionShape3D.new()
+ 	shape.name = "Shape"
+ 	var bs := BoxShape3D.new()
+ 	bs.size = size
+ 	shape.shape = bs
+-	shape.disabled = kind == "hurdle"
++	shape.disabled = false
+ 	body.add_child(shape)
+ 	body.add_child(mesh)
+ 	body.add_to_group("arena_block")

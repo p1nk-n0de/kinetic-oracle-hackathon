@@ -1,0 +1,1031 @@
+{
+ "generated_at": "2026-10-30T14:12:09+00:00",
+ "note": "Static export of run bundles for the dashboard. Verdicts come only from the verifier over SAM 3.1 tracks; tool status and model text are never consulted.",
+ "runs": [
+  {
+   "created_at": "2026-10-30T14:00:19+00:00",
+   "est_cost_usd": 0.409184,
+   "exported_bytes": 1572959,
+   "exported_files": [
+    "run_manifest.json",
+    "contract.json",
+    "api_calls.jsonl",
+    "pass1/clip.mp4",
+    "pass1/overlay.mp4",
+    "pass1/tracks.json",
+    "pass1/verification.json",
+    "pass1/truth_hidden.json",
+    "pass1/sam/barrier.json",
+    "pass1/sam/mover.json",
+    "pass2/clip.mp4",
+    "pass2/overlay.mp4",
+    "pass2/tracks.json",
+    "pass2/verification.json",
+    "pass2/truth_hidden.json",
+    "pass2/sam/barrier.json",
+    "pass2/sam/mover.json",
+    "pass3/clip.mp4",
+    "pass3/overlay.mp4",
+    "pass3/tracks.json",
+    "pass3/verification.json",
+    "pass3/truth_hidden.json",
+    "pass3/sam/barrier.json",
+    "pass3/sam/mover.json",
+    "repair_turn_1/prompt.json",
+    "repair_turn_1/transcript.json",
+    "repair_turn_1/patches.json",
+    "repair_turn_1/diff.patch",
+    "repair_turn_2/prompt.json",
+    "repair_turn_2/transcript.json",
+    "repair_turn_2/patches.json",
+    "repair_turn_2/diff.patch"
+   ],
+   "final_verdict": "PASS",
+   "finished_at": "2026-10-30T14:04:14+00:00",
+   "kind": "closed_loop",
+   "models": {
+    "contract": "muse-spark-1.3",
+    "diagnosis": "muse-spark-1.3",
+    "escalation": "muse-wonder-1.0",
+    "sam": "sam-3.1"
+   },
+   "pass_labels": [
+    "open-loop (before repair)",
+    "after repair turn 1",
+    "after repair turn 2"
+   ],
+   "pass_statuses": [
+    "FAIL",
+    "FAIL",
+    "PASS"
+   ],
+   "passes": 3,
+   "repair_turns": 2,
+   "run_id": "run_20261030-140019_79d646",
+   "status": "COMPLETE",
+   "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted."
+  },
+  {
+   "created_at": "2026-10-30T13:58:22+00:00",
+   "est_cost_usd": 0.137012,
+   "exported_bytes": 1004612,
+   "exported_files": [
+    "run_manifest.json",
+    "contract.json",
+    "api_calls.jsonl",
+    "pass1/clip.mp4",
+    "pass1/overlay.mp4",
+    "pass1/tracks.json",
+    "pass1/verification.json",
+    "pass1/truth_hidden.json",
+    "pass1/sam/barrier.json",
+    "pass1/sam/mover.json",
+    "pass2/clip.mp4",
+    "pass2/overlay.mp4",
+    "pass2/tracks.json",
+    "pass2/verification.json",
+    "pass2/truth_hidden.json",
+    "pass2/sam/barrier.json",
+    "pass2/sam/mover.json",
+    "repair_turn_1/prompt.json",
+    "repair_turn_1/transcript.json",
+    "repair_turn_1/patches.json",
+    "repair_turn_1/diff.patch"
+   ],
+   "final_verdict": "PASS",
+   "finished_at": "2026-10-30T14:00:18+00:00",
+   "kind": "closed_loop",
+   "models": {
+    "contract": "muse-spark-1.3",
+    "diagnosis": "muse-spark-1.3",
+    "escalation": "muse-wonder-1.0",
+    "sam": "sam-3.1"
+   },
+   "pass_labels": [
+    "open-loop (before repair)",
+    "after repair turn 1"
+   ],
+   "pass_statuses": [
+    "FAIL",
+    "PASS"
+   ],
+   "passes": 2,
+   "repair_turns": 1,
+   "run_id": "run_20261030-135822_cfbb17",
+   "status": "COMPLETE",
+   "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted."
+  },
+  {
+   "created_at": "2026-10-30T13:56:31+00:00",
+   "est_cost_usd": 0.129994,
+   "exported_bytes": 996798,
+   "exported_files": [
+    "run_manifest.json",
+    "contract.json",
+    "api_calls.jsonl",
+    "pass1/clip.mp4",
+    "pass1/overlay.mp4",
+    "pass1/tracks.json",
+    "pass1/verification.json",
+    "pass1/truth_hidden.json",
+    "pass1/sam/barrier.json",
+    "pass1/sam/mover.json",
+    "pass2/clip.mp4",
+    "pass2/overlay.mp4",
+    "pass2/tracks.json",
+    "pass2/verification.json",
+    "pass2/truth_hidden.json",
+    "pass2/sam/barrier.json",
+    "pass2/sam/mover.json",
+    "repair_turn_1/prompt.json",
+    "repair_turn_1/transcript.json",
+    "repair_turn_1/patches.json",
+    "repair_turn_1/diff.patch"
+   ],
+   "final_verdict": "PASS",
+   "finished_at": "2026-10-30T13:58:21+00:00",
+   "kind": "closed_loop",
+   "models": {
+    "contract": "muse-spark-1.3",
+    "diagnosis": "muse-spark-1.3",
+    "escalation": "muse-wonder-1.0",
+    "sam": "sam-3.1"
+   },
+   "pass_labels": [
+    "open-loop (before repair)",
+    "after repair turn 1"
+   ],
+   "pass_statuses": [
+    "FAIL",
+    "PASS"
+   ],
+   "passes": 2,
+   "repair_turns": 1,
+   "run_id": "run_20261030-135631_cda0ab",
+   "status": "COMPLETE",
+   "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted."
+  },
+  {
+   "created_at": "2026-10-30T13:54:14+00:00",
+   "est_cost_usd": 0.164678,
+   "exported_bytes": 1007557,
+   "exported_files": [
+    "run_manifest.json",
+    "contract.json",
+    "api_calls.jsonl",
+    "pass1/clip.mp4",
+    "pass1/overlay.mp4",
+    "pass1/tracks.json",
+    "pass1/verification.json",
+    "pass1/truth_hidden.json",
+    "pass1/sam/barrier.json",
+    "pass1/sam/mover.json",
+    "pass2/clip.mp4",
+    "pass2/overlay.mp4",
+    "pass2/tracks.json",
+    "pass2/verification.json",
+    "pass2/truth_hidden.json",
+    "pass2/sam/barrier.json",
+    "pass2/sam/mover.json",
+    "repair_turn_1/prompt.json",
+    "repair_turn_1/transcript.json",
+    "repair_turn_1/patches.json",
+    "repair_turn_1/diff.patch"
+   ],
+   "final_verdict": "PASS",
+   "finished_at": "2026-10-30T13:56:30+00:00",
+   "kind": "closed_loop",
+   "models": {
+    "contract": "muse-spark-1.3",
+    "diagnosis": "muse-spark-1.3",
+    "escalation": "muse-wonder-1.0",
+    "sam": "sam-3.1"
+   },
+   "pass_labels": [
+    "open-loop (before repair)",
+    "after repair turn 1"
+   ],
+   "pass_statuses": [
+    "FAIL",
+    "PASS"
+   ],
+   "passes": 2,
+   "repair_turns": 1,
+   "run_id": "run_20261030-135414_4556fe",
+   "status": "COMPLETE",
+   "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted."
+  },
+  {
+   "created_at": "2026-10-30T13:52:31+00:00",
+   "est_cost_usd": 0.138729,
+   "exported_bytes": 999085,
+   "exported_files": [
+    "run_manifest.json",
+    "contract.json",
+    "api_calls.jsonl",
+    "pass1/clip.mp4",
+    "pass1/overlay.mp4",
+    "pass1/tracks.json",
+    "pass1/verification.json",
+    "pass1/truth_hidden.json",
+    "pass1/sam/barrier.json",
+    "pass1/sam/mover.json",
+    "pass2/clip.mp4",
+    "pass2/overlay.mp4",
+    "pass2/tracks.json",
+    "pass2/verification.json",
+    "pass2/truth_hidden.json",
+    "pass2/sam/barrier.json",
+    "pass2/sam/mover.json",
+    "repair_turn_1/prompt.json",
+    "repair_turn_1/transcript.json",
+    "repair_turn_1/patches.json",
+    "repair_turn_1/diff.patch"
+   ],
+   "final_verdict": "PASS",
+   "finished_at": "2026-10-30T13:54:13+00:00",
+   "kind": "closed_loop",
+   "models": {
+    "contract": "muse-spark-1.3",
+    "diagnosis": "muse-spark-1.3",
+    "escalation": "muse-wonder-1.0",
+    "sam": "sam-3.1"
+   },
+   "pass_labels": [
+    "open-loop (before repair)",
+    "after repair turn 1"
+   ],
+   "pass_statuses": [
+    "FAIL",
+    "PASS"
+   ],
+   "passes": 2,
+   "repair_turns": 1,
+   "run_id": "run_20261030-135231_674ad3",
+   "status": "COMPLETE",
+   "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted."
+  },
+  {
+   "created_at": "2026-10-30T13:49:47+00:00",
+   "est_cost_usd": 0.148737,
+   "exported_bytes": 1000159,
+   "exported_files": [
+    "run_manifest.json",
+    "contract.json",
+    "api_calls.jsonl",
+    "pass1/clip.mp4",
+    "pass1/overlay.mp4",
+    "pass1/tracks.json",
+    "pass1/verification.json",
+    "pass1/truth_hidden.json",
+    "pass1/sam/barrier.json",
+    "pass1/sam/mover.json",
+    "pass2/clip.mp4",
+    "pass2/overlay.mp4",
+    "pass2/tracks.json",
+    "pass2/verification.json",
+    "pass2/truth_hidden.json",
+    "pass2/sam/barrier.json",
+    "pass2/sam/mover.json",
+    "repair_turn_1/prompt.json",
+    "repair_turn_1/transcript.json",
+    "repair_turn_1/patches.json",
+    "repair_turn_1/diff.patch"
+   ],
+   "final_verdict": "PASS",
+   "finished_at": "2026-10-30T13:51:56+00:00",
+   "kind": "closed_loop",
+   "models": {
+    "contract": "muse-spark-1.3",
+    "diagnosis": "muse-spark-1.3",
+    "escalation": "muse-wonder-1.0",
+    "sam": "sam-3.1"
+   },
+   "pass_labels": [
+    "open-loop (before repair)",
+    "after repair turn 1"
+   ],
+   "pass_statuses": [
+    "FAIL",
+    "PASS"
+   ],
+   "passes": 2,
+   "repair_turns": 1,
+   "run_id": "run_20261030-134947_c31b06",
+   "status": "COMPLETE",
+   "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted."
+  },
+  {
+   "created_at": "2026-10-30T13:47:37+00:00",
+   "est_cost_usd": 0.162269,
+   "exported_bytes": 1001384,
+   "exported_files": [
+    "run_manifest.json",
+    "contract.json",
+    "api_calls.jsonl",
+    "pass1/clip.mp4",
+    "pass1/overlay.mp4",
+    "pass1/tracks.json",
+    "pass1/verification.json",
+    "pass1/truth_hidden.json",
+    "pass1/sam/barrier.json",
+    "pass1/sam/mover.json",
+    "pass2/clip.mp4",
+    "pass2/overlay.mp4",
+    "pass2/tracks.json",
+    "pass2/verification.json",
+    "pass2/truth_hidden.json",
+    "pass2/sam/barrier.json",
+    "pass2/sam/mover.json",
+    "repair_turn_1/prompt.json",
+    "repair_turn_1/transcript.json",
+    "repair_turn_1/patches.json",
+    "repair_turn_1/diff.patch"
+   ],
+   "final_verdict": "PASS",
+   "finished_at": "2026-10-30T13:49:46+00:00",
+   "kind": "closed_loop",
+   "models": {
+    "contract": "muse-spark-1.3",
+    "diagnosis": "muse-spark-1.3",
+    "escalation": "muse-wonder-1.0",
+    "sam": "sam-3.1"
+   },
+   "pass_labels": [
+    "open-loop (before repair)",
+    "after repair turn 1"
+   ],
+   "pass_statuses": [
+    "FAIL",
+    "PASS"
+   ],
+   "passes": 2,
+   "repair_turns": 1,
+   "run_id": "run_20261030-134737_d075ab",
+   "status": "COMPLETE",
+   "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted."
+  },
+  {
+   "created_at": "2026-10-30T13:45:44+00:00",
+   "est_cost_usd": 0.151477,
+   "exported_bytes": 1000883,
+   "exported_files": [
+    "run_manifest.json",
+    "contract.json",
+    "api_calls.jsonl",
+    "pass1/clip.mp4",
+    "pass1/overlay.mp4",
+    "pass1/tracks.json",
+    "pass1/verification.json",
+    "pass1/truth_hidden.json",
+    "pass1/sam/barrier.json",
+    "pass1/sam/mover.json",
+    "pass2/clip.mp4",
+    "pass2/overlay.mp4",
+    "pass2/tracks.json",
+    "pass2/verification.json",
+    "pass2/truth_hidden.json",
+    "pass2/sam/barrier.json",
+    "pass2/sam/mover.json",
+    "repair_turn_1/prompt.json",
+    "repair_turn_1/transcript.json",
+    "repair_turn_1/patches.json",
+    "repair_turn_1/diff.patch"
+   ],
+   "final_verdict": "PASS",
+   "finished_at": "2026-10-30T13:47:36+00:00",
+   "kind": "closed_loop",
+   "models": {
+    "contract": "muse-spark-1.3",
+    "diagnosis": "muse-spark-1.3",
+    "escalation": "muse-wonder-1.0",
+    "sam": "sam-3.1"
+   },
+   "pass_labels": [
+    "open-loop (before repair)",
+    "after repair turn 1"
+   ],
+   "pass_statuses": [
+    "FAIL",
+    "PASS"
+   ],
+   "passes": 2,
+   "repair_turns": 1,
+   "run_id": "run_20261030-134544_a2314f",
+   "status": "COMPLETE",
+   "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted."
+  },
+  {
+   "created_at": "2026-10-30T13:43:38+00:00",
+   "est_cost_usd": 0.153507,
+   "exported_bytes": 1000719,
+   "exported_files": [
+    "run_manifest.json",
+    "contract.json",
+    "api_calls.jsonl",
+    "pass1/clip.mp4",
+    "pass1/overlay.mp4",
+    "pass1/tracks.json",
+    "pass1/verification.json",
+    "pass1/truth_hidden.json",
+    "pass1/sam/barrier.json",
+    "pass1/sam/mover.json",
+    "pass2/clip.mp4",
+    "pass2/overlay.mp4",
+    "pass2/tracks.json",
+    "pass2/verification.json",
+    "pass2/truth_hidden.json",
+    "pass2/sam/barrier.json",
+    "pass2/sam/mover.json",
+    "repair_turn_1/prompt.json",
+    "repair_turn_1/transcript.json",
+    "repair_turn_1/patches.json",
+    "repair_turn_1/diff.patch"
+   ],
+   "final_verdict": "PASS",
+   "finished_at": "2026-10-30T13:45:32+00:00",
+   "kind": "closed_loop",
+   "models": {
+    "contract": "muse-spark-1.3",
+    "diagnosis": "muse-spark-1.3",
+    "escalation": "muse-wonder-1.0",
+    "sam": "sam-3.1"
+   },
+   "pass_labels": [
+    "open-loop (before repair)",
+    "after repair turn 1"
+   ],
+   "pass_statuses": [
+    "FAIL",
+    "PASS"
+   ],
+   "passes": 2,
+   "repair_turns": 1,
+   "run_id": "run_20261030-134338_9cf9f4",
+   "status": "COMPLETE",
+   "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted."
+  },
+  {
+   "created_at": "2026-10-30T13:40:44+00:00",
+   "est_cost_usd": 0.150774,
+   "exported_bytes": 691891,
+   "exported_files": [
+    "run_manifest.json",
+    "contract.json",
+    "api_calls.jsonl",
+    "pass1/clip.mp4",
+    "pass1/overlay.mp4",
+    "pass1/tracks.json",
+    "pass1/verification.json",
+    "pass1/truth_hidden.json",
+    "pass1/sam/barrier.json",
+    "pass1/sam/mover.json",
+    "pass2/clip.mp4",
+    "pass2/overlay.mp4",
+    "pass2/tracks.json",
+    "pass2/verification.json",
+    "pass2/truth_hidden.json",
+    "pass2/sam/barrier.json",
+    "pass2/sam/mover.json",
+    "repair_turn_1/prompt.json",
+    "repair_turn_1/transcript.json",
+    "repair_turn_1/patches.json",
+    "repair_turn_1/diff.patch"
+   ],
+   "final_verdict": "INCONCLUSIVE",
+   "finished_at": "2026-10-30T13:42:31+00:00",
+   "kind": "closed_loop",
+   "models": {
+    "contract": "muse-spark-1.3",
+    "diagnosis": "muse-spark-1.3",
+    "escalation": "muse-wonder-1.0",
+    "sam": "sam-3.1"
+   },
+   "pass_labels": [
+    "open-loop (before repair)",
+    "after repair turn 1"
+   ],
+   "pass_statuses": [
+    "FAIL",
+    "INCONCLUSIVE"
+   ],
+   "passes": 2,
+   "repair_turns": 1,
+   "run_id": "run_20261030-134044_f95522",
+   "status": "COMPLETE",
+   "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted."
+  },
+  {
+   "created_at": "2026-10-30T13:36:49+00:00",
+   "est_cost_usd": 0.151239,
+   "exported_bytes": 1128639,
+   "exported_files": [
+    "run_manifest.json",
+    "contract.json",
+    "api_calls.jsonl",
+    "pass1/clip.mp4",
+    "pass1/overlay.mp4",
+    "pass1/tracks.json",
+    "pass1/verification.json",
+    "pass1/truth_hidden.json",
+    "pass1/sam/barrier.json",
+    "pass1/sam/mover.json",
+    "pass2/clip.mp4",
+    "pass2/overlay.mp4",
+    "pass2/tracks.json",
+    "pass2/verification.json",
+    "pass2/truth_hidden.json",
+    "pass2/sam/barrier.json",
+    "pass2/sam/mover.json",
+    "repair_turn_1/prompt.json",
+    "repair_turn_1/transcript.json",
+    "repair_turn_1/patches.json",
+    "repair_turn_1/diff.patch"
+   ],
+   "final_verdict": "PASS",
+   "finished_at": "2026-10-30T13:39:06+00:00",
+   "kind": "closed_loop",
+   "models": {
+    "contract": "muse-spark-1.3",
+    "diagnosis": "muse-spark-1.3",
+    "escalation": "muse-wonder-1.0",
+    "sam": "sam-3.1"
+   },
+   "pass_labels": [
+    "open-loop (before repair)",
+    "after repair turn 1"
+   ],
+   "pass_statuses": [
+    "FAIL",
+    "PASS"
+   ],
+   "passes": 2,
+   "repair_turns": 1,
+   "run_id": "run_20261030-133649_b146ca",
+   "status": "COMPLETE",
+   "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted."
+  },
+  {
+   "created_at": "2026-10-30T13:34:50+00:00",
+   "est_cost_usd": 0.158433,
+   "exported_bytes": 1003636,
+   "exported_files": [
+    "run_manifest.json",
+    "contract.json",
+    "api_calls.jsonl",
+    "pass1/clip.mp4",
+    "pass1/overlay.mp4",
+    "pass1/tracks.json",
+    "pass1/verification.json",
+    "pass1/truth_hidden.json",
+    "pass1/sam/barrier.json",
+    "pass1/sam/mover.json",
+    "pass2/clip.mp4",
+    "pass2/overlay.mp4",
+    "pass2/tracks.json",
+    "pass2/verification.json",
+    "pass2/truth_hidden.json",
+    "pass2/sam/barrier.json",
+    "pass2/sam/mover.json",
+    "repair_turn_1/prompt.json",
+    "repair_turn_1/transcript.json",
+    "repair_turn_1/patches.json",
+    "repair_turn_1/diff.patch"
+   ],
+   "final_verdict": "PASS",
+   "finished_at": "2026-10-30T13:36:49+00:00",
+   "kind": "closed_loop",
+   "models": {
+    "contract": "muse-spark-1.3",
+    "diagnosis": "muse-spark-1.3",
+    "escalation": "muse-wonder-1.0",
+    "sam": "sam-3.1"
+   },
+   "pass_labels": [
+    "open-loop (before repair)",
+    "after repair turn 1"
+   ],
+   "pass_statuses": [
+    "FAIL",
+    "PASS"
+   ],
+   "passes": 2,
+   "repair_turns": 1,
+   "run_id": "run_20261030-133450_d73762",
+   "status": "COMPLETE",
+   "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted."
+  },
+  {
+   "created_at": "2026-10-30T13:33:10+00:00",
+   "est_cost_usd": 0.130149,
+   "exported_bytes": 986149,
+   "exported_files": [
+    "run_manifest.json",
+    "contract.json",
+    "api_calls.jsonl",
+    "pass1/clip.mp4",
+    "pass1/overlay.mp4",
+    "pass1/tracks.json",
+    "pass1/verification.json",
+    "pass1/truth_hidden.json",
+    "pass1/sam/barrier.json",
+    "pass1/sam/mover.json",
+    "pass2/clip.mp4",
+    "pass2/overlay.mp4",
+    "pass2/tracks.json",
+    "pass2/verification.json",
+    "pass2/truth_hidden.json",
+    "pass2/sam/barrier.json",
+    "pass2/sam/mover.json",
+    "repair_turn_1/prompt.json",
+    "repair_turn_1/transcript.json",
+    "repair_turn_1/patches.json",
+    "repair_turn_1/diff.patch"
+   ],
+   "final_verdict": "PASS",
+   "finished_at": "2026-10-30T13:34:49+00:00",
+   "kind": "closed_loop",
+   "models": {
+    "contract": "muse-spark-1.3",
+    "diagnosis": "muse-spark-1.3",
+    "escalation": "muse-wonder-1.0",
+    "sam": "sam-3.1"
+   },
+   "pass_labels": [
+    "open-loop (before repair)",
+    "after repair turn 1"
+   ],
+   "pass_statuses": [
+    "FAIL",
+    "PASS"
+   ],
+   "passes": 2,
+   "repair_turns": 1,
+   "run_id": "run_20261030-133310_79a91f",
+   "status": "COMPLETE",
+   "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted."
+  },
+  {
+   "created_at": "2026-10-30T13:31:35+00:00",
+   "est_cost_usd": 0.125741,
+   "exported_bytes": 990185,
+   "exported_files": [
+    "run_manifest.json",
+    "contract.json",
+    "api_calls.jsonl",
+    "pass1/clip.mp4",
+    "pass1/overlay.mp4",
+    "pass1/tracks.json",
+    "pass1/verification.json",
+    "pass1/truth_hidden.json",
+    "pass1/sam/barrier.json",
+    "pass1/sam/mover.json",
+    "pass2/clip.mp4",
+    "pass2/overlay.mp4",
+    "pass2/tracks.json",
+    "pass2/verification.json",
+    "pass2/truth_hidden.json",
+    "pass2/sam/barrier.json",
+    "pass2/sam/mover.json",
+    "repair_turn_1/prompt.json",
+    "repair_turn_1/transcript.json",
+    "repair_turn_1/patches.json",
+    "repair_turn_1/diff.patch"
+   ],
+   "final_verdict": "PASS",
+   "finished_at": "2026-10-30T13:33:09+00:00",
+   "kind": "closed_loop",
+   "models": {
+    "contract": "muse-spark-1.3",
+    "diagnosis": "muse-spark-1.3",
+    "escalation": "muse-wonder-1.0",
+    "sam": "sam-3.1"
+   },
+   "pass_labels": [
+    "open-loop (before repair)",
+    "after repair turn 1"
+   ],
+   "pass_statuses": [
+    "FAIL",
+    "PASS"
+   ],
+   "passes": 2,
+   "repair_turns": 1,
+   "run_id": "run_20261030-133135_e86e1b",
+   "status": "COMPLETE",
+   "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted."
+  },
+  {
+   "created_at": "2026-10-30T13:29:53+00:00",
+   "est_cost_usd": 0.137839,
+   "exported_bytes": 996698,
+   "exported_files": [
+    "run_manifest.json",
+    "contract.json",
+    "api_calls.jsonl",
+    "pass1/clip.mp4",
+    "pass1/overlay.mp4",
+    "pass1/tracks.json",
+    "pass1/verification.json",
+    "pass1/truth_hidden.json",
+    "pass1/sam/barrier.json",
+    "pass1/sam/mover.json",
+    "pass2/clip.mp4",
+    "pass2/overlay.mp4",
+    "pass2/tracks.json",
+    "pass2/verification.json",
+    "pass2/truth_hidden.json",
+    "pass2/sam/barrier.json",
+    "pass2/sam/mover.json",
+    "repair_turn_1/prompt.json",
+    "repair_turn_1/transcript.json",
+    "repair_turn_1/patches.json",
+    "repair_turn_1/diff.patch"
+   ],
+   "final_verdict": "PASS",
+   "finished_at": "2026-10-30T13:31:34+00:00",
+   "kind": "closed_loop",
+   "models": {
+    "contract": "muse-spark-1.3",
+    "diagnosis": "muse-spark-1.3",
+    "escalation": "muse-wonder-1.0",
+    "sam": "sam-3.1"
+   },
+   "pass_labels": [
+    "open-loop (before repair)",
+    "after repair turn 1"
+   ],
+   "pass_statuses": [
+    "FAIL",
+    "PASS"
+   ],
+   "passes": 2,
+   "repair_turns": 1,
+   "run_id": "run_20261030-132953_c0fc3b",
+   "status": "COMPLETE",
+   "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted."
+  },
+  {
+   "created_at": "2026-10-30T13:29:21+00:00",
+   "est_cost_usd": 0.032,
+   "exported_bytes": 443785,
+   "exported_files": [
+    "run_manifest.json",
+    "contract.json",
+    "api_calls.jsonl",
+    "pass1/clip.mp4",
+    "pass1/overlay.mp4",
+    "pass1/tracks.json",
+    "pass1/verification.json",
+    "pass1/truth_hidden.json",
+    "pass1/sam/barrier.json",
+    "pass1/sam/mover.json"
+   ],
+   "final_verdict": "INCONCLUSIVE",
+   "finished_at": "2026-10-30T13:29:52+00:00",
+   "kind": "closed_loop",
+   "models": {
+    "contract": "muse-spark-1.3",
+    "diagnosis": "muse-spark-1.3",
+    "escalation": "muse-wonder-1.0",
+    "sam": "sam-3.1"
+   },
+   "pass_labels": [
+    "open-loop (before repair)"
+   ],
+   "pass_statuses": [
+    "INCONCLUSIVE"
+   ],
+   "passes": 1,
+   "repair_turns": 0,
+   "run_id": "run_20261030-132921_7fecb2",
+   "status": "COMPLETE",
+   "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted."
+  },
+  {
+   "created_at": "2026-10-30T13:28:22+00:00",
+   "est_cost_usd": 0.058786,
+   "exported_bytes": 507697,
+   "exported_files": [
+    "run_manifest.json",
+    "contract.json",
+    "api_calls.jsonl",
+    "pass1/clip.mp4",
+    "pass1/overlay.mp4",
+    "pass1/tracks.json",
+    "pass1/verification.json",
+    "pass1/truth_hidden.json",
+    "pass1/sam/barrier.json",
+    "pass1/sam/mover.json"
+   ],
+   "final_verdict": "PASS",
+   "finished_at": "2026-10-30T13:29:20+00:00",
+   "kind": "closed_loop",
+   "models": {
+    "contract": "muse-spark-1.3",
+    "diagnosis": "muse-spark-1.3",
+    "escalation": "muse-wonder-1.0",
+    "sam": "sam-3.1"
+   },
+   "pass_labels": [
+    "open-loop (before repair)"
+   ],
+   "pass_statuses": [
+    "PASS"
+   ],
+   "passes": 1,
+   "repair_turns": 0,
+   "run_id": "run_20261030-132822_293587",
+   "status": "COMPLETE",
+   "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted."
+  },
+  {
+   "created_at": "2026-10-30T13:27:50+00:00",
+   "est_cost_usd": 0.032,
+   "exported_bytes": 443335,
+   "exported_files": [
+    "run_manifest.json",
+    "contract.json",
+    "api_calls.jsonl",
+    "pass1/clip.mp4",
+    "pass1/overlay.mp4",
+    "pass1/tracks.json",
+    "pass1/verification.json",
+    "pass1/truth_hidden.json",
+    "pass1/sam/barrier.json",
+    "pass1/sam/mover.json"
+   ],
+   "final_verdict": "PASS",
+   "finished_at": "2026-10-30T13:28:21+00:00",
+   "kind": "closed_loop",
+   "models": {
+    "contract": "muse-spark-1.3",
+    "diagnosis": "muse-spark-1.3",
+    "escalation": "muse-wonder-1.0",
+    "sam": "sam-3.1"
+   },
+   "pass_labels": [
+    "open-loop (before repair)"
+   ],
+   "pass_statuses": [
+    "PASS"
+   ],
+   "passes": 1,
+   "repair_turns": 0,
+   "run_id": "run_20261030-132750_e09010",
+   "status": "COMPLETE",
+   "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted."
+  },
+  {
+   "created_at": "2026-10-30T13:25:03+00:00",
+   "est_cost_usd": 0.182234,
+   "exported_bytes": 1016862,
+   "exported_files": [
+    "run_manifest.json",
+    "contract.json",
+    "api_calls.jsonl",
+    "pass1/clip.mp4",
+    "pass1/overlay.mp4",
+    "pass1/tracks.json",
+    "pass1/verification.json",
+    "pass1/truth_hidden.json",
+    "pass1/sam/barrier.json",
+    "pass1/sam/mover.json",
+    "pass2/clip.mp4",
+    "pass2/overlay.mp4",
+    "pass2/tracks.json",
+    "pass2/verification.json",
+    "pass2/truth_hidden.json",
+    "pass2/sam/barrier.json",
+    "pass2/sam/mover.json",
+    "repair_turn_1/prompt.json",
+    "repair_turn_1/transcript.json",
+    "repair_turn_1/patches.json",
+    "repair_turn_1/diff.patch"
+   ],
+   "final_verdict": "PASS",
+   "finished_at": "2026-10-30T13:27:50+00:00",
+   "kind": "closed_loop",
+   "models": {
+    "contract": "muse-spark-1.3",
+    "diagnosis": "muse-spark-1.3",
+    "escalation": "muse-wonder-1.0",
+    "sam": "sam-3.1"
+   },
+   "pass_labels": [
+    "open-loop (before repair)",
+    "after repair turn 1"
+   ],
+   "pass_statuses": [
+    "FAIL",
+    "PASS"
+   ],
+   "passes": 2,
+   "repair_turns": 1,
+   "run_id": "run_20261030-132503_349fe5",
+   "status": "COMPLETE",
+   "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted."
+  },
+  {
+   "created_at": "2026-10-30T13:23:15+00:00",
+   "est_cost_usd": 0.143487,
+   "exported_bytes": 997978,
+   "exported_files": [
+    "run_manifest.json",
+    "contract.json",
+    "api_calls.jsonl",
+    "pass1/clip.mp4",
+    "pass1/overlay.mp4",
+    "pass1/tracks.json",
+    "pass1/verification.json",
+    "pass1/truth_hidden.json",
+    "pass1/sam/barrier.json",
+    "pass1/sam/mover.json",
+    "pass2/clip.mp4",
+    "pass2/overlay.mp4",
+    "pass2/tracks.json",
+    "pass2/verification.json",
+    "pass2/truth_hidden.json",
+    "pass2/sam/barrier.json",
+    "pass2/sam/mover.json",
+    "repair_turn_1/prompt.json",
+    "repair_turn_1/transcript.json",
+    "repair_turn_1/patches.json",
+    "repair_turn_1/diff.patch"
+   ],
+   "final_verdict": "PASS",
+   "finished_at": "2026-10-30T13:25:02+00:00",
+   "kind": "closed_loop",
+   "models": {
+    "contract": "muse-spark-1.3",
+    "diagnosis": "muse-spark-1.3",
+    "escalation": "muse-wonder-1.0",
+    "sam": "sam-3.1"
+   },
+   "pass_labels": [
+    "open-loop (before repair)",
+    "after repair turn 1"
+   ],
+   "pass_statuses": [
+    "FAIL",
+    "PASS"
+   ],
+   "passes": 2,
+   "repair_turns": 1,
+   "run_id": "run_20261030-132315_7c6e9b",
+   "status": "COMPLETE",
+   "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted."
+  },
+  {
+   "created_at": "2026-10-30T13:20:53+00:00",
+   "est_cost_usd": 0.150514,
+   "exported_bytes": 1006049,
+   "exported_files": [
+    "run_manifest.json",
+    "contract.json",
+    "api_calls.jsonl",
+    "pass1/clip.mp4",
+    "pass1/overlay.mp4",
+    "pass1/tracks.json",
+    "pass1/verification.json",
+    "pass1/truth_hidden.json",
+    "pass1/sam/barrier.json",
+    "pass1/sam/mover.json",
+    "pass2/clip.mp4",
+    "pass2/overlay.mp4",
+    "pass2/tracks.json",
+    "pass2/verification.json",
+    "pass2/truth_hidden.json",
+    "pass2/sam/barrier.json",
+    "pass2/sam/mover.json",
+    "repair_turn_1/prompt.json",
+    "repair_turn_1/transcript.json",
+    "repair_turn_1/patches.json",
+    "repair_turn_1/diff.patch"
+   ],
+   "final_verdict": "PASS",
+   "finished_at": "2026-10-30T13:23:15+00:00",
+   "kind": "closed_loop",
+   "models": {
+    "contract": "muse-spark-1.3",
+    "diagnosis": "muse-spark-1.3",
+    "escalation": "muse-wonder-1.0",
+    "sam": "sam-3.1"
+   },
+   "pass_labels": [
+    "open-loop (before repair)",
+    "after repair turn 1"
+   ],
+   "pass_statuses": [
+    "FAIL",
+    "PASS"
+   ],
+   "passes": 2,
+   "repair_turns": 1,
+   "run_id": "run_20261030-132053_bf568b",
+   "status": "COMPLETE",
+   "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted."
+  }
+ ],
+ "schema_version": "1.0"
+}

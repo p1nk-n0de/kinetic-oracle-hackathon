@@ -1,32 +1,37 @@
 # BUILD STATE — KINETIC-ORACLE (ProprioSAM)
 
-Deadline: Wed 4 Nov 2026 21:00 ET = **Thu 5 Nov 02:00 UTC**. Budget cap for the build: $40 Meta API.
+Deadline: Wed 4 Nov 2026 21:00 ET = **Thu 5 Nov 02:00 UTC**. Budget cap for the build: $40 Meta API. Spent so far: about $4.20
+(final evidence set $3.05, evaluation $0.25, superseded runs and probes about $0.90).
 
 ## Gate status
 | Gate | Status | Evidence |
 |---|---|---|
-| Phase 0 audit | **DONE 2026-10-30** | `docs/ENVIRONMENT_AUDIT.md` |
-| P0 closed loop | **DONE 2026-10-30 12:23** | `runs/run_20261030-122149_3091ef/`: fresh copy (tree hash == baseline) → Muse-compiled contract `hurdle-walk-1cccad8f` (thr 5 px, persistence 3, window 25–75) → pass 1 capture 11.8 s, tool said OK, verifier **FAIL t_fail=60** → Muse Spark blind diagnosis, 10 tool calls (`list_source_files`, `inspect_scene`, 5× `read_source`, 2× `inspect_physics`, `patch_source`), patch `"layer": 2 → 1` with a correct causal reason → pass 2 **PASS** (max E −13 px, coverage 1.0). 15 Meta request ids, 233 hashed files, $0.124, baseline unchanged. Anti-cheat screen: 0 banned terms, turn-1 prompt names no source file. `tests/` 17 passed. |
-| P1 CLI + tests + dashboard | in progress | verifier unit tests + anti-cheat e2e done locally; replay CLI + React dashboard delegated to cloud session `ko-dashboard` (PR against main) |
-| P2 evaluation + docs + demo video | in progress | trials 2–3, known-good true negative, layer-4 perturbation queued; evaluation script, VLM baseline, provenance docs, demo compositor next |
+| Phase 0 audit | **DONE** | `docs/ENVIRONMENT_AUDIT.md` |
+| P0 closed loop | **DONE** | 21 real bundles in `runs/`. Hero run `run_20261030-140019_79d646`: FAIL@60 → Spark's patch → FAIL@60 (repair rejected) → Wonder's patch → PASS |
+| P1 CLI, tests, dashboard | **DONE** | `scripts/replay_run.py`, `tests/` (unit + anti-cheat e2e), `web/` (built by a cloud session on a separate branch, reviewed and merged here) |
+| P2 evaluation, docs, demo clip | **DONE** | `docs/EVALUATION_REPORT.md`, `runs/evaluation_summary.json`, `docs/ARCHITECTURE_PROVENANCE.md`, `runs/kinetic_oracle_demo_proof.mp4`, `docs/DEMO_SCRIPT.md` |
 
-## Decisions locked in Phase 0 (do not re-derive)
-1. **Runtime models**: `muse-spark-1.3` Standard via `POST /v1/responses` with native function tools (replay prior output items + `function_call_output`). `muse-wonder-1.0` only as escalation after a failed repair turn. SAM via `/v1/files` + `/v1/responses` (`sam-3.1`), non-streaming, one concept per call, cached by `(clip_sha256, prompt, model)`.
-2. **`max_output_tokens ≥ 1500`** on every Muse call (reasoning tokens count). Contract compile uses structured output (`text.format` json_schema strict).
-3. **Working copy**: `shutil.copytree` of the fixture → `runs/<run_id>/workspace/hurdle_scene/` (neutral name), tree-hash must equal the baseline before Pass 1. Spawn the Godot MCP server with `GODOT_STUDIO_EXTRA_ROOT=<abs path of runs/>` so that path is launchable. Patches applied by our adapter (find/replace + unified diff in `repair_trace.jsonl`); `.godot/` excluded from hashes.
-4. **Muse tool surface (allowlist)**: `inspect_scene(node_path?)`, `inspect_physics(node_path)`, `drive(steps)` (real inputs, returns Player watch digest), `list_source_files()`, `read_source(rel_path)`, `patch_source(rel_path, find, replace, reason)`. Only `scripts/*.gd`, `scenes/*.tscn`, `project.godot` are listable/readable. Never expose `*.md`, `scenarios/`, `oracle.yaml`, absolute paths, truth.json, or the verifier's hidden data. One offscreen session per diagnosis turn, stopped in `finally`.
-5. **Frozen residual** (verifier library, declared before any clip is scored): `E(t) = y2(barrier) − y2(mover)`; VIOLATION when `E(t) > threshold_px` for `persistence_frames` consecutive tracked frames; coverage gates → `INCONCLUSIVE` (never PASS) when mover or barrier coverage in the critical window `[45,70]` < 0.9 or overall < 0.6. Muse compiles the contract instance (mover="capsule", barrier="yellow bar", thresholds, window, falsifiable statement) from the objective + camera description; the geometry code never changes per run. Barrier track = highest-confidence/largest id (the far pressure plate also matches "yellow bar").
-6. **Capture** = the proven tick-locked recipe (80 frames, every 3 ticks, 960×540, 20 fps MP4 faststart) with hidden `truth.json` saved for evaluation only. Hard 30 s timeout on the capture phase; session always stopped.
-7. **Open-loop lie** = the `drive`/walk step's MCP result (`ok`) recorded in the manifest next to the Pass 1 FAIL.
-8. Claude Code is a dev harness only; the product never calls Anthropic. Anti-cheat banned strings in outgoing Muse prompts: `defect`, `defective`, `pg_defect`, `DEFECT_FIXTURE`, `collision_layer`, `collision_mask`, `layer 2`, `"layer": 2`, `arena_layout`, `hurdle_blocks_walking`, `truth.json`, any absolute fixture path, any diff.
+## What the evidence shows
+- Defective scene: 3/3 FAIL at frame 60, repaired on turn 1, PASS. Variants: a different wrong layer, a different root cause, two faults, three faults, the robot build with the fault.
+- Known-good twin and the real robot build: PASS with no repair attempted. Robot build under a contract whose concept is not in the scene: INCONCLUSIVE, no repair.
+- Three-fault scene at one patch per turn, 10 trials: 8 solved in one turn; 1 repair rejected by the verifier and recovered by Wonder; 1 repair broke the game and the verifier refused to pass it.
+- Hidden-truth audit over 40 passes: 39 match the engine, 1 abstained, 0 wrong.
 
-## Next actions (P0, in order)
-1. `propriosam/meta_client.py` — bearer client (urllib), request-id + usage logging to `runs/<id>/api_calls.jsonl`, spend meter with $40 abort, SAM upload/track with SHA-256 cache, Muse `respond()` with tool loop helper, structured-output helper, image helper.
-2. `propriosam/vision_tracker.py` — parse SAM lines (regex) → per-frame boxes/centroids/velocities, mask raster via `meta_sam_parser.decode_mask_to_raster`, coverage metrics, overlay MP4 writer (PIL + ffmpeg).
-3. `propriosam/sensory_contract.py` + `verifier.py` — Pydantic contract, frozen rule, `VerificationResult{status, residual[], t_fail, coverage, evidence}`.
-4. `propriosam/mcp_adapter.py` — MCP stdio client to the Godot server, working-copy staging + hash check, capture recipe, allowlisted tools, patch/diff.
-5. `propriosam/diagnosis.py` + `repair_orchestrator.py` + `artifacts.py` — evidence formatter (anti-cheat filter), Muse tool loop (max 3 repair turns, Wonder escalation), manifest writer.
-6. `scripts/run_hurdle_loop.py` → real run → `runs/<run_id>/run_manifest.json`; then update this file.
+## Findings that changed the system (keep these in the demo story)
+1. **Vacuous pass.** A run passed because the held input was silently lost at frame 38 and the robot never reached the hurdle. Caught by the hidden-truth audit. Fix: approach gate in the verifier, input re-asserted every step, real regression fixture `tests/fixtures/dropped_input_walk`.
+2. **Broken repair.** Spark called `remove_collision_exception_from`, which does not exist. The game froze at spawn while every tool said OK and the model said the contract held. Verifier: INCONCLUSIVE. Fix: INCONCLUSIVE after a repair continues the bounded loop, and Muse gained a runtime-errors tool.
+3. **Hashing bug.** `sorted(os.walk())` defeated directory pruning. Found by the cloud session's review of `artifacts.py`.
 
-## Spend log
-- 2026-10-30 pre-build tests + probes: ≈ $1.12 (not counted against the $40 build cap).
+## Locked decisions (do not re-derive)
+1. Runtime models: `muse-spark-1.3` Standard via `POST /v1/responses` with native function tools, replaying prior output items + `function_call_output`. `muse-wonder-1.0` from turn 2. SAM via `/v1/files` + `/v1/responses`, non-streaming, one concept per call, cached by `(clip_sha256, prompt, model)`.
+2. `max_output_tokens ≥ 1500` on every Muse call (reasoning tokens count against it). Contract compile uses strict structured output.
+3. Working copy: `runs/<run_id>/workspace/hurdle_scene/`, tree hash must equal the baseline before pass 1. The Godot MCP server runs with `GODOT_STUDIO_EXTRA_ROOT=<runs dir>`. Never launch a baseline in place.
+4. Muse's tools: `inspect_scene`, `inspect_physics`, `get_runtime_errors`, `drive`, `list_source_files`, `read_source`, `patch_source`. Only `scripts/`, `scenes/`, `project.godot` are readable. At most 2 patches per turn (run parameter) and 3 turns.
+5. Frozen residual: `E(t) = y_bottom(barrier) − y_bottom(mover)`; VIOLATION when `E(t) > threshold_px` for `persistence_frames` consecutive tracked frames. PASS also needs coverage gates and the approach gate. The rule family is library code; Muse compiles the contract instance.
+6. Capture: tick-locked, 80 frames, every 3 ticks, 960×540, 20 fps, faststart, input re-asserted each step, hidden truth saved for evaluation only, 30 s timeout, session always stopped.
+7. Claude Code is the development harness only; the product never calls Anthropic.
+
+## Open items for the entrant
+- Confirm the new-work rule in the participant guide (behind the Cerebral Valley login). The provenance disclosure is written on the assumption that disclosed existing tools are acceptable.
+- Before making the repo public, clean the history: see the handoff report.
+- Record the 3-minute video from `docs/DEMO_SCRIPT.md`, and submit on the Cerebral Valley platform.

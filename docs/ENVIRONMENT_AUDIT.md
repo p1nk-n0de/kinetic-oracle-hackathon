@@ -9,8 +9,8 @@ Machine: Apple M4 Pro, 24 GB, macOS (Darwin 27). All paths verified on disk toda
 | Godot MCP server | `<godot-studio>` = `~/Projects/godot-studio` (separate repository, external volume must be mounted) | 22 tools, MCP protocol 2025-06-18, starts in 0.3 s. Launch: `uv run --directory ~/Projects/godot-studio godot-studio-mcp` |
 | Allowed project roots | `configs/studio.toml` `[roots]` + env **`GODOT_STUDIO_EXTRA_ROOT`** (one extra root, `src/godot_studio/config.py:62`) | Set `GODOT_STUDIO_EXTRA_ROOT=~/Projects/kinetic-oracle/runs` on the spawned server so `runs/<run_id>/workspace/` is launchable |
 | Godot binary | `/Applications/Godot.app/Contents/MacOS/Godot` 4.6.2.stable | Screenshots need a windowed process: launch with `offscreen=true` (window off-desktop), never headless |
-| Defective fixture | `tests/fixtures/pg_defect_hurdle/` (51 files) | Hurdle declared on collision layer 2 in `scripts/arena_layout.gd:22`; player mask 1 → walks through |
-| Known-good scene | `example_game/proving_ground/` (112 files) | Same game, hurdle on layer 1; protected root (never write) |
+| Defective fixture | `tests/fixtures/pg_defect_hurdle/` (45 files) | Hurdle declared on collision layer 2 in `scripts/arena_layout.gd:22`; player mask 1 → walks through |
+| Real game build | `example_game/proving_ground/` (69 files) | A later build: the player is a robot model, not a capsule; hurdle on the default layer. Protected root (never write) |
 | Today's repaired copy | `artifacts/working_copies/pg_defect_hurdle-repair-20261030-112402/` | Muse's own fix (removed `"layer": 2`) — used for the SAM evidence clip |
 | Scenarios | `example_game/proving_ground/scenarios/{hurdle_blocks_walking,jump_clears_hurdle,reach_corridor}.yaml` | Reproduction recipe: settle 40 ticks, hold `move_left` 25, hold `move_forward` 240; fail = `Player.position[2] <= -11.7` |
 
@@ -49,6 +49,6 @@ Credentials: `MODEL_API_KEY` is **not** exported in the shell. Key file: `~/.con
 ## 5. Baseline hashes (tree SHA-256, `.godot/` excluded; `scripts/hash_baselines.py`)
 
 <!-- hashes appended by the commit step -->
-defect_fixture: tree_sha256=135cf6c7f270dbbdba9e2737b5e337162dd0cb2f72d69b95d2d09ebc6b427aab files=51
-known_good_scene: tree_sha256=811f6439e289334d9a8ce140c0d42b275c130881e53075fd9187fbceb0e77831 files=112
+defect_fixture: tree_sha256=5df008eb17045d95aed148ff8c5ff579be158a3bbf88e8fde9cec0a1e7d0e88d files=45
+known_good_scene: tree_sha256=fc1c6174e310b3f7988fcd4d19096d64c3c5cbc8b1bf662b79e1b1cd03c2e29e files=69
 arena_layout.gd sha256=c876e4d9afe20da28046f1ea0baf951e78684734cba9fdba3ce015ab34e03694

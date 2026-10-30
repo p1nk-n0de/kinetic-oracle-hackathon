@@ -1,0 +1,11 @@
+[
+ {
+  "diff": "--- a/scripts/player.gd\n+++ b/scripts/player.gd\n@@ -37,7 +37,9 @@\n \tvisual.rotation.y = 0.0\n \tfor block in get_tree().get_nodes_in_group(\"arena_block\"):\n \t\tif block.name == \"Hurdle\":\n-\t\t\tadd_collision_exception_with(block)\n+\t\t\tblock.collision_layer = 1\n+\t\t\tblock.get_node(\"Shape\").disabled = false\n+\t\t\tremove_collision_exception_with(block)\n \n \n func _physics_process(delta: float) -> void:\n",
+  "find": "\tfor block in get_tree().get_nodes_in_group(\"arena_block\"):\n\t\tif block.name == \"Hurdle\":\n\t\t\tadd_collision_exception_with(block)",
+  "path": "scripts/player.gd",
+  "reason": "Hurdle has no collision: layer 2 vs player mask 1, shape.disabled, plus exception. Enable and re-layer it and clear exception so walking is physically blocked.",
+  "replace": "\tfor block in get_tree().get_nodes_in_group(\"arena_block\"):\n\t\tif block.name == \"Hurdle\":\n\t\t\tblock.collision_layer = 1\n\t\t\tblock.get_node(\"Shape\").disabled = false\n\t\t\tremove_collision_exception_with(block)",
+  "ts": "2026-10-30T13:57:45+00:00",
+  "turn_patch_index": 1
+ }
+]

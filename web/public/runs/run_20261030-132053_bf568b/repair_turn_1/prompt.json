@@ -1,0 +1,135 @@
+{
+ "banned_terms_checked": [
+  "defect",
+  "defective",
+  "pg_defect",
+  "DEFECT_FIXTURE",
+  "collision_layer",
+  "collision_mask",
+  "layer 2",
+  "\"layer\": 2",
+  "hurdle_blocks_walking",
+  "truth_hidden",
+  "truth.json",
+  "<godot-studio>/tests/fixtures/pg_defect_hurdle",
+  "<redacted:studio>-godot-studio",
+  "<redacted:volume>"
+ ],
+ "banned_terms_found": [],
+ "instructions": "You are the repair engineer for a small 3D game. An independent visual verifier decides whether the game meets an objective by tracking objects in the rendered clip with SAM 3.1 and evaluating a frozen geometric contract. The tool the agent used to act reported success, but the verifier measured a violation. Your job: find the root cause from evidence and apply the smallest source patch that makes the objective hold under the same contract.\nRules: inspect before you patch, and reason from measured values (physics state, node properties, source). Do not modify the camera, the barrier's position or size, the verifier, or the capture; do not add new scripts; at most two patches per turn. You never declare success: after your turn the patched game is relaunched, re-captured and re-measured by the verifier. Finish with three short lines: root cause, patch, why it satisfies the contract.",
+ "mentions_source_filenames": false,
+ "model": "muse-spark-1.3",
+ "own_history": "",
+ "prompt_sha256": "35512b81346dc9cedfbd38775eeb96cfb6c7925599b6fc14c029833a60c2fb91",
+ "tools": [
+  {
+   "description": "Live read-only game state. Without node_path: the watch digest of every instrumented node (player position/velocity/zone, HUD, doors, beacon) plus recent gameplay events. With node_path (e.g. /root/Main/Player): the listed properties of that node.",
+   "name": "inspect_scene",
+   "parameters": {
+    "properties": {
+     "node_path": {
+      "type": "string"
+     },
+     "properties": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array"
+     }
+    },
+    "type": "object"
+   },
+   "type": "function"
+  },
+  {
+   "description": "Physics diagnostics for one node: transform, collision layer and mask bits, collision shapes with world AABB, CharacterBody velocity / floor / wall / slide collisions, area overlaps.",
+   "name": "inspect_physics",
+   "parameters": {
+    "properties": {
+     "node_path": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "node_path"
+    ],
+    "type": "object"
+   },
+   "type": "function"
+  },
+  {
+   "description": "Deliver real gameplay input to the running game and observe the player after each step. steps: list of {\"input\": one of move_forward|move_back|move_left|move_right|jump, \"ticks\": N} or {\"wait_ticks\": N}. The game keeps running between calls.",
+   "name": "drive",
+   "parameters": {
+    "properties": {
+     "steps": {
+      "items": {
+       "type": "object"
+      },
+      "type": "array"
+     }
+    },
+    "required": [
+     "steps"
+    ],
+    "type": "object"
+   },
+   "type": "function"
+  },
+  {
+   "description": "List the project's GDScript and scene files (relative paths).",
+   "name": "list_source_files",
+   "parameters": {
+    "properties": {},
+    "type": "object"
+   },
+   "type": "function"
+  },
+  {
+   "description": "Read one source file by relative path (from list_source_files).",
+   "name": "read_source",
+   "parameters": {
+    "properties": {
+     "path": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "path"
+    ],
+    "type": "object"
+   },
+   "type": "function"
+  },
+  {
+   "description": "Apply ONE minimal textual patch to a source file in the working copy: `find` must occur exactly once and is replaced by `replace`. State the engineering reason. After your turn the patched game is relaunched and re-measured by the independent visual verifier; you do not get to declare success.",
+   "name": "patch_source",
+   "parameters": {
+    "properties": {
+     "find": {
+      "type": "string"
+     },
+     "path": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     },
+     "replace": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "path",
+     "find",
+     "replace",
+     "reason"
+    ],
+    "type": "object"
+   },
+   "type": "function"
+  }
+ ],
+ "turn": 1,
+ "user": "OBJECTIVE\nWalking straight forward without jumping, the player must be physically stopped by the low hurdle lying across the corridor; it must not pass through or over it.\n\nSENSORY CONTRACT (frozen before measurement)\nstatement: While walking straight forward without jumping, the capsule never crosses through or over the yellow bar so E(t) never exceeds 5px.\nmover concept: 'capsule'   barrier concept: 'yellow bar'\nrule: E(t) = y_bottom(barrier, t) - y_bottom(mover, t) in source pixels (y grows downward). The mover is judged to have crossed the barrier when E(t) > threshold_px for persistence_frames consecutive tracked frames. A PASS also requires the interaction to have happened: max E(t) must reach at least -(approach_body_heights x the mover's median box height). If the mover never came that close, the contract was not exercised and the result is INCONCLUSIVE.\nthreshold_px=5  persistence_frames=3  critical_window=[20, 70]  frames=80 @ 20 fps, 960x540 px\nexpected if satisfied: PASS: both capsule and yellow bar tracked; yellow bar moves down from top toward capsule feet while capsule stays near fixed screen position, E(t) rises from large negative toward near-zero/negative and never exceeds 5px for 3 consecutive frames, bar remains at/below feet without passing.\nexpected if violated: FAIL: yellow bar track moves from top of frame down past the capsule's feet and continues downward, E(t) rises from large negative through zero to >5px and stays >5px for >=3 consecutive tracked frames, indicating the capsule passed through or over the hurdle.\n\nWHAT THE AGENT'S TOOL REPORTED (open loop)\ngodot_send_input({\"action\": \"move_forward\", \"mode\": \"press\", \"wait\": false, \"observe\": false}) -> {\"input\": {\"action\": \"move_forward\", \"mode\": \"press\", \"ticks\": 30, \"ms\": 0}, \"result\": {}}\n\nWHAT THE VISUAL VERIFIER MEASURED (SAM 3.1 tracks of the rendered clip; source pixels, y grows downward)\nstatus: FAIL   t_fail: 60   violation run: [60, 61, 62]\nmax E(t): +236.0 px at frame 79   coverage: {\"mover_total\": 0.85, \"barrier_total\": 1.0, \"both_total\": 0.85, \"mover_window\": 1.0, \"barrier_window\": 1.0, \"both_window\": 1.0, \"critical_window\": [20, 70], \"min_window_coverage\": 0.8, \"min_total_coverage\": 0.7}\nreasons: E(t) > 5px for 3 consecutive tracked frames starting at frame 60\n\nframe | mover cx cy bottom vx vy | barrier cx cy bottom vy | E=barrier_bottom-mover_bottom\nf20 | 480 266 298 +0.0 -0.5 | 533 120 132 +2.5 | -166\nf21 | 480 265 298 +0.0 -0.5 | 534 122 134 +2.0 | -164\nf22 | 480 264 297 +0.0 -1.0 | 534 125 137 +3.0 | -160\nf23 | 480 264 297 +0.0 +0.0 | 534 126 139 +1.5 | -158\nf24 | 480 263 296 +0.0 -1.0 | 536 129 141 +2.5 | -155\nf25 | 480 262 296 +0.0 -0.5 | 536 132 144 +2.5 | -152\nf26 | 480 262 296 +0.0 +0.0 | 537 134 147 +3.0 | -149\nf27 | 480 262 296 -0.5 +0.0 | 538 138 150 +3.0 | -146\nf28 | 480 262 296 +0.5 +0.0 | 538 140 153 +2.5 | -143\nf29 | 480 263 296 +0.0 +0.5 | 539 143 156 +3.0 | -140\nf30 | 480 264 297 +0.0 +1.0 | 540 146 159 +3.0 | -138\nf31 | 480 264 298 -0.5 +0.5 | 540 148 162 +2.5 | -136\nf32 | 480 265 298 +0.5 +0.5 | 542 152 165 +3.5 | -133\nf33 | 480 266 299 +0.0 +1.0 | 542 155 168 +3.0 | -131\nf34 | 480 266 299 -0.5 +0.0 | 543 158 171 +2.5 | -128\nf35 | 480 266 299 +0.5 +0.0 | 544 161 175 +3.5 | -124\nf36 | 480 266 299 +0.0 +0.0 | 544 164 179 +3.5 | -120\nf37 | 480 266 299 +0.0 +0.0 | 546 168 182 +3.5 | -117\nf38 | 480 266 298 -0.5 -0.5 | 546 172 186 +3.5 | -112\nf39 | 480 264 297 +0.0 -1.5 | 548 176 190 +4.0 | -107\nf40 | 480 264 297 +0.5 +0.0 | 548 179 194 +3.5 | -103\nf41 | 480 263 296 -0.5 -1.0 | 549 183 198 +4.0 | -98\nf42 | 480 263 296 +0.5 +0.0 | 550 187 202 +4.0 | -94\nf43 | 480 262 295 +0.0 -1.0 | 552 190 206 +3.5 | -89\nf44 | 480 262 295 +0.0 +0.0 | 552 195 210 +4.5 | -85\nf45 | 480 262 295 +0.0 +0.0 | 554 200 215 +4.5 | -80\nf46 | 480 263 296 +0.0 +1.0 | 554 204 220 +4.5 | -76\nf47 | 480 263 296 +0.0 +0.0 | 556 208 224 +4.5 | -72\nf48 | 480 264 297 +0.0 +1.5 | 557 214 231 +5.5 | -66\nf49 | 480 265 297 +0.0 +0.5 | 558 218 235 +4.5 | -62\nf50 | 480 266 298 +0.0 +0.5 | 560 224 240 +5.0 | -58\nf51 | 480 266 299 +0.0 +0.5 | 561 228 246 +5.0 | -53\nf52 | 480 266 298 +0.0 +0.0 | 562 234 251 +5.0 | -47\nf53 | 480 266 298 +0.0 +0.0 | 564 240 257 +6.0 | -41\nf54 | 480 266 298 -0.5 +0.0 | 566 245 263 +5.5 | -35\nf55 | 480 266 298 +0.0 -0.5 | 581 251 269 +6.0 | -29\nf56 | 480 264 296 +0.0 -1.5 | 589 258 276 +6.5 | -20\nf57 | 479 264 296 -0.5 -0.5 | 592 264 282 +6.0 | -14\nf58 | 480 263 296 +0.5 -0.5 | 592 270 289 +6.5 | -7\nf59 | 480 262 295 +0.5 -0.5 | 574 276 296 +6.5 | +1\nf60 | 480 262 295 +0.0 -0.5 | 576 284 304 +7.5 | +9  <-- t_fail\nf61 | 480 257 285 +0.0 -5.0 | 578 291 311 +7.0 | +26\nf62 | 480 257 285 -0.5 +0.0 | 580 299 320 +8.0 | +35\nf63 | 480 257 285 +0.5 +0.0 | 582 307 328 +8.0 | +43\nf64 | 480 262 293 +0.0 +4.5 | 584 316 337 +8.5 | +44\nf65 | 480 264 296 +0.0 +2.0 | 586 324 346 +8.5 | +50\nf66 | 480 264 297 +0.0 +0.5 | 588 334 356 +9.5 | +59\nf67 | 480 265 298 +0.0 +1.0 | 592 342 365 +8.5 | +67\nf68 | 480 266 298 +0.0 +0.5 | 594 352 376 +10.5 | +78\nf69 | 480 266 299 -0.5 +0.5 | 596 363 387 +10.5 | +88\nf70 | 480 266 299 +0.5 +0.0 | 600 374 398 +10.5 | +99\n\nHOW TO READ E(t): the chase camera follows the player, so the player stays near the same screen position while approaching obstacles move down the frame. While the barrier is ahead of the player its bottom edge is above the player's feet (E < 0). E rising above the threshold and staying there means the barrier's bottom edge went below the player's feet: the player went past the barrier instead of being stopped by it.\n\nTASK: diagnose the root cause with the tools, then patch the working copy so that the objective holds under this contract. Start with list_source_files / inspect_scene."
+}

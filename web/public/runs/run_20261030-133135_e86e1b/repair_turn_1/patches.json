@@ -1,0 +1,11 @@
+[
+ {
+  "diff": "--- a/scripts/arena_builder.gd\n+++ b/scripts/arena_builder.gd\n@@ -57,7 +57,7 @@\n \tvar bs := BoxShape3D.new()\n \tbs.size = size\n \tshape.shape = bs\n-\tshape.disabled = kind == \"hurdle\"\n+\tshape.disabled = false\n \tbody.add_child(shape)\n \tbody.add_child(mesh)\n \tbody.add_to_group(\"arena_block\")\n",
+  "find": "\tshape.disabled = kind == \"hurdle\"",
+  "path": "scripts/arena_builder.gd",
+  "reason": "Hurdle CollisionShape was created disabled, so the yellow bar is visual-only and the player walks through it. Enable collision so the hurdle physically blocks walking.",
+  "replace": "\tshape.disabled = false",
+  "ts": "2026-10-30T13:32:34+00:00",
+  "turn_patch_index": 1
+ }
+]

@@ -1,0 +1,11 @@
+[
+ {
+  "diff": "--- a/scripts/arena_builder.gd\n+++ b/scripts/arena_builder.gd\n@@ -50,14 +50,14 @@\n \tvar body := StaticBody3D.new()\n \tbody.name = b[\"name\"]\n \tbody.position = b[\"pos\"]\n-\tbody.collision_layer = int(b.get(\"layer\", 1))\n+\tbody.collision_layer = 1\n \tbody.collision_mask = 0\n \tvar shape := CollisionShape3D.new()\n \tshape.name = \"Shape\"\n \tvar bs := BoxShape3D.new()\n \tbs.size = size\n \tshape.shape = bs\n-\tshape.disabled = kind == \"hurdle\"\n+\tshape.disabled = false\n \tbody.add_child(shape)\n \tbody.add_child(mesh)\n \tbody.add_to_group(\"arena_block\")\n",
+  "find": "\tbody.collision_layer = int(b.get(\"layer\", 1))\n\tbody.collision_mask = 0\n\tvar shape := CollisionShape3D.new()\n\tshape.name = \"Shape\"\n\tvar bs := BoxShape3D.new()\n\tbs.size = size\n\tshape.shape = bs\n\tshape.disabled = kind == \"hurdle\"",
+  "path": "scripts/arena_builder.gd",
+  "reason": "Hurdle shape was disabled and placed on layer 2 while player mask is 1, so no contact possible; force solid world-layer collision.",
+  "replace": "\tbody.collision_layer = 1\n\tbody.collision_mask = 0\n\tvar shape := CollisionShape3D.new()\n\tshape.name = \"Shape\"\n\tvar bs := BoxShape3D.new()\n\tbs.size = size\n\tshape.shape = bs\n\tshape.disabled = false",
+  "ts": "2026-10-30T14:01:45+00:00",
+  "turn_patch_index": 1
+ }
+]

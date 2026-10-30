@@ -1,0 +1,11 @@
+[
+ {
+  "diff": "--- a/scripts/player.gd\n+++ b/scripts/player.gd\n@@ -37,7 +37,11 @@\n \tvisual.rotation.y = 0.0\n \tfor block in get_tree().get_nodes_in_group(\"arena_block\"):\n \t\tif block.name == \"Hurdle\":\n-\t\t\tadd_collision_exception_with(block)\n+\t\t\tremove_collision_exception_with(block)\n+\t\t\tblock.collision_layer = 1\n+\t\t\tfor child in block.get_children():\n+\t\t\t\tif child is CollisionShape3D:\n+\t\t\t\t\tchild.disabled = false\n \n \n func _physics_process(delta: float) -> void:\n",
+  "find": "\tfor block in get_tree().get_nodes_in_group(\"arena_block\"):\n\t\tif block.name == \"Hurdle\":\n\t\t\tadd_collision_exception_with(block)",
+  "path": "scripts/player.gd",
+  "reason": "Hurdle had disabled shape + wrong layer + explicit player collision exception, letting the capsule pass through. Restore solid contact without moving/resizing the barrier.",
+  "replace": "\tfor block in get_tree().get_nodes_in_group(\"arena_block\"):\n\t\tif block.name == \"Hurdle\":\n\t\t\tremove_collision_exception_with(block)\n\t\t\tblock.collision_layer = 1\n\t\t\tfor child in block.get_children():\n\t\t\t\tif child is CollisionShape3D:\n\t\t\t\t\tchild.disabled = false",
+  "ts": "2026-10-30T13:47:00+00:00",
+  "turn_patch_index": 1
+ }
+]

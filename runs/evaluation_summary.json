@@ -1,0 +1,1831 @@
+{
+ "cases": {
+  "case1": [
+   {
+    "baseline": "<godot-studio>/tests/fixtures/pg_defect_hurdle",
+    "baseline_unchanged": true,
+    "contract_id": "hurdle-walk-f03c1c8b",
+    "copy_matched_baseline_at_stage": true,
+    "duration_s": 142.0,
+    "est_cost_usd": 0.150514,
+    "final": {
+     "max_E_px": -12.0,
+     "pass_index": 2,
+     "status": "PASS",
+     "t_fail": null
+    },
+    "final_verdict": "PASS",
+    "label": "case1 trial 1: defective scene",
+    "mover_concept": "capsule",
+    "pass1": {
+     "coverage_window": 1.0,
+     "max_E_px": 236.0,
+     "reasons": [
+      "E(t) > 5px for 3 consecutive tracked frames starting at frame 60"
+     ],
+     "status": "FAIL",
+     "t_fail": 60
+    },
+    "passes": [
+     {
+      "index": 1,
+      "max_E_px": 236.0,
+      "status": "FAIL",
+      "t_fail": 60
+     },
+     {
+      "index": 2,
+      "max_E_px": -12.0,
+      "status": "PASS",
+      "t_fail": null
+     }
+    ],
+    "repair_turns": [
+     {
+      "banned_terms_found": [],
+      "closing_claim": "root cause: Hurdle on layer 2 while Player mask=1, so no collision and walk-through. patch: player.tscn collision_mask 1 -> 3 to scan world + hurdle layers. why it satisfies: move_and_slide now hits 0.55m wall, E stays negative, never crosses 5px.",
+      "est_cost_usd": 0.086514,
+      "model": "muse-spark-1.3",
+      "patch_paths": [
+       "scenes/player.tscn"
+      ],
+      "patches": 1,
+      "reasons": [
+       "Player mask=1 ignores Hurdle on layer 2, so move_and_slide never collides and the capsule walks through. Mask=3 scans both world(1) and hurdle(2) layers."
+      ],
+      "tool_calls": 16,
+      "turn": 1
+     }
+    ],
+    "request_ids": 18,
+    "run_id": "run_20261030-132053_bf568b",
+    "status": "COMPLETE",
+    "truth_audit": [
+     {
+      "engine_crossed_hurdle": true,
+      "engine_final_z": -15.77,
+      "engine_implied_verdict": "FAIL",
+      "engine_min_z": -15.77,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 1,
+      "verifier": "FAIL"
+     },
+     {
+      "engine_crossed_hurdle": false,
+      "engine_final_z": -11.4,
+      "engine_implied_verdict": "PASS",
+      "engine_min_z": -11.4,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 2,
+      "verifier": "PASS"
+     }
+    ]
+   },
+   {
+    "baseline": "<godot-studio>/tests/fixtures/pg_defect_hurdle",
+    "baseline_unchanged": true,
+    "contract_id": "hurdle-walk-f03c1c8b",
+    "copy_matched_baseline_at_stage": true,
+    "duration_s": 107.0,
+    "est_cost_usd": 0.143487,
+    "final": {
+     "max_E_px": -12.0,
+     "pass_index": 2,
+     "status": "PASS",
+     "t_fail": null
+    },
+    "final_verdict": "PASS",
+    "label": "case1 trial 2: defective scene",
+    "mover_concept": "capsule",
+    "pass1": {
+     "coverage_window": 1.0,
+     "max_E_px": 234.0,
+     "reasons": [
+      "E(t) > 5px for 3 consecutive tracked frames starting at frame 60"
+     ],
+     "status": "FAIL",
+     "t_fail": 60
+    },
+    "passes": [
+     {
+      "index": 1,
+      "max_E_px": 234.0,
+      "status": "FAIL",
+      "t_fail": 60
+     },
+     {
+      "index": 2,
+      "max_E_px": -12.0,
+      "status": "PASS",
+      "t_fail": null
+     }
+    ],
+    "repair_turns": [
+     {
+      "banned_terms_found": [],
+      "closing_claim": "root cause: Hurdle StaticBody on layer 2 while player mask is 1, so no collision and walk-through. patch: arena_layout.gd Hurdle layer 2 \u2192 1, restoring world collision without moving/resizing it. why it satisfies: Player mask 1 now collides with hurdle, blocking forward walk so E(t) stays \u22645px.",
+      "est_cost_usd": 0.079487,
+      "model": "muse-spark-1.3",
+      "patch_paths": [
+       "scripts/arena_layout.gd"
+      ],
+      "patches": 1,
+      "reasons": [
+       "Hurdle on layer 2 is invisible to player mask 1, so no collision; restore to world layer 1."
+      ],
+      "tool_calls": 11,
+      "turn": 1
+     }
+    ],
+    "request_ids": 17,
+    "run_id": "run_20261030-132315_7c6e9b",
+    "status": "COMPLETE",
+    "truth_audit": [
+     {
+      "engine_crossed_hurdle": true,
+      "engine_final_z": -15.77,
+      "engine_implied_verdict": "FAIL",
+      "engine_min_z": -15.77,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 1,
+      "verifier": "FAIL"
+     },
+     {
+      "engine_crossed_hurdle": false,
+      "engine_final_z": -11.4,
+      "engine_implied_verdict": "PASS",
+      "engine_min_z": -11.4,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 2,
+      "verifier": "PASS"
+     }
+    ]
+   },
+   {
+    "baseline": "<godot-studio>/tests/fixtures/pg_defect_hurdle",
+    "baseline_unchanged": true,
+    "contract_id": "hurdle-walk-f03c1c8b",
+    "copy_matched_baseline_at_stage": true,
+    "duration_s": 167.0,
+    "est_cost_usd": 0.182234,
+    "final": {
+     "max_E_px": -13.0,
+     "pass_index": 2,
+     "status": "PASS",
+     "t_fail": null
+    },
+    "final_verdict": "PASS",
+    "label": "case1 trial 3: defective scene",
+    "mover_concept": "capsule",
+    "pass1": {
+     "coverage_window": 1.0,
+     "max_E_px": 235.0,
+     "reasons": [
+      "E(t) > 5px for 3 consecutive tracked frames starting at frame 60"
+     ],
+     "status": "FAIL",
+     "t_fail": 60
+    },
+    "passes": [
+     {
+      "index": 1,
+      "max_E_px": 235.0,
+      "status": "FAIL",
+      "t_fail": 60
+     },
+     {
+      "index": 2,
+      "max_E_px": -13.0,
+      "status": "PASS",
+      "t_fail": null
+     }
+    ],
+    "repair_turns": [
+     {
+      "banned_terms_found": [],
+      "closing_claim": "root cause: Hurdle StaticBody on layer 2 while player mask is 1, so no collision. patch: scripts/arena_layout.gd Hurdle layer 2 -> 1, same pos/size. why it satisfies the contract: player now collides and stays, E(t) stays <=5px.",
+      "est_cost_usd": 0.118234,
+      "model": "muse-spark-1.3",
+      "patch_paths": [
+       "scripts/arena_layout.gd"
+      ],
+      "patches": 1,
+      "reasons": [
+       "Hurdle on layer 2 is invisible to player mask 1, so no collision; put it on world layer 1."
+      ],
+      "tool_calls": 17,
+      "turn": 1
+     }
+    ],
+    "request_ids": 20,
+    "run_id": "run_20261030-132503_349fe5",
+    "status": "COMPLETE",
+    "truth_audit": [
+     {
+      "engine_crossed_hurdle": true,
+      "engine_final_z": -15.77,
+      "engine_implied_verdict": "FAIL",
+      "engine_min_z": -15.77,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 1,
+      "verifier": "FAIL"
+     },
+     {
+      "engine_crossed_hurdle": false,
+      "engine_final_z": -11.4,
+      "engine_implied_verdict": "PASS",
+      "engine_min_z": -11.4,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 2,
+      "verifier": "PASS"
+     }
+    ]
+   }
+  ],
+  "case2a": [
+   {
+    "baseline": "<repo>/runs/_baselines/known_good_capsule",
+    "baseline_unchanged": true,
+    "contract_id": "hurdle-walk-f03c1c8b",
+    "copy_matched_baseline_at_stage": true,
+    "duration_s": 31.0,
+    "est_cost_usd": 0.032,
+    "final": {
+     "max_E_px": -12.0,
+     "pass_index": 1,
+     "status": "PASS",
+     "t_fail": null
+    },
+    "final_verdict": "PASS",
+    "label": "case2a: known-good twin of the capsule scene",
+    "mover_concept": "capsule",
+    "pass1": {
+     "coverage_window": 1.0,
+     "max_E_px": -12.0,
+     "reasons": [
+      "no crossing: max E(t) = -12.0px at frame 59; coverage gates met"
+     ],
+     "status": "PASS",
+     "t_fail": null
+    },
+    "passes": [
+     {
+      "index": 1,
+      "max_E_px": -12.0,
+      "status": "PASS",
+      "t_fail": null
+     }
+    ],
+    "repair_turns": [],
+    "request_ids": 4,
+    "run_id": "run_20261030-132750_e09010",
+    "status": "COMPLETE",
+    "truth_audit": [
+     {
+      "engine_crossed_hurdle": false,
+      "engine_final_z": -11.4,
+      "engine_implied_verdict": "PASS",
+      "engine_min_z": -11.4,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 1,
+      "verifier": "PASS"
+     }
+    ]
+   }
+  ],
+  "case2b": [
+   {
+    "baseline": "<godot-studio>/example_game/proving_ground",
+    "baseline_unchanged": true,
+    "contract_id": "hurdle-walk-e03cef41",
+    "copy_matched_baseline_at_stage": true,
+    "duration_s": 58.0,
+    "est_cost_usd": 0.058786,
+    "final": {
+     "max_E_px": -33.0,
+     "pass_index": 1,
+     "status": "PASS",
+     "t_fail": null
+    },
+    "final_verdict": "PASS",
+    "label": "case2b: real robot build under a robot contract",
+    "mover_concept": "small robot",
+    "pass1": {
+     "coverage_window": 1.0,
+     "max_E_px": -33.0,
+     "reasons": [
+      "no crossing: max E(t) = -33.0px at frame 58; coverage gates met"
+     ],
+     "status": "PASS",
+     "t_fail": null
+    },
+    "passes": [
+     {
+      "index": 1,
+      "max_E_px": -33.0,
+      "status": "PASS",
+      "t_fail": null
+     }
+    ],
+    "repair_turns": [],
+    "request_ids": 6,
+    "run_id": "run_20261030-132822_293587",
+    "status": "COMPLETE",
+    "truth_audit": [
+     {
+      "engine_crossed_hurdle": false,
+      "engine_final_z": -11.4,
+      "engine_implied_verdict": "PASS",
+      "engine_min_z": -11.4,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 1,
+      "verifier": "PASS"
+     }
+    ]
+   }
+  ],
+  "case2c": [
+   {
+    "baseline": "<godot-studio>/example_game/proving_ground",
+    "baseline_unchanged": true,
+    "contract_id": "hurdle-walk-f03c1c8b",
+    "copy_matched_baseline_at_stage": true,
+    "duration_s": 31.0,
+    "est_cost_usd": 0.032,
+    "final": {
+     "max_E_px": null,
+     "pass_index": 1,
+     "status": "INCONCLUSIVE",
+     "t_fail": null
+    },
+    "final_verdict": "INCONCLUSIVE",
+    "label": "case2c: real robot build under the capsule contract",
+    "mover_concept": "capsule",
+    "pass1": {
+     "coverage_window": 0.0,
+     "max_E_px": null,
+     "reasons": [
+      "SAM 3.1 returned no track for mover concept 'capsule'",
+      "both-tracked coverage in window (20, 70) = 0.00 < 0.8",
+      "mover coverage 0.00 < 0.7"
+     ],
+     "status": "INCONCLUSIVE",
+     "t_fail": null
+    },
+    "passes": [
+     {
+      "index": 1,
+      "max_E_px": null,
+      "status": "INCONCLUSIVE",
+      "t_fail": null
+     }
+    ],
+    "repair_turns": [],
+    "request_ids": 4,
+    "run_id": "run_20261030-132921_7fecb2",
+    "status": "COMPLETE",
+    "truth_audit": [
+     {
+      "engine_crossed_hurdle": false,
+      "engine_final_z": -11.4,
+      "engine_implied_verdict": "PASS",
+      "engine_min_z": -11.4,
+      "engine_reached_hurdle": true,
+      "outcome": "abstained",
+      "pass": 1,
+      "verifier": "INCONCLUSIVE"
+     }
+    ]
+   }
+  ],
+  "case3a": [
+   {
+    "baseline": "<repo>/runs/_baselines/hurdle_layer4",
+    "baseline_unchanged": true,
+    "contract_id": "hurdle-walk-f03c1c8b",
+    "copy_matched_baseline_at_stage": true,
+    "duration_s": 101.0,
+    "est_cost_usd": 0.137839,
+    "final": {
+     "max_E_px": -13.0,
+     "pass_index": 2,
+     "status": "PASS",
+     "t_fail": null
+    },
+    "final_verdict": "PASS",
+    "label": "case3a: different wrong layer",
+    "mover_concept": "capsule",
+    "pass1": {
+     "coverage_window": 1.0,
+     "max_E_px": 237.0,
+     "reasons": [
+      "E(t) > 5px for 3 consecutive tracked frames starting at frame 60"
+     ],
+     "status": "FAIL",
+     "t_fail": 60
+    },
+    "passes": [
+     {
+      "index": 1,
+      "max_E_px": 237.0,
+      "status": "FAIL",
+      "t_fail": 60
+     },
+     {
+      "index": 2,
+      "max_E_px": -13.0,
+      "status": "PASS",
+      "t_fail": null
+     }
+    ],
+    "repair_turns": [
+     {
+      "banned_terms_found": [],
+      "closing_claim": "root cause: Hurdle StaticBody on collision_layer=4 while player mask=1, so no contact \u2014 walked through. patch: scripts/arena_layout.gd: removed `\"layer\": 4` from Hurdle so it defaults to world layer 1. why it satisfies: Layer 1 restores solid contact; 0.55 m wall blocks slide without jump, E(t) stays \u22645 px.",
+      "est_cost_usd": 0.073839,
+      "model": "muse-spark-1.3",
+      "patch_paths": [
+       "scripts/arena_layout.gd"
+      ],
+      "patches": 1,
+      "reasons": [
+       "Hurdle on layer 4 is invisible to player mask=1, so no collision and player walks through. Put it on world layer 1."
+      ],
+      "tool_calls": 11,
+      "turn": 1
+     }
+    ],
+    "request_ids": 17,
+    "run_id": "run_20261030-132953_c0fc3b",
+    "status": "COMPLETE",
+    "truth_audit": [
+     {
+      "engine_crossed_hurdle": true,
+      "engine_final_z": -15.77,
+      "engine_implied_verdict": "FAIL",
+      "engine_min_z": -15.77,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 1,
+      "verifier": "FAIL"
+     },
+     {
+      "engine_crossed_hurdle": false,
+      "engine_final_z": -11.4,
+      "engine_implied_verdict": "PASS",
+      "engine_min_z": -11.4,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 2,
+      "verifier": "PASS"
+     }
+    ]
+   }
+  ],
+  "case3b": [
+   {
+    "baseline": "<repo>/runs/_baselines/hurdle_shape_disabled",
+    "baseline_unchanged": true,
+    "contract_id": "hurdle-walk-f03c1c8b",
+    "copy_matched_baseline_at_stage": true,
+    "duration_s": 94.0,
+    "est_cost_usd": 0.125741,
+    "final": {
+     "max_E_px": -12.0,
+     "pass_index": 2,
+     "status": "PASS",
+     "t_fail": null
+    },
+    "final_verdict": "PASS",
+    "label": "case3b: different root cause, collision shape disabled",
+    "mover_concept": "capsule",
+    "pass1": {
+     "coverage_window": 1.0,
+     "max_E_px": 236.0,
+     "reasons": [
+      "E(t) > 5px for 3 consecutive tracked frames starting at frame 60"
+     ],
+     "status": "FAIL",
+     "t_fail": 60
+    },
+    "passes": [
+     {
+      "index": 1,
+      "max_E_px": 236.0,
+      "status": "FAIL",
+      "t_fail": 60
+     },
+     {
+      "index": 2,
+      "max_E_px": -12.0,
+      "status": "PASS",
+      "t_fail": null
+     }
+    ],
+    "repair_turns": [
+     {
+      "banned_terms_found": [],
+      "closing_claim": "root cause: Hurdle CollisionShape3D created with disabled=true, visual-only bar. patch: arena_builder.gd shape.disabled=false so hurdle is solid on layer 1. why: 0.55m solid bar blocks slide, walker stops ahead, E(t) stays <=5px.",
+      "est_cost_usd": 0.061741,
+      "model": "muse-spark-1.3",
+      "patch_paths": [
+       "scripts/arena_builder.gd"
+      ],
+      "patches": 1,
+      "reasons": [
+       "Hurdle CollisionShape was created disabled, so the yellow bar is visual-only and the player walks through it. Enable collision so the hurdle physically blocks walking."
+      ],
+      "tool_calls": 11,
+      "turn": 1
+     }
+    ],
+    "request_ids": 16,
+    "run_id": "run_20261030-133135_e86e1b",
+    "status": "COMPLETE",
+    "truth_audit": [
+     {
+      "engine_crossed_hurdle": true,
+      "engine_final_z": -15.77,
+      "engine_implied_verdict": "FAIL",
+      "engine_min_z": -15.77,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 1,
+      "verifier": "FAIL"
+     },
+     {
+      "engine_crossed_hurdle": false,
+      "engine_final_z": -11.4,
+      "engine_implied_verdict": "PASS",
+      "engine_min_z": -11.4,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 2,
+      "verifier": "PASS"
+     }
+    ]
+   }
+  ],
+  "case3c": [
+   {
+    "baseline": "<repo>/runs/_baselines/hurdle_two_faults",
+    "baseline_unchanged": true,
+    "contract_id": "hurdle-walk-f03c1c8b",
+    "copy_matched_baseline_at_stage": true,
+    "duration_s": 99.0,
+    "est_cost_usd": 0.130149,
+    "final": {
+     "max_E_px": -13.0,
+     "pass_index": 2,
+     "status": "PASS",
+     "t_fail": null
+    },
+    "final_verdict": "PASS",
+    "label": "case3c: two simultaneous faults",
+    "mover_concept": "capsule",
+    "pass1": {
+     "coverage_window": 1.0,
+     "max_E_px": 236.0,
+     "reasons": [
+      "E(t) > 5px for 3 consecutive tracked frames starting at frame 60"
+     ],
+     "status": "FAIL",
+     "t_fail": 60
+    },
+    "passes": [
+     {
+      "index": 1,
+      "max_E_px": 236.0,
+      "status": "FAIL",
+      "t_fail": 60
+     },
+     {
+      "index": 2,
+      "max_E_px": -13.0,
+      "status": "PASS",
+      "t_fail": null
+     }
+    ],
+    "repair_turns": [
+     {
+      "banned_terms_found": [],
+      "closing_claim": "root cause: Hurdle collision shape disabled and on layer 2 vs player mask 1, so no contact. patch: Enabled hurdle shape in arena_builder.gd and restored layer 1 in arena_layout.gd. why it satisfies: Solid 0.55m bar now blocks walk, E stays \u22645px without crossing.",
+      "est_cost_usd": 0.066149,
+      "model": "muse-spark-1.3",
+      "patch_paths": [
+       "scripts/arena_builder.gd",
+       "scripts/arena_layout.gd"
+      ],
+      "patches": 2,
+      "reasons": [
+       "Hurdle shape was created disabled so it had no collision; enable it so the bar physically blocks the player.",
+       "Hurdle was on layer 2 while player mask is 1, so no collision even when enabled; restore documented layer 1."
+      ],
+      "tool_calls": 10,
+      "turn": 1
+     }
+    ],
+    "request_ids": 15,
+    "run_id": "run_20261030-133310_79a91f",
+    "status": "COMPLETE",
+    "truth_audit": [
+     {
+      "engine_crossed_hurdle": true,
+      "engine_final_z": -15.77,
+      "engine_implied_verdict": "FAIL",
+      "engine_min_z": -15.77,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 1,
+      "verifier": "FAIL"
+     },
+     {
+      "engine_crossed_hurdle": false,
+      "engine_final_z": -11.4,
+      "engine_implied_verdict": "PASS",
+      "engine_min_z": -11.4,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 2,
+      "verifier": "PASS"
+     }
+    ]
+   }
+  ],
+  "case3d": [
+   {
+    "baseline": "<repo>/runs/_baselines/hurdle_three_faults",
+    "baseline_unchanged": true,
+    "contract_id": "hurdle-walk-f03c1c8b",
+    "copy_matched_baseline_at_stage": true,
+    "duration_s": 119.0,
+    "est_cost_usd": 0.158433,
+    "final": {
+     "max_E_px": -12.0,
+     "pass_index": 2,
+     "status": "PASS",
+     "t_fail": null
+    },
+    "final_verdict": "PASS",
+    "label": "case3d: three faults in three files",
+    "mover_concept": "capsule",
+    "pass1": {
+     "coverage_window": 1.0,
+     "max_E_px": 235.0,
+     "reasons": [
+      "E(t) > 5px for 3 consecutive tracked frames starting at frame 60"
+     ],
+     "status": "FAIL",
+     "t_fail": 60
+    },
+    "passes": [
+     {
+      "index": 1,
+      "max_E_px": 235.0,
+      "status": "FAIL",
+      "t_fail": 60
+     },
+     {
+      "index": 2,
+      "max_E_px": -12.0,
+      "status": "PASS",
+      "t_fail": null
+     }
+    ],
+    "repair_turns": [
+     {
+      "banned_terms_found": [],
+      "closing_claim": "root cause: Hurdle shape disabled + layer 2 vs mask 1 + collision exception, so no contact. patch: Force hurdle body to layer 1 with enabled shape; remove Hurdle collision exception in reset_to_spawn. why it satisfies: Solid 0.55 m wall spans corridor on player mask, so walk collides and E(t) stays \u22645px.",
+      "est_cost_usd": 0.094433,
+      "model": "muse-spark-1.3",
+      "patch_paths": [
+       "scripts/arena_builder.gd",
+       "scripts/player.gd"
+      ],
+      "patches": 2,
+      "reasons": [
+       "Hurdle shape was disabled and placed on layer 2 while player mask is 1, so no collision. Force world layer 1 and enabled shape.",
+       "reset_to_spawn added a collision exception for the Hurdle, letting player pass through. Remove it so hurdle collides."
+      ],
+      "tool_calls": 14,
+      "turn": 1
+     }
+    ],
+    "request_ids": 17,
+    "run_id": "run_20261030-133450_d73762",
+    "status": "COMPLETE",
+    "truth_audit": [
+     {
+      "engine_crossed_hurdle": true,
+      "engine_final_z": -15.77,
+      "engine_implied_verdict": "FAIL",
+      "engine_min_z": -15.77,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 1,
+      "verifier": "FAIL"
+     },
+     {
+      "engine_crossed_hurdle": false,
+      "engine_final_z": -11.4,
+      "engine_implied_verdict": "PASS",
+      "engine_min_z": -11.4,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 2,
+      "verifier": "PASS"
+     }
+    ]
+   }
+  ],
+  "case3e": [
+   {
+    "baseline": "<repo>/runs/_baselines/robot_hurdle_layer2",
+    "baseline_unchanged": true,
+    "contract_id": "hurdle-walk-e03cef41",
+    "copy_matched_baseline_at_stage": true,
+    "duration_s": 137.0,
+    "est_cost_usd": 0.151239,
+    "final": {
+     "max_E_px": -32.0,
+     "pass_index": 2,
+     "status": "PASS",
+     "t_fail": null
+    },
+    "final_verdict": "PASS",
+    "label": "case3e: real robot build with the hurdle on the wrong layer",
+    "mover_concept": "small robot",
+    "pass1": {
+     "coverage_window": 1.0,
+     "max_E_px": 223.0,
+     "reasons": [
+      "E(t) > 5px for 3 consecutive tracked frames starting at frame 62"
+     ],
+     "status": "FAIL",
+     "t_fail": 62
+    },
+    "passes": [
+     {
+      "index": 1,
+      "max_E_px": 223.0,
+      "status": "FAIL",
+      "t_fail": 62
+     },
+     {
+      "index": 2,
+      "max_E_px": -32.0,
+      "status": "PASS",
+      "t_fail": null
+     }
+    ],
+    "repair_turns": [
+     {
+      "banned_terms_found": [],
+      "closing_claim": "root cause: Hurdle StaticBody on layer 2 vs Player mask 1 \u2014 no collision, ghost pass-through. patch: Removed `\"layer\": 2` override in arena_layout.gd so Hurdle defaults to world layer 1. why it satisfies: Restored solid contact blocks walk-forward at 0.55m face, E stays negative in window.",
+      "est_cost_usd": 0.087239,
+      "model": "muse-spark-1.3",
+      "patch_paths": [
+       "scripts/arena_layout.gd"
+      ],
+      "patches": 1,
+      "reasons": [
+       "Hurdle on layer 2 never collides with player mask 1, so it is ghost; restore to default world layer 1."
+      ],
+      "tool_calls": 15,
+      "turn": 1
+     }
+    ],
+    "request_ids": 17,
+    "run_id": "run_20261030-133649_b146ca",
+    "status": "COMPLETE",
+    "truth_audit": [
+     {
+      "engine_crossed_hurdle": true,
+      "engine_final_z": -15.77,
+      "engine_implied_verdict": "FAIL",
+      "engine_min_z": -15.77,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 1,
+      "verifier": "FAIL"
+     },
+     {
+      "engine_crossed_hurdle": false,
+      "engine_final_z": -11.4,
+      "engine_implied_verdict": "PASS",
+      "engine_min_z": -11.4,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 2,
+      "verifier": "PASS"
+     }
+    ]
+   }
+  ],
+  "case3f": [
+   {
+    "baseline": "<repo>/runs/_baselines/hurdle_three_faults",
+    "baseline_unchanged": true,
+    "contract_id": "hurdle-walk-f03c1c8b",
+    "copy_matched_baseline_at_stage": true,
+    "duration_s": 107.0,
+    "est_cost_usd": 0.150774,
+    "final": {
+     "max_E_px": null,
+     "pass_index": 2,
+     "status": "INCONCLUSIVE",
+     "t_fail": null
+    },
+    "final_verdict": "INCONCLUSIVE",
+    "label": "case3f: three faults, one patch per turn",
+    "mover_concept": "capsule",
+    "pass1": {
+     "coverage_window": 1.0,
+     "max_E_px": 234.0,
+     "reasons": [
+      "E(t) > 5px for 3 consecutive tracked frames starting at frame 60"
+     ],
+     "status": "FAIL",
+     "t_fail": 60
+    },
+    "passes": [
+     {
+      "index": 1,
+      "max_E_px": 234.0,
+      "status": "FAIL",
+      "t_fail": 60
+     },
+     {
+      "index": 2,
+      "max_E_px": null,
+      "status": "INCONCLUSIVE",
+      "t_fail": null
+     }
+    ],
+    "repair_turns": [
+     {
+      "banned_terms_found": [],
+      "closing_claim": "root cause: Hurdle had layer 2 vs player mask 1, disabled shape, plus collision exception \u2014 no contact, walked through. patch: player reset now removes Hurdle exception, sets Hurdle layer to 1 and enables its Shape. why it satisfies the contract: solid low wall blocks slide, capsule stays before bar so E(t) stays \u22645px.",
+      "est_cost_usd": 0.086774,
+      "model": "muse-spark-1.3",
+      "patch_paths": [
+       "scripts/player.gd"
+      ],
+      "patches": 1,
+      "reasons": [
+       "Hurdle collision is triple-disabled (layer 2 vs mask 1, shape.disabled, exception). Restoring solid contact at runtime so walking is blocked."
+      ],
+      "tool_calls": 12,
+      "turn": 1
+     }
+    ],
+    "request_ids": 15,
+    "run_id": "run_20261030-134044_f95522",
+    "status": "COMPLETE",
+    "truth_audit": [
+     {
+      "engine_crossed_hurdle": true,
+      "engine_final_z": -15.77,
+      "engine_implied_verdict": "FAIL",
+      "engine_min_z": -15.77,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 1,
+      "verifier": "FAIL"
+     },
+     {
+      "engine_crossed_hurdle": false,
+      "engine_final_z": 0.0,
+      "engine_implied_verdict": "INCONCLUSIVE",
+      "engine_min_z": 0.0,
+      "engine_reached_hurdle": false,
+      "outcome": "match",
+      "pass": 2,
+      "verifier": "INCONCLUSIVE"
+     }
+    ]
+   },
+   {
+    "baseline": "<repo>/runs/_baselines/hurdle_three_faults",
+    "baseline_unchanged": true,
+    "contract_id": "hurdle-walk-f03c1c8b",
+    "copy_matched_baseline_at_stage": true,
+    "duration_s": 114.0,
+    "est_cost_usd": 0.153507,
+    "final": {
+     "max_E_px": -12.0,
+     "pass_index": 2,
+     "status": "PASS",
+     "t_fail": null
+    },
+    "final_verdict": "PASS",
+    "label": "case3f: three faults, one patch per turn",
+    "mover_concept": "capsule",
+    "pass1": {
+     "coverage_window": 1.0,
+     "max_E_px": 235.0,
+     "reasons": [
+      "E(t) > 5px for 3 consecutive tracked frames starting at frame 60"
+     ],
+     "status": "FAIL",
+     "t_fail": 60
+    },
+    "passes": [
+     {
+      "index": 1,
+      "max_E_px": 235.0,
+      "status": "FAIL",
+      "t_fail": 60
+     },
+     {
+      "index": 2,
+      "max_E_px": -12.0,
+      "status": "PASS",
+      "t_fail": null
+     }
+    ],
+    "repair_turns": [
+     {
+      "banned_terms_found": [],
+      "closing_claim": "root cause: Hurdle shape disabled + layer 2 vs mask 1 + collision exception, so no contact. patch: reset_to_spawn now un-excepts Hurdle, sets layer 1, enables Shape. why it satisfies: solid 0.55m wall blocks walk-forward, E stays \u22645px.",
+      "est_cost_usd": 0.089507,
+      "model": "muse-spark-1.3",
+      "patch_paths": [
+       "scripts/player.gd"
+      ],
+      "patches": 1,
+      "reasons": [
+       "Hurdle shape is disabled + on layer 2 (player mask 1) + explicitly excepted, so no contact. Make reset enforce solid hurdle instead of ignoring it."
+      ],
+      "tool_calls": 11,
+      "turn": 1
+     }
+    ],
+    "request_ids": 16,
+    "run_id": "run_20261030-134338_9cf9f4",
+    "status": "COMPLETE",
+    "truth_audit": [
+     {
+      "engine_crossed_hurdle": true,
+      "engine_final_z": -15.77,
+      "engine_implied_verdict": "FAIL",
+      "engine_min_z": -15.77,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 1,
+      "verifier": "FAIL"
+     },
+     {
+      "engine_crossed_hurdle": false,
+      "engine_final_z": -11.4,
+      "engine_implied_verdict": "PASS",
+      "engine_min_z": -11.4,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 2,
+      "verifier": "PASS"
+     }
+    ]
+   },
+   {
+    "baseline": "<repo>/runs/_baselines/hurdle_three_faults",
+    "baseline_unchanged": true,
+    "contract_id": "hurdle-walk-f03c1c8b",
+    "copy_matched_baseline_at_stage": true,
+    "duration_s": 112.0,
+    "est_cost_usd": 0.151477,
+    "final": {
+     "max_E_px": -12.0,
+     "pass_index": 2,
+     "status": "PASS",
+     "t_fail": null
+    },
+    "final_verdict": "PASS",
+    "label": "case3f: three faults, one patch per turn",
+    "mover_concept": "capsule",
+    "pass1": {
+     "coverage_window": 1.0,
+     "max_E_px": 235.0,
+     "reasons": [
+      "E(t) > 5px for 3 consecutive tracked frames starting at frame 60"
+     ],
+     "status": "FAIL",
+     "t_fail": 60
+    },
+    "passes": [
+     {
+      "index": 1,
+      "max_E_px": 235.0,
+      "status": "FAIL",
+      "t_fail": 60
+     },
+     {
+      "index": 2,
+      "max_E_px": -12.0,
+      "status": "PASS",
+      "t_fail": null
+     }
+    ],
+    "repair_turns": [
+     {
+      "banned_terms_found": [],
+      "closing_claim": "root cause: Hurdle shape disabled + layer 2 vs mask 1 + player collision exception, so no contact. patch: reset_to_spawn now removes exception and restores Hurdle layer 1 with shape enabled. why it satisfies: walking capsule collides with 0.55m wall and stops, E stays negative.",
+      "est_cost_usd": 0.087477,
+      "model": "muse-spark-1.3",
+      "patch_paths": [
+       "scripts/player.gd"
+      ],
+      "patches": 1,
+      "reasons": [
+       "Hurdle had disabled shape + wrong layer + explicit player collision exception, letting the capsule pass through. Restore solid contact without moving/resizing the barrier."
+      ],
+      "tool_calls": 13,
+      "turn": 1
+     }
+    ],
+    "request_ids": 16,
+    "run_id": "run_20261030-134544_a2314f",
+    "status": "COMPLETE",
+    "truth_audit": [
+     {
+      "engine_crossed_hurdle": true,
+      "engine_final_z": -15.77,
+      "engine_implied_verdict": "FAIL",
+      "engine_min_z": -15.77,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 1,
+      "verifier": "FAIL"
+     },
+     {
+      "engine_crossed_hurdle": false,
+      "engine_final_z": -11.4,
+      "engine_implied_verdict": "PASS",
+      "engine_min_z": -11.4,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 2,
+      "verifier": "PASS"
+     }
+    ]
+   },
+   {
+    "baseline": "<repo>/runs/_baselines/hurdle_three_faults",
+    "baseline_unchanged": true,
+    "contract_id": "hurdle-walk-f03c1c8b",
+    "copy_matched_baseline_at_stage": true,
+    "duration_s": 129.0,
+    "est_cost_usd": 0.162269,
+    "final": {
+     "max_E_px": -12.0,
+     "pass_index": 2,
+     "status": "PASS",
+     "t_fail": null
+    },
+    "final_verdict": "PASS",
+    "label": "case3f: three faults, one patch per turn",
+    "mover_concept": "capsule",
+    "pass1": {
+     "coverage_window": 1.0,
+     "max_E_px": 236.0,
+     "reasons": [
+      "E(t) > 5px for 3 consecutive tracked frames starting at frame 60"
+     ],
+     "status": "FAIL",
+     "t_fail": 60
+    },
+    "passes": [
+     {
+      "index": 1,
+      "max_E_px": 236.0,
+      "status": "FAIL",
+      "t_fail": 60
+     },
+     {
+      "index": 2,
+      "max_E_px": -12.0,
+      "status": "PASS",
+      "t_fail": null
+     }
+    ],
+    "repair_turns": [
+     {
+      "banned_terms_found": [],
+      "closing_claim": "root cause: Hurdle collision disabled (shape.disabled, layer 2 vs mask 1) + player exception lets capsule walk through. patch: reset_to_spawn now clears Hurdle exception, forces layer 1 and enables Shape. why it satisfies: 0.55m solid wall blocks CharacterBody on floor so E(t) stays \u22645px without jumping.",
+      "est_cost_usd": 0.098269,
+      "model": "muse-spark-1.3",
+      "patch_paths": [
+       "scripts/player.gd"
+      ],
+      "patches": 1,
+      "reasons": [
+       "Hurdle shape is disabled in builder, on wrong layer (2 vs player mask 1), plus player adds collision exception. Repair hurdle at spawn: clear exception, force layer 1, enable shape so walking is blocked."
+      ],
+      "tool_calls": 12,
+      "turn": 1
+     }
+    ],
+    "request_ids": 16,
+    "run_id": "run_20261030-134737_d075ab",
+    "status": "COMPLETE",
+    "truth_audit": [
+     {
+      "engine_crossed_hurdle": true,
+      "engine_final_z": -15.77,
+      "engine_implied_verdict": "FAIL",
+      "engine_min_z": -15.77,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 1,
+      "verifier": "FAIL"
+     },
+     {
+      "engine_crossed_hurdle": false,
+      "engine_final_z": -11.4,
+      "engine_implied_verdict": "PASS",
+      "engine_min_z": -11.4,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 2,
+      "verifier": "PASS"
+     }
+    ]
+   },
+   {
+    "baseline": "<repo>/runs/_baselines/hurdle_three_faults",
+    "baseline_unchanged": true,
+    "contract_id": "hurdle-walk-f03c1c8b",
+    "copy_matched_baseline_at_stage": true,
+    "duration_s": 129.0,
+    "est_cost_usd": 0.148737,
+    "final": {
+     "max_E_px": -13.0,
+     "pass_index": 2,
+     "status": "PASS",
+     "t_fail": null
+    },
+    "final_verdict": "PASS",
+    "label": "case3f: three faults, one patch per turn",
+    "mover_concept": "capsule",
+    "pass1": {
+     "coverage_window": 1.0,
+     "max_E_px": 235.0,
+     "reasons": [
+      "E(t) > 5px for 3 consecutive tracked frames starting at frame 60"
+     ],
+     "status": "FAIL",
+     "t_fail": 60
+    },
+    "passes": [
+     {
+      "index": 1,
+      "max_E_px": 235.0,
+      "status": "FAIL",
+      "t_fail": 60
+     },
+     {
+      "index": 2,
+      "max_E_px": -13.0,
+      "status": "PASS",
+      "t_fail": null
+     }
+    ],
+    "repair_turns": [
+     {
+      "banned_terms_found": [],
+      "closing_claim": "root cause: Hurdle shape disabled + layer 2 vs mask 1 + player collision exception \u2014 no contact, walks through. patch: reset_to_spawn now un-excepts Hurdle, sets layer 1, enables Shape. why it satisfies: solid layer-1 bar blocks CharacterBody, E(t) stays \u22645px.",
+      "est_cost_usd": 0.084737,
+      "model": "muse-spark-1.3",
+      "patch_paths": [
+       "scripts/player.gd"
+      ],
+      "patches": 1,
+      "reasons": [
+       "Hurdle has no collision: shape disabled in builder, wrong layer (2 vs player mask 1), plus explicit add_collision_exception_with(Hurdle). Replace exception with enforcement of solid layer-1 collision so walking forward is physically blocked."
+      ],
+      "tool_calls": 12,
+      "turn": 1
+     }
+    ],
+    "request_ids": 16,
+    "run_id": "run_20261030-134947_c31b06",
+    "status": "COMPLETE",
+    "truth_audit": [
+     {
+      "engine_crossed_hurdle": true,
+      "engine_final_z": -15.77,
+      "engine_implied_verdict": "FAIL",
+      "engine_min_z": -15.77,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 1,
+      "verifier": "FAIL"
+     },
+     {
+      "engine_crossed_hurdle": false,
+      "engine_final_z": -11.4,
+      "engine_implied_verdict": "PASS",
+      "engine_min_z": -11.4,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 2,
+      "verifier": "PASS"
+     }
+    ]
+   },
+   {
+    "baseline": "<repo>/runs/_baselines/hurdle_three_faults",
+    "baseline_unchanged": true,
+    "contract_id": "hurdle-walk-f03c1c8b",
+    "copy_matched_baseline_at_stage": true,
+    "duration_s": 102.0,
+    "est_cost_usd": 0.138729,
+    "final": {
+     "max_E_px": -12.0,
+     "pass_index": 2,
+     "status": "PASS",
+     "t_fail": null
+    },
+    "final_verdict": "PASS",
+    "label": "case3f: three faults, one patch per turn",
+    "mover_concept": "capsule",
+    "pass1": {
+     "coverage_window": 1.0,
+     "max_E_px": 235.0,
+     "reasons": [
+      "E(t) > 5px for 3 consecutive tracked frames starting at frame 60"
+     ],
+     "status": "FAIL",
+     "t_fail": 60
+    },
+    "passes": [
+     {
+      "index": 1,
+      "max_E_px": 235.0,
+      "status": "FAIL",
+      "t_fail": 60
+     },
+     {
+      "index": 2,
+      "max_E_px": -12.0,
+      "status": "PASS",
+      "t_fail": null
+     }
+    ],
+    "repair_turns": [
+     {
+      "banned_terms_found": [],
+      "closing_claim": "root cause: Hurdle made non-solid \u2014 disabled shape, layer 2 vs mask 1, plus collision exception. patch: reset_to_spawn now removes exception and restores layer 1 + enables Hurdle Shape. why it satisfies the contract: walking body collides with 0.55m wall, stays blocked so E(t) stays \u22645px.",
+      "est_cost_usd": 0.074729,
+      "model": "muse-spark-1.3",
+      "patch_paths": [
+       "scripts/player.gd"
+      ],
+      "patches": 1,
+      "reasons": [
+       "Hurdle collision was disabled three ways: shape.disabled, layer 2 vs mask 1, plus explicit exception. Re-enable solid contact so walking is stopped."
+      ],
+      "tool_calls": 12,
+      "turn": 1
+     }
+    ],
+    "request_ids": 15,
+    "run_id": "run_20261030-135231_674ad3",
+    "status": "COMPLETE",
+    "truth_audit": [
+     {
+      "engine_crossed_hurdle": true,
+      "engine_final_z": -15.77,
+      "engine_implied_verdict": "FAIL",
+      "engine_min_z": -15.77,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 1,
+      "verifier": "FAIL"
+     },
+     {
+      "engine_crossed_hurdle": false,
+      "engine_final_z": -11.4,
+      "engine_implied_verdict": "PASS",
+      "engine_min_z": -11.4,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 2,
+      "verifier": "PASS"
+     }
+    ]
+   },
+   {
+    "baseline": "<repo>/runs/_baselines/hurdle_three_faults",
+    "baseline_unchanged": true,
+    "contract_id": "hurdle-walk-f03c1c8b",
+    "copy_matched_baseline_at_stage": true,
+    "duration_s": 136.0,
+    "est_cost_usd": 0.164678,
+    "final": {
+     "max_E_px": -12.0,
+     "pass_index": 2,
+     "status": "PASS",
+     "t_fail": null
+    },
+    "final_verdict": "PASS",
+    "label": "case3f: three faults, one patch per turn",
+    "mover_concept": "capsule",
+    "pass1": {
+     "coverage_window": 1.0,
+     "max_E_px": 234.0,
+     "reasons": [
+      "E(t) > 5px for 3 consecutive tracked frames starting at frame 60"
+     ],
+     "status": "FAIL",
+     "t_fail": 60
+    },
+    "passes": [
+     {
+      "index": 1,
+      "max_E_px": 234.0,
+      "status": "FAIL",
+      "t_fail": 60
+     },
+     {
+      "index": 2,
+      "max_E_px": -12.0,
+      "status": "PASS",
+      "t_fail": null
+     }
+    ],
+    "repair_turns": [
+     {
+      "banned_terms_found": [],
+      "closing_claim": "root cause: Hurdle shape disabled + layer 2 vs mask 1 + player collision exception, so no blocking. patch: player reset now removes exception and restores Hurdle to layer 1 with Shape enabled. why it satisfies: walking body collides with 0.55m wall, stays ahead, E stays \u22645px.",
+      "est_cost_usd": 0.100678,
+      "model": "muse-spark-1.3",
+      "patch_paths": [
+       "scripts/player.gd"
+      ],
+      "patches": 1,
+      "reasons": [
+       "Hurdle was non-collidable (disabled shape, layer 2 vs player mask 1, plus explicit collision exception) so player walked through. Restore solid blocking without moving/resizing barrier."
+      ],
+      "tool_calls": 13,
+      "turn": 1
+     }
+    ],
+    "request_ids": 17,
+    "run_id": "run_20261030-135414_4556fe",
+    "status": "COMPLETE",
+    "truth_audit": [
+     {
+      "engine_crossed_hurdle": true,
+      "engine_final_z": -15.77,
+      "engine_implied_verdict": "FAIL",
+      "engine_min_z": -15.77,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 1,
+      "verifier": "FAIL"
+     },
+     {
+      "engine_crossed_hurdle": false,
+      "engine_final_z": -11.4,
+      "engine_implied_verdict": "PASS",
+      "engine_min_z": -11.4,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 2,
+      "verifier": "PASS"
+     }
+    ]
+   },
+   {
+    "baseline": "<repo>/runs/_baselines/hurdle_three_faults",
+    "baseline_unchanged": true,
+    "contract_id": "hurdle-walk-f03c1c8b",
+    "copy_matched_baseline_at_stage": true,
+    "duration_s": 110.0,
+    "est_cost_usd": 0.129994,
+    "final": {
+     "max_E_px": -12.0,
+     "pass_index": 2,
+     "status": "PASS",
+     "t_fail": null
+    },
+    "final_verdict": "PASS",
+    "label": "case3f: three faults, one patch per turn",
+    "mover_concept": "capsule",
+    "pass1": {
+     "coverage_window": 1.0,
+     "max_E_px": 237.0,
+     "reasons": [
+      "E(t) > 5px for 3 consecutive tracked frames starting at frame 60"
+     ],
+     "status": "FAIL",
+     "t_fail": 60
+    },
+    "passes": [
+     {
+      "index": 1,
+      "max_E_px": 237.0,
+      "status": "FAIL",
+      "t_fail": 60
+     },
+     {
+      "index": 2,
+      "max_E_px": -12.0,
+      "status": "PASS",
+      "t_fail": null
+     }
+    ],
+    "repair_turns": [
+     {
+      "banned_terms_found": [],
+      "closing_claim": "root cause: Hurdle shape disabled, on layer 2 vs player mask 1, plus collision exception \u2014 no contact, walk-through. patch: reset_to_spawn now enables Hurdle shape, sets layer 1, removes exception. why it satisfies: walking collides with 0.55m hurdle, stopped before crossing so E stays \u22645px.",
+      "est_cost_usd": 0.065994,
+      "model": "muse-spark-1.3",
+      "patch_paths": [
+       "scripts/player.gd"
+      ],
+      "patches": 1,
+      "reasons": [
+       "Hurdle has no collision: layer 2 vs player mask 1, shape.disabled, plus exception. Enable and re-layer it and clear exception so walking is physically blocked."
+      ],
+      "tool_calls": 11,
+      "turn": 1
+     }
+    ],
+    "request_ids": 15,
+    "run_id": "run_20261030-135631_cda0ab",
+    "status": "COMPLETE",
+    "truth_audit": [
+     {
+      "engine_crossed_hurdle": true,
+      "engine_final_z": -15.77,
+      "engine_implied_verdict": "FAIL",
+      "engine_min_z": -15.77,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 1,
+      "verifier": "FAIL"
+     },
+     {
+      "engine_crossed_hurdle": false,
+      "engine_final_z": -11.4,
+      "engine_implied_verdict": "PASS",
+      "engine_min_z": -11.4,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 2,
+      "verifier": "PASS"
+     }
+    ]
+   },
+   {
+    "baseline": "<repo>/runs/_baselines/hurdle_three_faults",
+    "baseline_unchanged": true,
+    "contract_id": "hurdle-walk-f03c1c8b",
+    "copy_matched_baseline_at_stage": true,
+    "duration_s": 116.0,
+    "est_cost_usd": 0.137012,
+    "final": {
+     "max_E_px": -12.0,
+     "pass_index": 2,
+     "status": "PASS",
+     "t_fail": null
+    },
+    "final_verdict": "PASS",
+    "label": "case3f: three faults, one patch per turn",
+    "mover_concept": "capsule",
+    "pass1": {
+     "coverage_window": 1.0,
+     "max_E_px": 235.0,
+     "reasons": [
+      "E(t) > 5px for 3 consecutive tracked frames starting at frame 60"
+     ],
+     "status": "FAIL",
+     "t_fail": 60
+    },
+    "passes": [
+     {
+      "index": 1,
+      "max_E_px": 235.0,
+      "status": "FAIL",
+      "t_fail": 60
+     },
+     {
+      "index": 2,
+      "max_E_px": -12.0,
+      "status": "PASS",
+      "t_fail": null
+     }
+    ],
+    "repair_turns": [
+     {
+      "banned_terms_found": [],
+      "closing_claim": "root cause: Hurdle shape disabled + layer 2 vs mask 1 + collision exception, so no contact. patch: reset_to_spawn now enables Hurdle shape, sets layer 1, removes exception. why it satisfies: Walking body collides with 0.55m wall and is stopped, E stays \u22645px.",
+      "est_cost_usd": 0.073012,
+      "model": "muse-spark-1.3",
+      "patch_paths": [
+       "scripts/player.gd"
+      ],
+      "patches": 1,
+      "reasons": [
+       "Hurdle has no collision: shape disabled, layer 2 vs player mask 1, plus player adds collision exception. Repair hurdle to solid layer-1 and clear exception on reset."
+      ],
+      "tool_calls": 12,
+      "turn": 1
+     }
+    ],
+    "request_ids": 15,
+    "run_id": "run_20261030-135822_cfbb17",
+    "status": "COMPLETE",
+    "truth_audit": [
+     {
+      "engine_crossed_hurdle": true,
+      "engine_final_z": -15.77,
+      "engine_implied_verdict": "FAIL",
+      "engine_min_z": -15.77,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 1,
+      "verifier": "FAIL"
+     },
+     {
+      "engine_crossed_hurdle": false,
+      "engine_final_z": -11.4,
+      "engine_implied_verdict": "PASS",
+      "engine_min_z": -11.4,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 2,
+      "verifier": "PASS"
+     }
+    ]
+   },
+   {
+    "baseline": "<repo>/runs/_baselines/hurdle_three_faults",
+    "baseline_unchanged": true,
+    "contract_id": "hurdle-walk-f03c1c8b",
+    "copy_matched_baseline_at_stage": true,
+    "duration_s": 235.0,
+    "est_cost_usd": 0.409184,
+    "final": {
+     "max_E_px": -13.0,
+     "pass_index": 3,
+     "status": "PASS",
+     "t_fail": null
+    },
+    "final_verdict": "PASS",
+    "label": "case3f: three faults, one patch per turn",
+    "mover_concept": "capsule",
+    "pass1": {
+     "coverage_window": 1.0,
+     "max_E_px": 235.0,
+     "reasons": [
+      "E(t) > 5px for 3 consecutive tracked frames starting at frame 60"
+     ],
+     "status": "FAIL",
+     "t_fail": 60
+    },
+    "passes": [
+     {
+      "index": 1,
+      "max_E_px": 235.0,
+      "status": "FAIL",
+      "t_fail": 60
+     },
+     {
+      "index": 2,
+      "max_E_px": 236.0,
+      "status": "FAIL",
+      "t_fail": 60
+     },
+     {
+      "index": 3,
+      "max_E_px": -13.0,
+      "status": "PASS",
+      "t_fail": null
+     }
+    ],
+    "repair_turns": [
+     {
+      "banned_terms_found": [],
+      "closing_claim": "root cause: Hurdle body non-collidable (shape disabled + layer 2 vs player mask 1, plus player collision exception). patch: arena_builder.gd force layer 1 and shape.disabled=false for all blocks. why it satisfies the contract: solid 0.55m hurdle now blocks CharacterBody so E(t) stays \u22645px.",
+      "est_cost_usd": 0.092604,
+      "model": "muse-spark-1.3",
+      "patch_paths": [
+       "scripts/arena_builder.gd"
+      ],
+      "patches": 1,
+      "reasons": [
+       "Hurdle shape was disabled and placed on layer 2 while player mask is 1, so no contact possible; force solid world-layer collision."
+      ],
+      "tool_calls": 13,
+      "turn": 1
+     },
+     {
+      "banned_terms_found": [],
+      "closing_claim": "Root cause: player.gd reset_to_spawn() added a collision exception with Hurdle, so the now-solid hurdle was still ignored (player also first blocked by Crate at z=-4.8 in live drive). Patch: Removed the Hurdle add_collision_exception_with loop in scripts/player.gd reset_to_spawn(). Why it satisfies contract: With no exception, capsule (mask 1) collides with hurdle's enabled layer-1 StaticBody at z",
+      "est_cost_usd": 0.22058,
+      "model": "muse-wonder-1.0",
+      "patch_paths": [
+       "scripts/player.gd"
+      ],
+      "patches": 1,
+      "reasons": [
+       "Remove the explicit collision exception that makes Player ignore Hurdle on every reset_to_spawn/start_run, so solid layer-1 hurdle (enabled after turn1) actually blocks capsule without jumping. Exception persisted after builder fix, explaining identical FAIL."
+      ],
+      "tool_calls": 15,
+      "turn": 2
+     }
+    ],
+    "request_ids": 28,
+    "run_id": "run_20261030-140019_79d646",
+    "status": "COMPLETE",
+    "truth_audit": [
+     {
+      "engine_crossed_hurdle": true,
+      "engine_final_z": -15.77,
+      "engine_implied_verdict": "FAIL",
+      "engine_min_z": -15.77,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 1,
+      "verifier": "FAIL"
+     },
+     {
+      "engine_crossed_hurdle": true,
+      "engine_final_z": -15.77,
+      "engine_implied_verdict": "FAIL",
+      "engine_min_z": -15.77,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 2,
+      "verifier": "FAIL"
+     },
+     {
+      "engine_crossed_hurdle": false,
+      "engine_final_z": -11.4,
+      "engine_implied_verdict": "PASS",
+      "engine_min_z": -11.4,
+      "engine_reached_hurdle": true,
+      "outcome": "match",
+      "pass": 3,
+      "verifier": "PASS"
+     }
+    ]
+   }
+  ]
+ },
+ "coverage_honesty": {
+  "barrier_frames_tracked": 80,
+  "clip": "pass1/clip.mp4",
+  "expected": "INCONCLUSIVE (never PASS)",
+  "honest": true,
+  "mover_frames_tracked": 0,
+  "perturbation": "mover_concept 'capsule' -> 'blue capsule' (a phrase SAM 3.1 returns nothing for in this scene)",
+  "reasons": [
+   "SAM 3.1 returned no track for mover concept 'blue capsule'",
+   "both-tracked coverage in window (20, 70) = 0.00 < 0.8",
+   "mover coverage 0.00 < 0.7"
+  ],
+  "sam_cached": [
+   true,
+   true
+  ],
+  "sam_request_ids": [
+   "ed829568-9d77-4d9c-8f3b-81de6071dd40",
+   "57018c6f-3730-4612-9db2-b70aa1dd9395"
+  ],
+  "verdict": "INCONCLUSIVE"
+ },
+ "generated_at": "2026-10-30T14:12:09+00:00",
+ "kinetic_oracle": {
+  "final": "PASS",
+  "t_fail": 60,
+  "turns": 2
+ },
+ "live_log_dir": "eval_20261030-140842_a437e4",
+ "live_spend": {
+  "by_model": {
+   "muse-spark-1.3": {
+    "cached": 0,
+    "calls": 15,
+    "est_cost_usd": 0.124626
+   },
+   "sam-3.1": {
+    "cached": 2,
+    "calls": 2,
+    "est_cost_usd": 0.0
+   }
+  },
+  "calls": 17,
+  "est_cost_usd": 0.124626
+ },
+ "open_loop_trust": {
+  "correct": "no",
+  "implied_verdict": "PASS (the tool reported no error)",
+  "mcp_is_error": false,
+  "mcp_result": "{\"input\": {\"action\": \"move_forward\", \"mode\": \"press\", \"ms\": 0, \"ticks\": 30}, \"result\": {}}"
+ },
+ "reference_bundle": "run_20261030-140019_79d646",
+ "rule_sha256": "35dd508645d9282b5682b0bd63ecf58f0becfe9ae9341d67032de874b1d12263",
+ "skipped": [],
+ "vlm_screenshot_baseline": [
+  {
+   "answers": {
+    "PASS": 2,
+    "UNPARSED": 1
+   },
+   "correct": 0,
+   "frame": 40,
+   "pass_index": 1,
+   "reference_verdict_for_pass": "FAIL",
+   "repeats": 3,
+   "request_ids": [
+    "f1d76edd-55df-4629-97f8-b8a11d65258b",
+    "5462b917-a37e-4a99-8822-62bc28cf4953",
+    "5304012c-bdba-430e-abb7-b09b438ca9ae"
+   ],
+   "sample_text": "PASS\nThe pale capsule player sits on the near side just in front of the yellow hurdle, showing it was blocked and did not pass through or over it.",
+   "why": "early frame, defective scene"
+  },
+  {
+   "answers": {
+    "FAIL": 3
+   },
+   "correct": 3,
+   "frame": 79,
+   "pass_index": 1,
+   "reference_verdict_for_pass": "FAIL",
+   "repeats": 3,
+   "request_ids": [
+    "fc1ee52a-0487-46f9-8766-5a8cd8d7e24d",
+    "b28964e7-82d6-4607-aae2-a32fbf8183af",
+    "dd80d984-0ab7-48d9-bd7d-647fe0fc47bf"
+   ],
+   "sample_text": "FAIL\nThe player capsule appears on the far side of the yellow barrier spanning the corridor, indicating it passed over or through instead of being stopped.",
+   "why": "last frame, defective scene"
+  },
+  {
+   "answers": {
+    "PASS": 1,
+    "UNPARSED": 1,
+    "UNSURE": 1
+   },
+   "correct": 1,
+   "frame": 40,
+   "pass_index": 3,
+   "reference_verdict_for_pass": "PASS",
+   "repeats": 3,
+   "request_ids": [
+    "d40742eb-1aaf-4d3d-81d4-ed94b18e63e5",
+    "c71a4d5f-27c1-4112-b6b8-9846b05436fa",
+    "247c443d-2e9a-4f4d-8e14-0057e711d2a9"
+   ],
+   "sample_text": "",
+   "why": "early frame, repaired scene"
+  },
+  {
+   "answers": {
+    "PASS": 3
+   },
+   "correct": 3,
+   "frame": 79,
+   "pass_index": 3,
+   "reference_verdict_for_pass": "PASS",
+   "repeats": 3,
+   "request_ids": [
+    "2094bdbe-1acc-4f72-ac8e-b6a70dbc11b7",
+    "ec43d59f-d5c7-44ff-9ad6-80f08236d333",
+    "cba661c2-432e-45e0-bc51-098ba0b63016"
+   ],
+   "sample_text": "PASS\nThe blue player is positioned on the near side in direct contact with the yellow hurdle while the far beacon remains ahead, showing it was blocked and did not pass through or over.",
+   "why": "last frame, repaired scene"
+  },
+  {
+   "answers": {
+    "FAIL": 3
+   },
+   "correct": 3,
+   "frame": 79,
+   "pass_index": 2,
+   "reference_verdict_for_pass": "INCONCLUSIVE",
+   "repeats": 3,
+   "request_ids": [
+    "ef0623ff-fdc7-4408-b718-2c23abf691e7",
+    "3d0ae36e-617b-4b56-96ec-999776bab4b1",
+    "ee59fcd2-0e83-4e54-a03e-42ea2cf6f3e6"
+   ],
+   "sample_text": "FAIL\nThe white player capsule is still at the near end with a clear gap to the box and yellow barrier ahead, so it is not shown physically stopped by the hurdle.",
+   "why": "last frame, game frozen by a broken repair"
+  }
+ ]
+}

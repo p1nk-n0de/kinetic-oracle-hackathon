@@ -289,6 +289,14 @@ export interface VerificationResult {
   max_residual_frame: number | null
   margin_px: number | null
   coverage: Partial<Coverage>
+  /** The approach gate: a PASS needs the mover to have come this close. Absent in older bundles. */
+  approach?: {
+    mover_body_px: number | null
+    approach_body_heights: number
+    required_max_E_px: number | null
+    max_E_px: number | null
+    exercised: boolean
+  } | null
   evidence_rows: EvidenceRow[]
   reasons: string[]
 }

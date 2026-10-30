@@ -1,0 +1,592 @@
+{
+ "anti_cheat": {
+  "banned_terms": [
+   "defect",
+   "defective",
+   "pg_defect",
+   "DEFECT_FIXTURE",
+   "collision_layer",
+   "collision_mask",
+   "layer 2",
+   "\"layer\": 2",
+   "hurdle_blocks_walking",
+   "truth_hidden",
+   "truth.json",
+   "<godot-studio>/tests/fixtures/pg_defect_hurdle",
+   "<redacted:studio>-godot-studio",
+   "<redacted:volume>"
+  ],
+  "turns": [
+   {
+    "banned_terms_checked": 14,
+    "banned_terms_found": [],
+    "mentions_source_filenames": false,
+    "prompt_sha256": "8c5a14a2b3bd7c45f158c0450d5e3b9bca98c163997c78af2511ac2ffd775829",
+    "turn": 1
+   }
+  ]
+ },
+ "baseline": {
+  "files": 45,
+  "path": "<repo>/runs/_baselines/hurdle_layer4",
+  "tree_sha256": "16207efce25969818618d24bef3ce2a0a440254dea0f7922a5a894bfaf9cc15c",
+  "tree_sha256_after_run": "16207efce25969818618d24bef3ce2a0a440254dea0f7922a5a894bfaf9cc15c",
+  "unchanged": true
+ },
+ "contract_path": "contract.json",
+ "contract_sha256": "194aa42228a55290be121316acf49d01c00662a35436f24d6797167cf6eabe10",
+ "created_at": "2026-10-30T13:29:53+00:00",
+ "environment": {
+  "git": {
+   "commit": "20a69c996fdf1ca4240e294afc011b2966b36d21",
+   "source_dirty": false
+  },
+  "godot": {
+   "binary": "/Applications/Godot.app/Contents/MacOS/Godot",
+   "error": "",
+   "ok": true,
+   "supported": true,
+   "version": "4.6.2.stable.official.71f334935"
+  },
+  "host": "macOS-27.0.1-arm64-arm-64bit",
+  "propriosam": "0.1.0",
+  "python": "3.12.12"
+ },
+ "files": {
+  "api_calls.jsonl": "02eba1732a7bab99a430ea28659a8117f276574a0c82412ac1bd8355d4549f78",
+  "contract.json": "3368eccfda8979f3ae077db7f40adfef33d26f1068d8854e3ed80a2e581cdb9a",
+  "mcp_calls.jsonl": "579522519c1c41e64376f5c45c6e45fdd421bbfa01c6b74018097810241c9a5c",
+  "pass1/clip.mp4": "6f26ee4a9f0b195cabaa456d95399262c4f5cec1263de95ec8c80a8676327ae1",
+  "pass1/frames/f_000.png": "5fe0740c2aba62da38bc6104d9f55cfc69055d1c2d443948d72e2d5cc82b7834",
+  "pass1/frames/f_001.png": "826fb1a9a8624f6d0e3106f070afc4bfd6562ae7db6a62c07479c689f675abed",
+  "pass1/frames/f_002.png": "41d32ac182bc42af5f532a3ff89b77a7bcad908b94d99e55e46d407d066ab6e7",
+  "pass1/frames/f_003.png": "1015ccc869a61e3620e11ab5b60f69cc07b37d874e4cced6105c335bde52b210",
+  "pass1/frames/f_004.png": "ed97aef3f21888bae9a9b69c3ebb438852995148a87e0a29b69982f933970b5d",
+  "pass1/frames/f_005.png": "3ad65d0bf114f568da07830e8208a3f92f8cb34dc9fff7bcae30f5ec352884cc",
+  "pass1/frames/f_006.png": "4aae7635518edeee13c2405120a6a3904d5950f1801966c92ddb60cff39d2a2c",
+  "pass1/frames/f_007.png": "38cde7a618a36ad8cccba1b56fdad64619a2dcf432453d99a3876e50ef211020",
+  "pass1/frames/f_008.png": "55255c8651f3cdd42a8c81a319749a17cccf9dd9240b698a709c9fd9775799b4",
+  "pass1/frames/f_009.png": "53e477bb0d374190389b0853623783d5efd081248530cdd4b6ce40646cdd83d5",
+  "pass1/frames/f_010.png": "d4f7672b89b8c20c70f879a162f6e19efe70068c0e1480f6a0382fe8f166fa85",
+  "pass1/frames/f_011.png": "b06e97aab165031ee1aa0a05dedf08b97c5197dfc18ecb83512100792ffb6dc6",
+  "pass1/frames/f_012.png": "55894359ced9e62022765dc9b0d2df9d82975a668579546f0c5f76dbf12b6e59",
+  "pass1/frames/f_013.png": "1f449ca22a1ccc44c5696dccf3f471ca358e2f828c89d66bd991b50a1b3aafd5",
+  "pass1/frames/f_014.png": "e1b5919c20c1fac1fe6a6a9fd3a7558b371ae4b061d3fec6e21c0d27d0249ac2",
+  "pass1/frames/f_015.png": "4f9c23f92bbd77eb53a361bf4339c55b7fd08aabda7c02835876ee4cbc9941e2",
+  "pass1/frames/f_016.png": "77e040b0ee47a2ea57e041d04d02799c53e520fa9d0391e1b50fd95dadf1aee4",
+  "pass1/frames/f_017.png": "dcdfcdf0b25b7b3dab30ed814f2312d91f00e193c7766fb4af54e325f53e482f",
+  "pass1/frames/f_018.png": "4fad679f3010db540f23b32e8b48a4f587f4762cdd67f9b75fe6c710ddee187f",
+  "pass1/frames/f_019.png": "dd0af179741604ce6c4f614ebf1b3fc980737bb051ade79670be63effc5b3e53",
+  "pass1/frames/f_020.png": "f16f20ae5a291c51737321f2bbd1859cc3c0a61bb936f2f923a4ae5f2e7f1a95",
+  "pass1/frames/f_021.png": "3f04b30ae61ecaa7fcb3c83025eeb69b330c4aa67660dee8bfe4fae4b07da39b",
+  "pass1/frames/f_022.png": "bc4913f15c139e51cfeb9531330b60af570847a759170403eebea6cb405651bd",
+  "pass1/frames/f_023.png": "9fe6323aaa8c0b73c621f0af354eb11fe63d9711b65fa5690be52a2f47d485a9",
+  "pass1/frames/f_024.png": "af53d528953efb8079353b813b5d8c21eb61fb9dfe8b941532a945731cff26dc",
+  "pass1/frames/f_025.png": "77726f1b5937037eac952d7a6b0a3033e1057bb108b55c1c221697b61cf2f671",
+  "pass1/frames/f_026.png": "82e7757ca7f061890d484e722afb10239917c068a32bfa46df05ae91b8316a9e",
+  "pass1/frames/f_027.png": "939ea05fefe62bd30089468557b17d6f9351b5231076df7023bacb89d0ed7f5a",
+  "pass1/frames/f_028.png": "904724fa5e3aa4416c117760ebdf0cb3094855024c1f0cb33efe8849dcdb1382",
+  "pass1/frames/f_029.png": "46d3c1d2edcc49e9d83c6249d7c3289999daf15f265944f42b01dcf967536fcb",
+  "pass1/frames/f_030.png": "dea0a2b2aaf7253f05134b0f20815b6af3957cb25ada5a10b8529e5b68d8fa67",
+  "pass1/frames/f_031.png": "7bd926d491d00ca324277681984da2d2edd5f28cb35cf919c12eea6d9dc9b3ff",
+  "pass1/frames/f_032.png": "063edb1e58487f94a32f550cf2f2b592286544d60d59f026fafad6672b2a3d3a",
+  "pass1/frames/f_033.png": "8fd6c3e4026fd30d0bd50db402226bc3d72af00538ad4bb6872b7c49bc295f75",
+  "pass1/frames/f_034.png": "84e3a1f10ac0edbdd83d07d1cfc152e07dd34e59f2bb4633a51be7addaf7aa29",
+  "pass1/frames/f_035.png": "d3210b2a97edfcd3dff1356c55b50fe7e2fa0d429fced176653893c4ede67cee",
+  "pass1/frames/f_036.png": "32c29edf53dda77d806856d78e4c9c83733da8c312a8c52bcc2109e4fcb0b298",
+  "pass1/frames/f_037.png": "43695a81cfdc0a617641b228b3f9ee0a54d49e08b0634a3899f6d04e186a836d",
+  "pass1/frames/f_038.png": "b23ffcdc42c553130326fc7de9ab4583e7a64ea5e69459bf189da97014ba99e1",
+  "pass1/frames/f_039.png": "aed52210412eb3a1d89c5d0e7d2798271bf5dd19ec8ab9f065e27f8e08ff0801",
+  "pass1/frames/f_040.png": "d03f828f7307f41761b692edd0f13e60284e3a6eedfb1551819a4c29442cfc93",
+  "pass1/frames/f_041.png": "2fe77bbc25c85dc62152264adce3700f8ddfa7382d836c14565b5f3404dcd5a4",
+  "pass1/frames/f_042.png": "b1a2300d81e5f7fb45b19caa22186463045f07c26a5344a08ad0a69a58553e36",
+  "pass1/frames/f_043.png": "49d0485d9c2c19cd710cffbc31081d220126c115e107709606b5057cb118d583",
+  "pass1/frames/f_044.png": "5655a73a5c11956c274daf20ad9faae2f9e61a2382fd3055697f8c722e402d13",
+  "pass1/frames/f_045.png": "af6c7710a097fad7202aafc125eeb43239af0f2b920932cb7b3ee3a94dcb8bea",
+  "pass1/frames/f_046.png": "3b9b76162a6a5ee640b1b748bec25abb3807c432e8f6a6fe77ffda7c0234d724",
+  "pass1/frames/f_047.png": "33d8cbf68e5cf30b86670f46f2ef3de684bc0924b8403940a69027d76f9d62b7",
+  "pass1/frames/f_048.png": "e000945cb8b6e3c43648014aaac38420bdebfdf8e831063c427ddb83fcecb219",
+  "pass1/frames/f_049.png": "9b06e83fb68b9a7d9e567b4a770a8ee16a68301ea7e90b5549273c36b41e05df",
+  "pass1/frames/f_050.png": "e2b52642301a373dcc597e8e0dca8369c9391bd9f06d0704e70a0af3e89915f5",
+  "pass1/frames/f_051.png": "283b9ff9e32c2c64762c511fa100659778ff32cb7de4498a6bbb2603ebabdb85",
+  "pass1/frames/f_052.png": "7681881bc5e39edf5d3223a9476cdae8ad1a9a922c8068fde0ff6d69cdf246eb",
+  "pass1/frames/f_053.png": "448eeb2772767bb896fbe41f0d264edef4d3e91a79b0a16d468ce751c14aab5a",
+  "pass1/frames/f_054.png": "231e6e583180d55d43866722e6374e12fcf109ea2299caa2bfb6e22cbcac484d",
+  "pass1/frames/f_055.png": "92e21e5e9ef054d286d7988cccb0ef6752fe0172b080330dfe78f798f0d8ac94",
+  "pass1/frames/f_056.png": "b9e32de35023d84363eb89eeb715df1051d82a8b1e3bb4271ee8ba6326a7df81",
+  "pass1/frames/f_057.png": "3ec393aaa74155def799b1cc649f285794b50d258b6d0fdb55e5d5eee374efe7",
+  "pass1/frames/f_058.png": "87609e903b0b55b2c3c57773294672edc1a822b6df7122fea55bfe7ccc08085a",
+  "pass1/frames/f_059.png": "dcab05ff770c5f9f4b9c789d230f3247677759c0a0f2e6558c0bd33e7829aa2f",
+  "pass1/frames/f_060.png": "bbaaf2ad4f4fc71e3393c1f8a6d00c7e314d98da972d85388da6d9db507409eb",
+  "pass1/frames/f_061.png": "6e8f4fcd83c42d0755848502759de216e97688bec403a64c5c888ff7ea8fb58e",
+  "pass1/frames/f_062.png": "87b2b1ca2877ed62e65ae4c1487972f4dc34aa432f99c96ed130c38e10528eb9",
+  "pass1/frames/f_063.png": "7b84966204a9d7e737d6504827d5a8f029f6d72cc9567c9cd77839d214edc41b",
+  "pass1/frames/f_064.png": "fcddd8e02ca179138c2a20feba2565f58450cc09531aa09cd91e327ba9c6529a",
+  "pass1/frames/f_065.png": "eb470eb6d59357fb791e812933501222261e7b3da345cf3e5c1e4f8439827558",
+  "pass1/frames/f_066.png": "4ba503a2016960664654f7b8e57c933ce6cc2ce6288c0593f78b43c23569d632",
+  "pass1/frames/f_067.png": "c5b865eaff565c74d52f787d52ed4f3e4d0fb1804e6b97384bbab76e228e6e61",
+  "pass1/frames/f_068.png": "c96a4cebd6a6847c0fe95a7cf6316768dd371d5597463df7d3b84abb09fb1625",
+  "pass1/frames/f_069.png": "f1bc6e1c020498c9c4fd1236d5e46980cc2c55e1148d16022ff1d8f030b356a2",
+  "pass1/frames/f_070.png": "d2d938f67b9f6de37c795341b18157d03a281d1c428e12e55bce6c94377432f3",
+  "pass1/frames/f_071.png": "41634f78c3616740c83faa94643057de1f4342fe1464e949c14565f11d88d6c4",
+  "pass1/frames/f_072.png": "2051c0e6768839670a66ed5fc010167b5a0415a04b194e71bec3cbb8c4fba321",
+  "pass1/frames/f_073.png": "53c558ec7624509cfaf5439b72c73b036d0aa385facf99529c1e0429c0b0f7a0",
+  "pass1/frames/f_074.png": "e0e940c4e1e9722b433ca78bc3b23357c700a2432705aa01e6a92cf2cba55a69",
+  "pass1/frames/f_075.png": "e87341ae23399b71e4652e34145d81cc2ce068a73e7c872a294e9e9565602c9b",
+  "pass1/frames/f_076.png": "951c33d778d9878fb137c6e286dbbc5e32e627f0a99989969a9f71c664a2d021",
+  "pass1/frames/f_077.png": "f83ce7bfa791081d492e5dccbd6793d40e3ec9f130691cd37b3d454d8f3d13ba",
+  "pass1/frames/f_078.png": "d8f542f5bf4f38fe6b4bd34a3f14bbcef1bb1e841c53c71eb0fe4209891d6398",
+  "pass1/frames/f_079.png": "8f2e793fe2553c5c8d73b06ad26d185152218d51ea34cfb22ca366eb698c8e4c",
+  "pass1/overlay.mp4": "13a51a066e94fe1507b319969a4b9cf72beeff6c457ae4f55f00cbfd5be1d766",
+  "pass1/sam/barrier.json": "ea77b0c49c5ed8289a26b8f146b2fdaacca027a4e98784b9d92372885c690132",
+  "pass1/sam/mover.json": "52b9b564f0dd30202fec52a47043ca17ee2d1eb5834b5248e58e25cd68b374d0",
+  "pass1/tracks.json": "0de76b2e641569fbbf5fbda3128dc08a6bc9aaface5b0b2cbc2067f3e94b58da",
+  "pass1/truth_hidden.json": "5206172402821f26ef7a118b0f2d3df9a8f7bf81440cbbe9dee4af76395fb9c3",
+  "pass1/verification.json": "91072745671df5c2c0b1b5e4e0e5db324fdd940125aef0c01caaddb4dd4f704a",
+  "pass2/clip.mp4": "034047d5244fbbce78fd70a12ac2852e9cf547ed2749cbfcb2ecb9e63d2908cf",
+  "pass2/frames/f_000.png": "e7e4d4aaded636345249f161defc7f0590e17f49ede2445274e2d2ea3937a2e0",
+  "pass2/frames/f_001.png": "706283c341cefccaa6a8bcb2b10952d6df921c8292f53ae1f4e07ea8e02e23eb",
+  "pass2/frames/f_002.png": "8f93f5a77b0be36ed1d718b2513cee789a2854feafcf1bfc2d63b31fe005604b",
+  "pass2/frames/f_003.png": "7bbe869e9a0501c8a8b786274b0da60908685daeacbf6cb014b44aac4e5d589b",
+  "pass2/frames/f_004.png": "4957656e96687cd963c1f8c746d77c6490c885e55acd44af6af990ba26eb1a50",
+  "pass2/frames/f_005.png": "ba7f85001aff1f9fcc7d70cfa899ea65e415f1522632c952cd7424da78cbe4ae",
+  "pass2/frames/f_006.png": "58c5712b5fc89b7a28484b212bf89ec091eba0c80b2ea955011345545d55af9f",
+  "pass2/frames/f_007.png": "acfea42448a5ebe2a570cfccb149b51d5a6fa660f9f76cc35a1eba1a92f107d6",
+  "pass2/frames/f_008.png": "268b9d86cbd1b193fe4a63ce99b78a0d9f61cccdfe2246349b10206ccf193c50",
+  "pass2/frames/f_009.png": "bf7cb3b79d40335d37e2ef8eeb5eabfadef2e912a6a12128f6a351f419fff1d0",
+  "pass2/frames/f_010.png": "6fafccda7200c5938c8df43cf387ef54210d0044f20681368b63cee13daf1615",
+  "pass2/frames/f_011.png": "d1887dc2308561233436bc29fa045ceaea72e19c5ca7c4e74070381d9c329e82",
+  "pass2/frames/f_012.png": "2b45ab476ef582816cba37d8c2757f966838f2ab3b52d643ceee4c42636e54a0",
+  "pass2/frames/f_013.png": "ec73fd1d9aec55e8439fa3d6244417097795338edb3ea0e2faec383ef288d043",
+  "pass2/frames/f_014.png": "ae6f574c7f77130266ecf2349800eec68d86e45546ca94a0ce5684a1c199142f",
+  "pass2/frames/f_015.png": "b42c7b6f3160b78f7d04c0f87f1fc2b1f0dfc2c50ff230a1c76c4bc101380ee3",
+  "pass2/frames/f_016.png": "1734abd590f8725b7d1c1770fb21ef4b360cdc111696071f628550917e11fc9f",
+  "pass2/frames/f_017.png": "cc414bfcb64295e789e3bb7cb23272b0eba9fe38b47056c6417e4898ad9bc75c",
+  "pass2/frames/f_018.png": "2293485a02ccc661a680e3285b4f15bf355b1b10aa8161ad4ca9c729b16ab6b0",
+  "pass2/frames/f_019.png": "03ce70e97a42c19a0b316a3b0dd5910d39f8c4468d80a4a646b8155860ae1981",
+  "pass2/frames/f_020.png": "e5c2d0dc6f84b01e0cb8d49b08f9a714ad5696f6404155ca09f2b44a3ef510b4",
+  "pass2/frames/f_021.png": "40a16c6b400b94d68b6f01faaa18ed9a6229f9dd174ae173530443b00f8eaecf",
+  "pass2/frames/f_022.png": "d110f049be4d5536355edcf07ffdb43a024eacbbf7149a92f8afab96c7ed8ae3",
+  "pass2/frames/f_023.png": "41ef0f42f64163eb6fc1257d15da8eef2676111c321e4a35219cbbfc728ab9b5",
+  "pass2/frames/f_024.png": "a251242c3ef65ae9db1210badb025038a00688097067b636e1f53d34598b0d93",
+  "pass2/frames/f_025.png": "780926a561fa983bcd8e3bf78bc2128069c8bb42ffc64d2dda4a8254427dc095",
+  "pass2/frames/f_026.png": "cb81341b0ead7698d91143d301a763168d23568b0c01a73a13d10e9e5d713e6d",
+  "pass2/frames/f_027.png": "bb4722ec093bfe9c3b5ed9066f4ccf41483f069207a4cd0a0f371d5c819a6b46",
+  "pass2/frames/f_028.png": "ced662d779331a10db756e6293767c3e9e1bc779a5a9f42ac773dc4012317b5b",
+  "pass2/frames/f_029.png": "fc6fd873f0487121f5fdd0a43eff9d91504dc5f445cd988b78f14182e94b16bf",
+  "pass2/frames/f_030.png": "3c31c5c9bb239393c43795feda38884122f7e52d6d5ec4d1043ad82b3129e2b1",
+  "pass2/frames/f_031.png": "3c5feea11006d11f3eab441528781621f9f73c94cefc368f42628627c94d27fc",
+  "pass2/frames/f_032.png": "4b51c26c8bb92fc26e9b75ce2d7fb292502947a29bc7d05d7c28c87d90046e42",
+  "pass2/frames/f_033.png": "cb28589aa522c6038af9506ebceb8a3be95a4c46612b3f6440613a672c91507c",
+  "pass2/frames/f_034.png": "22f06f1c49f0200e7988b7d2beff2c05b4e29f42da7425a4be345dc4d962398b",
+  "pass2/frames/f_035.png": "5d930d883a87d03362a48f2287f4637a2e5f5d1f67d661142c89fca3fdcf81be",
+  "pass2/frames/f_036.png": "7cb2848bbe177d5589a7644b35dbcdddb5618c4cfae519c05e4b7fb78409c676",
+  "pass2/frames/f_037.png": "c81cac5752cd59ef3104b866cc5a24d9d206c14dae3d10e4ef9ed60eb484eab4",
+  "pass2/frames/f_038.png": "82d04472a9291203a95a484f29cedf7a609746fd32042088cebde2369b877476",
+  "pass2/frames/f_039.png": "34134e67cae7d019896d1935d16beb7395f17662219f77cefb5bc3a0042421b2",
+  "pass2/frames/f_040.png": "3d0a4172f2afbf6af25a8c6fc08d038f921d51735ae75c35555bda8cb541f265",
+  "pass2/frames/f_041.png": "5353341875d321f87af045521207efc5c6baa33c36161a4c81c6c4bc78ebd9b0",
+  "pass2/frames/f_042.png": "281e2fd212580607fa70164d84bf77e27c30e00a8da6b68d7f1e2f0e3ceb32d4",
+  "pass2/frames/f_043.png": "63a557fd9e269835126a43ead0afb7946da28b89cf51059eb3fd12eb2b116903",
+  "pass2/frames/f_044.png": "230002ea1ad8554bf996750e06c6fd37ecffec5c1898aa84a459893943ac28cc",
+  "pass2/frames/f_045.png": "eff4f96cfa1acacf1396e03abd6cf6ab2bcf9f9f921fd774f25684cb6c245e33",
+  "pass2/frames/f_046.png": "527da1e086bffbc6bb5d99eba387afd2a03c3d3ac7e74837a4e3bafe5e896cf8",
+  "pass2/frames/f_047.png": "c2fcc614bc00cb815dd28e348cd5f3e8366ee938ef2000aaa99440bd4b315807",
+  "pass2/frames/f_048.png": "7255b23e3975b6ae991927d6eeca67ef0581e29bfe6a2ce19114f1f6af445c4e",
+  "pass2/frames/f_049.png": "0d11a6097424b14be7e0b49084fab957f0ca7e3ab32487fbd5f147f7a7bbfb30",
+  "pass2/frames/f_050.png": "b7b03493ef5fd1ef3675783c1668b9aae9a20be26d9afa08b2d0ec083aa1d17f",
+  "pass2/frames/f_051.png": "8431153dba5cbd1f11bc606a876b205a364a58eb099f51c876756d8b65618eaf",
+  "pass2/frames/f_052.png": "a846164ab2729d3b51bee6a22f81ab36002815a900f31c998c5d11f19d52f456",
+  "pass2/frames/f_053.png": "6e2cb031a7c3d3915c10d355c743e300cffe79a3585b1bce34653b762f5072ba",
+  "pass2/frames/f_054.png": "f2e463eaa247f6adb0541a8899e6c4fd7fa40b11237ebe0ea471e561b723f841",
+  "pass2/frames/f_055.png": "e28cbbca1c75afa67036a6f4ff543b6dae74b0ed2134b1a4aa4f9373aad70bb3",
+  "pass2/frames/f_056.png": "c17d1421026d52b2161af265e46cd63b4b0348fb6f3c6017f40e28c1cd4c3bf1",
+  "pass2/frames/f_057.png": "4ff6ae806f8f0212781a14720e4dc734c375f8462a081f7dc595bc33494b2a8e",
+  "pass2/frames/f_058.png": "fc0d66dfdc0e7fae6a6ab9fba44926cbce04ea009ff60fe3a75c684ffaf97e7e",
+  "pass2/frames/f_059.png": "69f7b7f7823850c4e4788810c1edf19815e9a962cba5b40106a1719cc6b3de3c",
+  "pass2/frames/f_060.png": "57397b7c960e5a44fc5d0817dc2ca2712e5e4be684378c31b27d806e8ab9c941",
+  "pass2/frames/f_061.png": "8bf83e72ae21c8233a10348a3188b256e7f43316e2f237c7d555ba00d73090ff",
+  "pass2/frames/f_062.png": "94347b3db46886b309616108bde5c8c6f1c8cd02f4b2aef181ad926c77d5f3e7",
+  "pass2/frames/f_063.png": "8a303dd46fd409c9c266463cdf5e5fba5d2e416e3eff89ef1e75e27a9c298256",
+  "pass2/frames/f_064.png": "2b557ba1bfcc337ad71a338c86ef651875a407ebfe74643262027063a9863670",
+  "pass2/frames/f_065.png": "2445ec7ca0b1c6da9360e4292d343df8c4e0c63b29f75451df586ee8db2e8239",
+  "pass2/frames/f_066.png": "769a11a1d098316886e47f8604adf37f9c76c92983c0aabcf0c37f50ebd91f11",
+  "pass2/frames/f_067.png": "709af4808a02dbc8ea87ca4f847f541b308230bf7a9863133d8a4b06459459b5",
+  "pass2/frames/f_068.png": "04ea6469761eebcc81396c0995bb009eb21a3a9c164292f4c527194c3124ef9d",
+  "pass2/frames/f_069.png": "368ce808e6187fdeb99c001f1a4a425d30c461411522c20180b14871613758e1",
+  "pass2/frames/f_070.png": "d67d98f8f5e1c4500790eb8f093f3be4ae1a96f2b7e2f80f9afc352662f4f5b2",
+  "pass2/frames/f_071.png": "e173f918c49c017eab6c51f52c5f07bcf84a76cd0888544b6795cec1907a302d",
+  "pass2/frames/f_072.png": "5f77429da1e08652804f04c53cf921a01cd2dd6a07d4c43722f1d4b1c9b8b98f",
+  "pass2/frames/f_073.png": "7188dd6e6d5133a227a8f72ecd86c0db42708d3c0279cdb588155752bfaae39d",
+  "pass2/frames/f_074.png": "9cbef996676873d5326f9b545f7f21c861136e292d87445475874ff06046436f",
+  "pass2/frames/f_075.png": "5b2b4a06d9ae82b01f3448f152fea9c31fc936ebf5ef2c9f77847dd9af754330",
+  "pass2/frames/f_076.png": "b4930293252baa6db49b84e366cfa4ac247f18d713779eb370eb61fc9c3bc9d4",
+  "pass2/frames/f_077.png": "0c079f3e6d13340c9861f773c28fbec875aadef5e3a12e811cac82c4ec419f55",
+  "pass2/frames/f_078.png": "422f02bc08d3cc31e19b1d5153f69fd0de8cc7fc4e587d40820306b2b3bfcea7",
+  "pass2/frames/f_079.png": "6a6969e0fc92e11de6cba146af2d9dc8e645fcd65e96f87e27b0fe46c9b80e97",
+  "pass2/overlay.mp4": "85afa5314c2d733674147a28bdb4f83d23f20237e7a0aeee8ccaf5b5a6ef80c2",
+  "pass2/sam/barrier.json": "5a0cd9d7ff2c3b9efd4cf1be5374ffa2ba540e45cda4cf7bdea160157cda3261",
+  "pass2/sam/mover.json": "6d14c7c7fae641fd2f62e965a7ceee44bec983b6d2d4dc65c3215778bec5382b",
+  "pass2/tracks.json": "ed66ea77b3c513bd1f39e4343d84c82eadfd677624f3d90f355256a12bea1053",
+  "pass2/truth_hidden.json": "9affd6ffd35cb2975506a790bc45d82fecaf5035b55ed1a6a7d85ce6cadc5961",
+  "pass2/verification.json": "6a79c7803c02d6d182ed457e4f44ade8b327505df27ad1281c129e8d60d69a63",
+  "repair_turn_1/diff.patch": "7f723454bb6937fa6d671de9b834b2f08136bbdf2a76cc980149bf253a0ba376",
+  "repair_turn_1/patches.json": "e0a049d3cf6cc68ed0fc9a9dd5c08f548a6407f754ed0ada295f9d35e8353951",
+  "repair_turn_1/prompt.json": "5a2ec98c0e9c2c3740897bb9de0500c25c1aca3d3ab7fc6d2a4ebc4357937caa",
+  "repair_turn_1/tool_calls.json": "533aa6b998172189183bbbf60754d594d135a7efb212436e0c16debc50d6c3a7",
+  "repair_turn_1/transcript.json": "b8c9bce7c2d37c974e7b52bb278abdc2f9934dba1361677726e8fab54335eebe"
+ },
+ "final_verdict": "PASS",
+ "finished_at": "2026-10-30T13:31:34+00:00",
+ "kind": "closed_loop",
+ "models": {
+  "contract": "muse-spark-1.3",
+  "diagnosis": "muse-spark-1.3",
+  "escalation": "muse-wonder-1.0",
+  "sam": "sam-3.1"
+ },
+ "notes": [
+  "case3a: different wrong layer"
+ ],
+ "passes": [
+  {
+   "capture": {
+    "duration_s": 12.65,
+    "every_ticks": 3,
+    "fps": 20,
+    "frame_count": 80,
+    "label": "run_20261030-132953_c0fc3b-pass1",
+    "launch": {
+     "pid": 18805,
+     "port": 7400
+    },
+    "max_width": 960,
+    "session_id": "20261030-132953-286642",
+    "settle_ticks": 40,
+    "sidestep_ticks": 25
+   },
+   "clip_path": "pass1/clip.mp4",
+   "clip_sha256": "6f26ee4a9f0b195cabaa456d95399262c4f5cec1263de95ec8c80a8676327ae1",
+   "frame_count": 80,
+   "frames_dir": "pass1/frames",
+   "index": 1,
+   "label": "open-loop (before repair)",
+   "max_residual": 237.0,
+   "open_loop": {
+    "args": {
+     "action": "move_forward",
+     "mode": "press",
+     "observe": false,
+     "wait": false
+    },
+    "mcp_is_error": false,
+    "note": "The MCP tool reports success. Nothing in this result says whether the hurdle stopped the player; only the rendered clip can.",
+    "result": {
+     "input": {
+      "action": "move_forward",
+      "mode": "press",
+      "ms": 0,
+      "ticks": 30
+     },
+     "result": {}
+    },
+    "tool": "godot_send_input"
+   },
+   "overlay_info": {
+    "frames": 80,
+    "mask_decode_failures": 0,
+    "masks_drawn": 148,
+    "path": "<repo>/runs/run_20261030-132953_c0fc3b/pass1/overlay.mp4"
+   },
+   "overlay_path": "pass1/overlay.mp4",
+   "overlay_sha256": "13a51a066e94fe1507b319969a4b9cf72beeff6c457ae4f55f00cbfd5be1d766",
+   "project_tree_sha256": "16207efce25969818618d24bef3ce2a0a440254dea0f7922a5a894bfaf9cc15c",
+   "sam": {
+    "barrier": {
+     "cached": false,
+     "concept": "yellow bar",
+     "coverage_total": 1.0,
+     "frames_processed": 80,
+     "frames_tracked": 80,
+     "object_id_selected": "0",
+     "raw_path": "pass1/sam/barrier.json",
+     "request_id": "b0d1871f-cc5c-4444-bf76-1c9dac9ebfb9",
+     "response_id": "resp_6ae49beb5918c1b99d9d458e",
+     "selection": {
+      "candidates": {
+       "0": {
+        "frames": 80,
+        "mean_area_px": 7304.9875,
+        "mean_confidence": 0.9139785170555115
+       },
+       "1": {
+        "frames": 73,
+        "mean_area_px": 1045.3835616438357,
+        "mean_confidence": 0.7264957427978516
+       }
+      },
+      "rule": "max(mean_confidence, mean_area_px, frames)",
+      "selected": "0"
+     }
+    },
+    "mover": {
+     "cached": false,
+     "concept": "capsule",
+     "coverage_total": 0.85,
+     "frames_processed": 80,
+     "frames_tracked": 68,
+     "object_id_selected": "0",
+     "raw_path": "pass1/sam/mover.json",
+     "request_id": "c26a04a4-6a61-41d1-8685-92d0b9788aab",
+     "response_id": "resp_6ae49be544565346499749cc",
+     "selection": {
+      "candidates": {
+       "0": {
+        "frames": 68,
+        "mean_area_px": 2871.6470588235293,
+        "mean_confidence": 0.827957034111023
+       }
+      },
+      "rule": "max(mean_confidence, mean_area_px, frames)",
+      "selected": "0"
+     }
+    }
+   },
+   "t_fail": 60,
+   "tracks_path": "pass1/tracks.json",
+   "truth_hidden_path": "pass1/truth_hidden.json",
+   "verification_path": "pass1/verification.json",
+   "verification_status": "FAIL"
+  },
+  {
+   "capture": {
+    "duration_s": 12.26,
+    "every_ticks": 3,
+    "fps": 20,
+    "frame_count": 80,
+    "label": "run_20261030-132953_c0fc3b-pass2",
+    "launch": {
+     "pid": 18857,
+     "port": 7400
+    },
+    "max_width": 960,
+    "session_id": "20261030-133105-64a195",
+    "settle_ticks": 40,
+    "sidestep_ticks": 25
+   },
+   "clip_path": "pass2/clip.mp4",
+   "clip_sha256": "034047d5244fbbce78fd70a12ac2852e9cf547ed2749cbfcb2ecb9e63d2908cf",
+   "frame_count": 80,
+   "frames_dir": "pass2/frames",
+   "index": 2,
+   "label": "after repair turn 1",
+   "max_residual": -13.0,
+   "open_loop": {
+    "args": {
+     "action": "move_forward",
+     "mode": "press",
+     "observe": false,
+     "wait": false
+    },
+    "mcp_is_error": false,
+    "note": "The MCP tool reports success. Nothing in this result says whether the hurdle stopped the player; only the rendered clip can.",
+    "result": {
+     "input": {
+      "action": "move_forward",
+      "mode": "press",
+      "ms": 0,
+      "ticks": 30
+     },
+     "result": {}
+    },
+    "tool": "godot_send_input"
+   },
+   "overlay_info": {
+    "frames": 80,
+    "mask_decode_failures": 0,
+    "masks_drawn": 149,
+    "path": "<repo>/runs/run_20261030-132953_c0fc3b/pass2/overlay.mp4"
+   },
+   "overlay_path": "pass2/overlay.mp4",
+   "overlay_sha256": "85afa5314c2d733674147a28bdb4f83d23f20237e7a0aeee8ccaf5b5a6ef80c2",
+   "project_tree_sha256": "54bfa1b51435ffa6be95503364cf9fb194a4bae1eb71f0bf65f5749c47b7e258",
+   "sam": {
+    "barrier": {
+     "cached": false,
+     "concept": "yellow bar",
+     "coverage_total": 1.0,
+     "frames_processed": 80,
+     "frames_tracked": 80,
+     "object_id_selected": "0",
+     "raw_path": "pass2/sam/barrier.json",
+     "request_id": "80fba193-9c49-43f9-aa9e-908ee0af5dd1",
+     "response_id": "resp_6ae49c33de3229c5b6d54b61",
+     "selection": {
+      "candidates": {
+       "0": {
+        "frames": 80,
+        "mean_area_px": 5516.5,
+        "mean_confidence": 0.9101123809814453
+       },
+       "1": {
+        "frames": 57,
+        "mean_area_px": 892.6491228070175,
+        "mean_confidence": 0.7852349281311035
+       }
+      },
+      "rule": "max(mean_confidence, mean_area_px, frames)",
+      "selected": "0"
+     }
+    },
+    "mover": {
+     "cached": false,
+     "concept": "capsule",
+     "coverage_total": 0.8625,
+     "frames_processed": 80,
+     "frames_tracked": 69,
+     "object_id_selected": "0",
+     "raw_path": "pass2/sam/mover.json",
+     "request_id": "521cd453-4859-4a6a-aefd-355c75e2d90c",
+     "response_id": "resp_6ae49c2c25c7682e22504ea7",
+     "selection": {
+      "candidates": {
+       "0": {
+        "frames": 69,
+        "mean_area_px": 2967.1884057971015,
+        "mean_confidence": 0.7697842121124268
+       }
+      },
+      "rule": "max(mean_confidence, mean_area_px, frames)",
+      "selected": "0"
+     }
+    }
+   },
+   "t_fail": null,
+   "tracks_path": "pass2/tracks.json",
+   "truth_hidden_path": "pass2/truth_hidden.json",
+   "verification_path": "pass2/verification.json",
+   "verification_status": "PASS"
+  }
+ ],
+ "repair_turns": [
+  {
+   "anti_cheat": {
+    "banned_terms_checked": 14,
+    "banned_terms_found": [],
+    "mentions_source_filenames": false,
+    "prompt_sha256": "8c5a14a2b3bd7c45f158c0450d5e3b9bca98c163997c78af2511ac2ffd775829"
+   },
+   "diff_path": "repair_turn_1/diff.patch",
+   "diff_sha256": "7f723454bb6937fa6d671de9b834b2f08136bbdf2a76cc980149bf253a0ba376",
+   "escalated": false,
+   "est_cost_usd": 0.073839,
+   "model": "muse-spark-1.3",
+   "outcome_text": "root cause: Hurdle StaticBody on collision_layer=4 while player mask=1, so no contact \u2014 walked through.\npatch: scripts/arena_layout.gd: removed `\"layer\": 4` from Hurdle so it defaults to world layer 1.\nwhy it satisfies: Layer 1 restores solid contact; 0.55 m wall blocks slide without jump, E(t) stays \u22645 px.\n",
+   "patches": [
+    {
+     "find": "{\"name\": \"Hurdle\", \"pos\": Vector3(0, 0.275, -12), \"size\": Vector3(4, 0.55, 0.4), \"kind\": \"hurdle\", \"layer\": 4},",
+     "path": "scripts/arena_layout.gd",
+     "reason": "Hurdle on layer 4 is invisible to player mask=1, so no collision and player walks through. Put it on world layer 1.",
+     "replace": "{\"name\": \"Hurdle\", \"pos\": Vector3(0, 0.275, -12), \"size\": Vector3(4, 0.55, 0.4), \"kind\": \"hurdle\"},",
+     "ts": "2026-10-30T13:30:58+00:00",
+     "turn_patch_index": 1
+    }
+   ],
+   "prompt_path": "repair_turn_1/prompt.json",
+   "request_ids": [
+    "5bc66af1-9549-492d-aeaf-ef08aa922aad",
+    "54be57b6-1698-4ef2-8c20-689c1e3d2790",
+    "2574aaf4-f720-484e-8218-1c16343b8e2e",
+    "fdafd70b-9ff1-4770-8c46-b885b1328edb",
+    "c0c3fbb6-c86b-4066-9560-53171f4578be",
+    "a3135019-4752-4e5d-a428-76e13a6cae1f",
+    "d0684641-124b-475f-8152-b3e688d3b57e",
+    "06aad52c-08c2-4677-a23d-9e614f5b561f",
+    "8e116eb6-7fba-4825-a79d-8775d87ac1ef"
+   ],
+   "response_ids": [
+    "resp_6ae49bef897b07bb35f44dd7",
+    "resp_6ae49bf2f96b25499a3742c3",
+    "resp_6ae49bf710f524a9fbfe45e9",
+    "resp_6ae49bfce4a3dbc124084950",
+    "resp_6ae49c02a143417cd08d47af",
+    "resp_6ae49c075cfcdef4583a4f53",
+    "resp_6ae49c0b5e2167c882e746a1",
+    "resp_6ae49c12a6065e647b774ee0",
+    "resp_6ae49c1830de1a7803fe42a0"
+   ],
+   "tool_call_names": [
+    "list_source_files",
+    "inspect_scene",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "inspect_physics",
+    "inspect_scene",
+    "inspect_physics",
+    "patch_source"
+   ],
+   "tool_calls": 11,
+   "transcript_path": "repair_turn_1/transcript.json",
+   "turn": 1
+  }
+ ],
+ "request_ids": [
+  "fb960ed6-3dab-42b9-b32c-ed25260157e9",
+  "c26a04a4-6a61-41d1-8685-92d0b9788aab",
+  "2118f9fc-206e-4190-b749-57a91c182bdb",
+  "b0d1871f-cc5c-4444-bf76-1c9dac9ebfb9",
+  "5bc66af1-9549-492d-aeaf-ef08aa922aad",
+  "54be57b6-1698-4ef2-8c20-689c1e3d2790",
+  "2574aaf4-f720-484e-8218-1c16343b8e2e",
+  "fdafd70b-9ff1-4770-8c46-b885b1328edb",
+  "c0c3fbb6-c86b-4066-9560-53171f4578be",
+  "a3135019-4752-4e5d-a428-76e13a6cae1f",
+  "d0684641-124b-475f-8152-b3e688d3b57e",
+  "06aad52c-08c2-4677-a23d-9e614f5b561f",
+  "8e116eb6-7fba-4825-a79d-8775d87ac1ef",
+  "9208fd72-4337-4251-9713-9e4d896c8c56",
+  "521cd453-4859-4a6a-aefd-355c75e2d90c",
+  "3a4d18ed-c328-484a-8af3-0970c576ee08",
+  "80fba193-9c49-43f9-aa9e-908ee0af5dd1"
+ ],
+ "rule_sha256": "35dd508645d9282b5682b0bd63ecf58f0becfe9ae9341d67032de874b1d12263",
+ "run_id": "run_20261030-132953_c0fc3b",
+ "schema_version": "1.0",
+ "spend": {
+  "by_model": {
+   "None": {
+    "cached": 0,
+    "calls": 4,
+    "est_cost_usd": 0.0
+   },
+   "muse-spark-1.3": {
+    "cached": 0,
+    "calls": 9,
+    "est_cost_usd": 0.07384
+   },
+   "sam-3.1": {
+    "cached": 0,
+    "calls": 4,
+    "est_cost_usd": 0.064
+   }
+  },
+  "calls": 17,
+  "est_cost_usd": 0.137839
+ },
+ "status": "COMPLETE",
+ "verdict_basis": "Verdict comes only from verifier.verify over SAM 3.1 tracks under the frozen contract; MCP tool statuses and model text are recorded but never consulted.",
+ "workspace": {
+  "baseline_match_at_stage": true,
+  "baseline_tree_sha256": "16207efce25969818618d24bef3ce2a0a440254dea0f7922a5a894bfaf9cc15c",
+  "files": 45,
+  "final_tree_sha256": "54bfa1b51435ffa6be95503364cf9fb194a4bae1eb71f0bf65f5749c47b7e258",
+  "modified_during_run": true,
+  "name": "hurdle_scene",
+  "path": "<repo>/runs/run_20261030-132953_c0fc3b/workspace/hurdle_scene",
+  "staged_at": "2026-10-30T13:29:53+00:00",
+  "staged_tree_sha256": "16207efce25969818618d24bef3ce2a0a440254dea0f7922a5a894bfaf9cc15c"
+ }
+}
