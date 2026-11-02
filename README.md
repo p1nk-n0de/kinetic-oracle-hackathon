@@ -9,6 +9,29 @@ deterministic residual** decides PASS, FAIL or INCONCLUSIVE from numbers alone. 
 blind, from the measurements and a handful of inspection tools, and patches the scene. Then everything is measured again.
 The model never gets to declare success.
 
+## What was built during the hackathon
+The hackathon ran 26 Oct – 4 Nov 2026. Everything in this repository was written on **30 Oct 2026**: the git history runs from
+12:03 to 15:23 UTC that day, and all 21 runs carry that date in their ids and manifests. The demo video was rendered from these
+run bundles on 2 Nov 2026.
+
+| Component | Status | Evidence |
+|---|---|---|
+| SAM 3.1 integration and per-frame tracking (`propriosam/meta_client.py`, `propriosam/vision_tracker.py`) | **Built during the hackathon** | git history, 30 Oct |
+| Muse Spark contract compiler: objective to frozen, hashed contract (`propriosam/sensory_contract.py`) | **Built during the hackathon** | git history, 30 Oct |
+| Residual verifier with coverage and approach gates (`propriosam/verifier.py`) | **Built during the hackathon** | git history, 30 Oct |
+| Muse Spark → Muse Wonder blind diagnosis and bounded repair loop (`propriosam/diagnosis.py`, `propriosam/repair_orchestrator.py`) | **Built during the hackathon** | git history, 30 Oct |
+| Godot adapter: working-copy staging, tick-locked capture, Muse's 7-tool allowlist (`propriosam/mcp_adapter.py`) | **Built during the hackathon**. It drives the pre-existing server below. | git history, 30 Oct |
+| 21 closed-loop runs, evaluation, hidden-truth audit (`runs/`, `docs/EVALUATION_REPORT.md`) | **Run during the hackathon** | run ids and manifests, 30 Oct |
+| Offline replay verifier, 306 tests, telemetry dashboard (`scripts/replay_run.py`, `tests/`, `web/`) | **Built during the hackathon** | git history, 30 Oct |
+| Demo video | **Made during the hackathon** | rendered 2 Nov from the run bundles |
+| The Godot test game (Proving Ground, with its deliberate-defect fixture) | **Pre-existing**: the system under test | separate private repository, committed 23 Oct 2026, unchanged since the event began |
+| The Godot MCP server that launches, drives and captures the game | **Pre-existing**: test infrastructure | same repository, committed 23 Oct 2026, unchanged since the event began |
+
+Also not new work: the Godot 4.6.2 engine, Meta's `meta-sam-parser`, and the open-source libraries listed in `pyproject.toml` and
+`web/package.json`. The run bundles contain excerpts of the pre-existing game's source, which Muse read through its tools, and
+footage of the game. Both are evidence of the checks, not part of the entry. The software was written with Claude Code; every
+model call at runtime is a Meta model.
+
 ## The demonstration: "The agent that believed its tool"
 A Godot action, *walk forward; the low hurdle must stop you*, goes through a Godot MCP server. The tool returns OK. The
 rendered clip shows the player walking straight through the hurdle.

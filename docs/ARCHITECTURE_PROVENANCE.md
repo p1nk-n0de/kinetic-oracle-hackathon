@@ -30,7 +30,8 @@ verifier.py: E(t) = y_bottom(barrier) − y_bottom(mover); VIOLATION = E > thr f
    ─▶ PASS | FAIL (t_fail) | INCONCLUSIVE (coverage gate) | ERROR
                                                                         │ FAIL
 Muse Spark (Responses API, native function tools) sees ONLY: objective, contract, tool's OK, measured rows,
-   and 6 allowlisted tools (inspect_scene, inspect_physics, drive, list_source_files, read_source, patch_source)
+   and 7 allowlisted tools (inspect_scene, inspect_physics, get_runtime_errors, drive, list_source_files, read_source, patch_source;
+   get_runtime_errors was added after the broken-repair finding, so the earliest runs had the other 6)
    ─▶ patch on the working copy ─▶ relaunch ─▶ re-capture ─▶ SAM ─▶ verifier again (≤ 3 turns; Wonder after a failed Spark turn)
                                                                         │
 runs/<run_id>/: manifest, contract, passes, repair turns, api_calls.jsonl (request ids), sha256 of every file
