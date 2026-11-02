@@ -1,10 +1,10 @@
 """Safe working-copy manager + narrow allowlisted bridge to the existing Godot
-MCP server (godot-studio, pre-existing infrastructure).
+MCP server (pre-existing infrastructure; location and entry point in `local_config`).
 
 * The baseline project is copied into `runs/<run_id>/workspace/<name>/` and its
   tree hash must equal the baseline's before anything runs. The baseline is
-  never written. The spawned MCP server gets `GODOT_STUDIO_EXTRA_ROOT=<runs dir>` so the
-  copy is a launchable project root.
+  never written. The spawned MCP server gets `<EXTRA_ROOT_ENV>=<runs dir>` so the copy is a
+  launchable project root.
 * `capture_clip` is the tick-locked recipe that produced the prior evidence:
   settle, sidestep, hold forward, capture one real rendered frame every 3
   physics ticks (80 frames) while recording the player's true state to a
@@ -26,12 +26,11 @@ from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 
 from .artifacts import scrub, tree_sha256, write_json
+from .local_config import EXTRA_ROOT_ENV, MCP_ENTRY, STUDIO, UV
 from .meta_client import utc_now
 from .vision_tracker import encode_frames
 
-UV = "uv"
-STUDIO = Path("~/Projects/godot-studio").expanduser()
-SERVER = [UV, "run", "--directory", str(STUDIO), "godot-studio-mcp"]
+SERVER = [UV, "run", "--directory", str(STUDIO), MCP_ENTRY]
 PLAYER = "/root/Main/Player"
 MAX_PATCHES_PER_TURN = 2
 
@@ -68,7 +67,7 @@ class GodotStudio:
 
     async def __aenter__(self):
         env = {k: v for k, v in os.environ.items() if k not in ("MODEL_API_KEY", "META_API_KEY")}
-        env["GODOT_STUDIO_EXTRA_ROOT"] = str(self.extra_root)
+        env[EXTRA_ROOT_ENV] = str(self.extra_root)
         params = StdioServerParameters(command=SERVER[0], args=SERVER[1:], env=env, cwd=str(STUDIO))
         self._cm = stdio_client(params)
         read, write = await self._cm.__aenter__()

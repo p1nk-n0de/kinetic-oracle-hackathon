@@ -2,6 +2,10 @@
 
 Machine: Apple M4 Pro, 24 GB, macOS (Darwin 27). All paths verified on disk today.
 
+In this public copy the private studio's names are generic substitutes (`godot-studio`, `godot-studio-mcp`, `godot_studio`,
+`GODOT_STUDIO_EXTRA_ROOT`; see `docs/SANITIZATION.md`). Point the code at a real copy with the `KO_*` variables in
+`propriosam/local_config.py`, set in the untracked `scripts/env.local.sh`.
+
 ## 1. Existing infrastructure recovered (pre-dates the hackathon — disclosed, not claimed)
 
 | Item | Location | Notes |

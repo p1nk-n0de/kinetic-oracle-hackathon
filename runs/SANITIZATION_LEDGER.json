@@ -1,0 +1,768 @@
+{
+ "markers": {
+  "<redacted:studio>": "name of the author's private Godot studio (pre-existing tooling, not part of the entry)",
+  "<redacted:volume>": "label of a local external drive"
+ },
+ "note": "Files listed under `files` are published with identity strings replaced by the markers above. recorded_sha256 is the hash the run wrote into run_manifest.json, left unchanged: it is the hash of the private original. public_sha256 is the hash of the file in this repository. Markers sit only in tool results, MCP log previews and banned-term lists: no prompt text, model-authored text or replay input was changed. Every run_manifest.json also carries the rewritten id of the commit that produced the run (environment.git.commit); manifests are not in their own hash lists. See docs/SANITIZATION.md.",
+ "runs": {
+  "run_20261030-132053_bf568b": {
+   "files": {
+    "mcp_calls.jsonl": {
+     "locations": [
+      "line 1 (godot_environment_audit): result_preview"
+     ],
+     "markers": {
+      "<redacted:studio>": 1
+     },
+     "public_sha256": "765ecc04aa59c15503a8e95fbcb1f84de32a37355dd5c94bba147a94e3611363",
+     "recorded_sha256": "5747b864b5918a9360f00c94a0759f8147e538001c82052e9ea27ce8a5314d88"
+    },
+    "repair_turn_1/prompt.json": {
+     "locations": [
+      "banned_terms_checked[12]",
+      "banned_terms_checked[13]"
+     ],
+     "markers": {
+      "<redacted:studio>": 1,
+      "<redacted:volume>": 1
+     },
+     "public_sha256": "3d80b2cd61943d5255ee4b847b6fefede70f94626c39afdfdf72852a17a3aa19",
+     "recorded_sha256": "60a4da3413ffdc3a46d6dca8128d6addd8195ce6d48998cdd699f58a5d90e7a0"
+    }
+   },
+   "run_manifest.json": {
+    "locations": [
+     "anti_cheat.banned_terms[12]",
+     "anti_cheat.banned_terms[13]"
+    ],
+    "markers": {
+     "<redacted:studio>": 1,
+     "<redacted:volume>": 1
+    }
+   }
+  },
+  "run_20261030-132315_7c6e9b": {
+   "files": {
+    "mcp_calls.jsonl": {
+     "locations": [
+      "line 1 (godot_environment_audit): result_preview"
+     ],
+     "markers": {
+      "<redacted:studio>": 1
+     },
+     "public_sha256": "45a440ffcc5d32218eb8364a75187814f13d294ef196d187445dad65d1d8807a",
+     "recorded_sha256": "e8d91baff7f52a1ccfc596db47a531042241bda1067fc81aa66e3994f085d36c"
+    },
+    "repair_turn_1/prompt.json": {
+     "locations": [
+      "banned_terms_checked[12]",
+      "banned_terms_checked[13]"
+     ],
+     "markers": {
+      "<redacted:studio>": 1,
+      "<redacted:volume>": 1
+     },
+     "public_sha256": "cf1989f8ae1f87e39e640418919e7a813c3d7e04f8096ec10666dada0906695d",
+     "recorded_sha256": "727c3d49afc7053a53b680c6da496a88c14e132290eaa3bf1ad3870fa5a00c1b"
+    }
+   },
+   "run_manifest.json": {
+    "locations": [
+     "anti_cheat.banned_terms[12]",
+     "anti_cheat.banned_terms[13]"
+    ],
+    "markers": {
+     "<redacted:studio>": 1,
+     "<redacted:volume>": 1
+    }
+   }
+  },
+  "run_20261030-132503_349fe5": {
+   "files": {
+    "mcp_calls.jsonl": {
+     "locations": [
+      "line 1 (godot_environment_audit): result_preview"
+     ],
+     "markers": {
+      "<redacted:studio>": 1
+     },
+     "public_sha256": "06408ea63aae1c55a5e965daf9ae5046a6a30f4f6803a2e4e4c9261b7f581453",
+     "recorded_sha256": "8cf77fad4089ccd262d16733f01ebd54b695b06504521e46fdb7564c1af96627"
+    },
+    "repair_turn_1/prompt.json": {
+     "locations": [
+      "banned_terms_checked[12]",
+      "banned_terms_checked[13]"
+     ],
+     "markers": {
+      "<redacted:studio>": 1,
+      "<redacted:volume>": 1
+     },
+     "public_sha256": "c19a8c9019a0339bc04b4d5bf23b0dec04efc66ad7d42da2a963b1f29dfe284f",
+     "recorded_sha256": "e9302a62ddcfe5e1c9e9843fda8281120d711e027402311213efab3b495c487c"
+    }
+   },
+   "run_manifest.json": {
+    "locations": [
+     "anti_cheat.banned_terms[12]",
+     "anti_cheat.banned_terms[13]"
+    ],
+    "markers": {
+     "<redacted:studio>": 1,
+     "<redacted:volume>": 1
+    }
+   }
+  },
+  "run_20261030-132750_e09010": {
+   "files": {
+    "mcp_calls.jsonl": {
+     "locations": [
+      "line 1 (godot_environment_audit): result_preview"
+     ],
+     "markers": {
+      "<redacted:studio>": 1
+     },
+     "public_sha256": "c77e519b5f4d7626de556fff9d47303cfd07b4b759e6d13733e4d574da2987c4",
+     "recorded_sha256": "219e233d837d680e7b736910af459e60cddaff972ead53051f39fcdf4b03e0e8"
+    }
+   },
+   "run_manifest.json": {
+    "locations": [
+     "anti_cheat.banned_terms[12]",
+     "anti_cheat.banned_terms[13]"
+    ],
+    "markers": {
+     "<redacted:studio>": 1,
+     "<redacted:volume>": 1
+    }
+   }
+  },
+  "run_20261030-132822_293587": {
+   "files": {
+    "mcp_calls.jsonl": {
+     "locations": [
+      "line 1 (godot_environment_audit): result_preview"
+     ],
+     "markers": {
+      "<redacted:studio>": 1
+     },
+     "public_sha256": "c6bcba66edec776aea62e8b4aed7cabb44dc5242dd93cd4e175032185bf8b990",
+     "recorded_sha256": "f17b8d0ca8747950b823f8fb690431c1c134be9d5c1122eab19a7ff1a9e5b010"
+    }
+   },
+   "run_manifest.json": {
+    "locations": [
+     "anti_cheat.banned_terms[12]",
+     "anti_cheat.banned_terms[13]"
+    ],
+    "markers": {
+     "<redacted:studio>": 1,
+     "<redacted:volume>": 1
+    }
+   }
+  },
+  "run_20261030-132921_7fecb2": {
+   "files": {
+    "mcp_calls.jsonl": {
+     "locations": [
+      "line 1 (godot_environment_audit): result_preview"
+     ],
+     "markers": {
+      "<redacted:studio>": 1
+     },
+     "public_sha256": "f5dce1c987a45cdc5df0e7f9ec84b55f1759c08514f62a916a4164ddca167142",
+     "recorded_sha256": "e51e1466a0539c95a50557882f40595751a467c31583e28d4132c2ffc78f7490"
+    }
+   },
+   "run_manifest.json": {
+    "locations": [
+     "anti_cheat.banned_terms[12]",
+     "anti_cheat.banned_terms[13]"
+    ],
+    "markers": {
+     "<redacted:studio>": 1,
+     "<redacted:volume>": 1
+    }
+   }
+  },
+  "run_20261030-132953_c0fc3b": {
+   "files": {
+    "mcp_calls.jsonl": {
+     "locations": [
+      "line 1 (godot_environment_audit): result_preview"
+     ],
+     "markers": {
+      "<redacted:studio>": 1
+     },
+     "public_sha256": "289e58cbc241f12076da68bf14a75ac9c4d448404c37729e0ace539911b8412b",
+     "recorded_sha256": "579522519c1c41e64376f5c45c6e45fdd421bbfa01c6b74018097810241c9a5c"
+    },
+    "repair_turn_1/prompt.json": {
+     "locations": [
+      "banned_terms_checked[12]",
+      "banned_terms_checked[13]"
+     ],
+     "markers": {
+      "<redacted:studio>": 1,
+      "<redacted:volume>": 1
+     },
+     "public_sha256": "8359a88ec52aa03516fd0b81c10f23ba3e38eec004dd223216ddb4822eb9b88c",
+     "recorded_sha256": "5a2ec98c0e9c2c3740897bb9de0500c25c1aca3d3ab7fc6d2a4ebc4357937caa"
+    }
+   },
+   "run_manifest.json": {
+    "locations": [
+     "anti_cheat.banned_terms[12]",
+     "anti_cheat.banned_terms[13]"
+    ],
+    "markers": {
+     "<redacted:studio>": 1,
+     "<redacted:volume>": 1
+    }
+   }
+  },
+  "run_20261030-133135_e86e1b": {
+   "files": {
+    "mcp_calls.jsonl": {
+     "locations": [
+      "line 1 (godot_environment_audit): result_preview"
+     ],
+     "markers": {
+      "<redacted:studio>": 1
+     },
+     "public_sha256": "13ab0b18b93f48710a556242ed907d9a8c34a5cb9ba8499a6f038683180f0412",
+     "recorded_sha256": "780ae2d88ab6bfa9b339a7e087a0416f4ee2fad654ffc10b05fd05ca8dcbc08b"
+    },
+    "repair_turn_1/prompt.json": {
+     "locations": [
+      "banned_terms_checked[12]",
+      "banned_terms_checked[13]"
+     ],
+     "markers": {
+      "<redacted:studio>": 1,
+      "<redacted:volume>": 1
+     },
+     "public_sha256": "58b9171f2075f1b3400cde199aba5018ff116a362ea4c90f52127729c5559ca5",
+     "recorded_sha256": "43d5489caa46537ab1949dc1d7bcbc6eef0a045a88bac3fab00908ede52757ca"
+    }
+   },
+   "run_manifest.json": {
+    "locations": [
+     "anti_cheat.banned_terms[12]",
+     "anti_cheat.banned_terms[13]"
+    ],
+    "markers": {
+     "<redacted:studio>": 1,
+     "<redacted:volume>": 1
+    }
+   }
+  },
+  "run_20261030-133310_79a91f": {
+   "files": {
+    "mcp_calls.jsonl": {
+     "locations": [
+      "line 1 (godot_environment_audit): result_preview"
+     ],
+     "markers": {
+      "<redacted:studio>": 1
+     },
+     "public_sha256": "5a68fd757b94bee5945258d9c6516743582d50a6778f23941e141fb03573b89d",
+     "recorded_sha256": "dd0eac4b3b1ee27fa1999364cca9617f7735b08ef9d33e5af68d9e97b977e6c7"
+    },
+    "repair_turn_1/prompt.json": {
+     "locations": [
+      "banned_terms_checked[12]",
+      "banned_terms_checked[13]"
+     ],
+     "markers": {
+      "<redacted:studio>": 1,
+      "<redacted:volume>": 1
+     },
+     "public_sha256": "ea81845e7564636f61349d67d4533c25604d6400ce8761307a1770e41e890211",
+     "recorded_sha256": "c9fbe6e2a6d028400e313d288ecea62eab0434971d2569799fcb4e7b447c805a"
+    }
+   },
+   "run_manifest.json": {
+    "locations": [
+     "anti_cheat.banned_terms[12]",
+     "anti_cheat.banned_terms[13]"
+    ],
+    "markers": {
+     "<redacted:studio>": 1,
+     "<redacted:volume>": 1
+    }
+   }
+  },
+  "run_20261030-133450_d73762": {
+   "files": {
+    "mcp_calls.jsonl": {
+     "locations": [
+      "line 1 (godot_environment_audit): result_preview"
+     ],
+     "markers": {
+      "<redacted:studio>": 1
+     },
+     "public_sha256": "e6641fa288247fe02ebd908fd266a34de8ce078af1e33f253108e2244e366e95",
+     "recorded_sha256": "8d4e5aca8008ca1971d17cf46f3726b20abf33f5302759b355621028b48bd472"
+    },
+    "repair_turn_1/prompt.json": {
+     "locations": [
+      "banned_terms_checked[12]",
+      "banned_terms_checked[13]"
+     ],
+     "markers": {
+      "<redacted:studio>": 1,
+      "<redacted:volume>": 1
+     },
+     "public_sha256": "7f522fc6b5024282fe9a4a24ae7a5aab09efb9d64e94ca720db69a30bd63bf06",
+     "recorded_sha256": "168040a0ca55985b47adabbb58f08253a49b3ac2897e2f871f84bfc82a6010ca"
+    }
+   },
+   "run_manifest.json": {
+    "locations": [
+     "anti_cheat.banned_terms[12]",
+     "anti_cheat.banned_terms[13]"
+    ],
+    "markers": {
+     "<redacted:studio>": 1,
+     "<redacted:volume>": 1
+    }
+   }
+  },
+  "run_20261030-133649_b146ca": {
+   "files": {
+    "mcp_calls.jsonl": {
+     "locations": [
+      "line 1 (godot_environment_audit): result_preview"
+     ],
+     "markers": {
+      "<redacted:studio>": 1
+     },
+     "public_sha256": "050389584f1e471aff6d562c57cd9d4756aa5b3123fadc6f088bf8210fb6aa26",
+     "recorded_sha256": "8cf7393b3c6f620fae3824cf87a7cfcc4a6ca78711e3d289ad9269e324af5b43"
+    },
+    "repair_turn_1/prompt.json": {
+     "locations": [
+      "banned_terms_checked[12]",
+      "banned_terms_checked[13]"
+     ],
+     "markers": {
+      "<redacted:studio>": 1,
+      "<redacted:volume>": 1
+     },
+     "public_sha256": "58a1e53fc8eaf64bb7c08118609e31dac99a5f81635b37514021596cc3bbad1d",
+     "recorded_sha256": "eea7175d2c6227263b3a914b5dab26e7e5a40b174821dec534c5d11cd5f7a167"
+    }
+   },
+   "run_manifest.json": {
+    "locations": [
+     "anti_cheat.banned_terms[12]",
+     "anti_cheat.banned_terms[13]"
+    ],
+    "markers": {
+     "<redacted:studio>": 1,
+     "<redacted:volume>": 1
+    }
+   }
+  },
+  "run_20261030-134044_f95522": {
+   "files": {
+    "mcp_calls.jsonl": {
+     "locations": [
+      "line 1 (godot_environment_audit): result_preview"
+     ],
+     "markers": {
+      "<redacted:studio>": 1
+     },
+     "public_sha256": "1315c6e848c3573186e26ac3c4658e1ea234fae85f46c1b4ddf600accce591db",
+     "recorded_sha256": "e4c20d4aaf25212ba735b8326c1d9f8e6e8e75a5b137912eee0b9a5f3a86cbd6"
+    },
+    "repair_turn_1/prompt.json": {
+     "locations": [
+      "banned_terms_checked[12]",
+      "banned_terms_checked[13]"
+     ],
+     "markers": {
+      "<redacted:studio>": 1,
+      "<redacted:volume>": 1
+     },
+     "public_sha256": "e6a9f0179f9311d6ee577aefb414f7bb5b6af544eb53ada341bdc4641a301fc4",
+     "recorded_sha256": "b0a796e4e3dcfa0cf8ccbce9d247409f6964c13d9c0f754bd846b8862d0275c2"
+    }
+   },
+   "run_manifest.json": {
+    "locations": [
+     "anti_cheat.banned_terms[12]",
+     "anti_cheat.banned_terms[13]"
+    ],
+    "markers": {
+     "<redacted:studio>": 1,
+     "<redacted:volume>": 1
+    }
+   }
+  },
+  "run_20261030-134338_9cf9f4": {
+   "files": {
+    "mcp_calls.jsonl": {
+     "locations": [
+      "line 1 (godot_environment_audit): result_preview"
+     ],
+     "markers": {
+      "<redacted:studio>": 1
+     },
+     "public_sha256": "6fe92fa030d45d14aded2867648644d84709b15aa95cc3990f8fbcacdb4fd942",
+     "recorded_sha256": "58cc891e6556d7361655de3e58069b037c7339f5f5def2bca36ea93e8e597369"
+    },
+    "repair_turn_1/prompt.json": {
+     "locations": [
+      "banned_terms_checked[12]",
+      "banned_terms_checked[13]"
+     ],
+     "markers": {
+      "<redacted:studio>": 1,
+      "<redacted:volume>": 1
+     },
+     "public_sha256": "031e64daa40fb7874c8ca13cad63a99a7fe906855e534e8cb6693762419f62da",
+     "recorded_sha256": "5851ad4ed10f38f790aeab44d7c80f2388cba9ac5898ca0eb39b6a9740e546a4"
+    }
+   },
+   "run_manifest.json": {
+    "locations": [
+     "anti_cheat.banned_terms[12]",
+     "anti_cheat.banned_terms[13]"
+    ],
+    "markers": {
+     "<redacted:studio>": 1,
+     "<redacted:volume>": 1
+    }
+   }
+  },
+  "run_20261030-134544_a2314f": {
+   "files": {
+    "mcp_calls.jsonl": {
+     "locations": [
+      "line 1 (godot_environment_audit): result_preview",
+      "line 334 (godot_get_runtime_errors): result_preview"
+     ],
+     "markers": {
+      "<redacted:studio>": 2
+     },
+     "public_sha256": "6b5d5b9f68e186e4ae93b0d949f917a7c443e11065e3753ababf0e236263476f",
+     "recorded_sha256": "fcb7d220621c9c566c68933f2b214f0dd2f702a5eac8bccc321f5621f4ea9614"
+    },
+    "repair_turn_1/prompt.json": {
+     "locations": [
+      "banned_terms_checked[12]",
+      "banned_terms_checked[13]"
+     ],
+     "markers": {
+      "<redacted:studio>": 1,
+      "<redacted:volume>": 1
+     },
+     "public_sha256": "e8954805aff5e267246261f03c9e5e19b5878b2713338c95f4967fb0bb8f4080",
+     "recorded_sha256": "443b84efec7aeb53d23fea9f86fd2a80704e5840ddd6d9b1ea6a1a038a02abda"
+    },
+    "repair_turn_1/transcript.json": {
+     "locations": [
+      "[17] tool get_runtime_errors: output.process_log_tail[4]"
+     ],
+     "markers": {
+      "<redacted:studio>": 1
+     },
+     "public_sha256": "993f107174189789fe48dc1a855f277697f44a1a1ec9028e9769023b7a8c23af",
+     "recorded_sha256": "1b109ec8b89c020f735508a81db4d74216bec3e503d2a47232ae61701d3ba026"
+    }
+   },
+   "run_manifest.json": {
+    "locations": [
+     "anti_cheat.banned_terms[12]",
+     "anti_cheat.banned_terms[13]"
+    ],
+    "markers": {
+     "<redacted:studio>": 1,
+     "<redacted:volume>": 1
+    }
+   }
+  },
+  "run_20261030-134737_d075ab": {
+   "files": {
+    "mcp_calls.jsonl": {
+     "locations": [
+      "line 1 (godot_environment_audit): result_preview"
+     ],
+     "markers": {
+      "<redacted:studio>": 1
+     },
+     "public_sha256": "00dd723fbdbc44443ed26322272e5479bc76cfb6ae38f5ab1b673eb29c80159b",
+     "recorded_sha256": "9a3b0c22bff99c16f651e76ad68079a1f60659d1d53b6fc98362056c3bf0206d"
+    },
+    "repair_turn_1/prompt.json": {
+     "locations": [
+      "banned_terms_checked[12]",
+      "banned_terms_checked[13]"
+     ],
+     "markers": {
+      "<redacted:studio>": 1,
+      "<redacted:volume>": 1
+     },
+     "public_sha256": "178cace6fdc83cef4d48cc3caa38d6ee05605f28f91b213fc2934dab6b1216cd",
+     "recorded_sha256": "fef181cae09928ecf5ebbd3a73958d47fbe9070def409197349892203841258c"
+    }
+   },
+   "run_manifest.json": {
+    "locations": [
+     "anti_cheat.banned_terms[12]",
+     "anti_cheat.banned_terms[13]"
+    ],
+    "markers": {
+     "<redacted:studio>": 1,
+     "<redacted:volume>": 1
+    }
+   }
+  },
+  "run_20261030-134947_c31b06": {
+   "files": {
+    "mcp_calls.jsonl": {
+     "locations": [
+      "line 1 (godot_environment_audit): result_preview"
+     ],
+     "markers": {
+      "<redacted:studio>": 1
+     },
+     "public_sha256": "cfaf98b45284e5967edea91d814e282140546fa67105348fc11f0293783f661c",
+     "recorded_sha256": "6f9318368a21034240b4455eb34751ffb704ca096fb874e2499ca7911df20706"
+    },
+    "repair_turn_1/prompt.json": {
+     "locations": [
+      "banned_terms_checked[12]",
+      "banned_terms_checked[13]"
+     ],
+     "markers": {
+      "<redacted:studio>": 1,
+      "<redacted:volume>": 1
+     },
+     "public_sha256": "386e5d7f7f8e1a7b2d4e516bed358651438c42515ce2bcf294ec05c3b6d3b680",
+     "recorded_sha256": "32983df488ba91ef0a9bd30c82a5002a881039b55fbf2435b90e588e877ee959"
+    }
+   },
+   "run_manifest.json": {
+    "locations": [
+     "anti_cheat.banned_terms[12]",
+     "anti_cheat.banned_terms[13]"
+    ],
+    "markers": {
+     "<redacted:studio>": 1,
+     "<redacted:volume>": 1
+    }
+   }
+  },
+  "run_20261030-135231_674ad3": {
+   "files": {
+    "mcp_calls.jsonl": {
+     "locations": [
+      "line 1 (godot_environment_audit): result_preview"
+     ],
+     "markers": {
+      "<redacted:studio>": 1
+     },
+     "public_sha256": "19f57a9f88b1de739bc7855a9c23f06c9b0db5a3b2a1fcb5cfc4c6d9f6707793",
+     "recorded_sha256": "b25d662e7684bb78e6c07b556a3168de7cfb324bf13aef7cc37cbd0e70313b32"
+    },
+    "repair_turn_1/prompt.json": {
+     "locations": [
+      "banned_terms_checked[12]",
+      "banned_terms_checked[13]"
+     ],
+     "markers": {
+      "<redacted:studio>": 1,
+      "<redacted:volume>": 1
+     },
+     "public_sha256": "974bf6071f855be9fa7e43389ac314b565478be731089b21ecd271d4997f1e6d",
+     "recorded_sha256": "bb1f82a324bddc81aeeef0b30abb395a8fa94dff2bb24d7c0b5fb882990d9263"
+    }
+   },
+   "run_manifest.json": {
+    "locations": [
+     "anti_cheat.banned_terms[12]",
+     "anti_cheat.banned_terms[13]"
+    ],
+    "markers": {
+     "<redacted:studio>": 1,
+     "<redacted:volume>": 1
+    }
+   }
+  },
+  "run_20261030-135414_4556fe": {
+   "files": {
+    "mcp_calls.jsonl": {
+     "locations": [
+      "line 1 (godot_environment_audit): result_preview"
+     ],
+     "markers": {
+      "<redacted:studio>": 1
+     },
+     "public_sha256": "f773be667e7ebad251638d304faf2ae2a283117145a12ad62512e67ae04dea65",
+     "recorded_sha256": "9e1749c0cad8567d9196e32b5ba47000648f9bb37690b956db016290a8e6b62e"
+    },
+    "repair_turn_1/prompt.json": {
+     "locations": [
+      "banned_terms_checked[12]",
+      "banned_terms_checked[13]"
+     ],
+     "markers": {
+      "<redacted:studio>": 1,
+      "<redacted:volume>": 1
+     },
+     "public_sha256": "87237c659277ad365f41729195f11b177c175fec6d6f8db2cc16c77cb0c14033",
+     "recorded_sha256": "c83b6887e579d308fe6a99203d7add7a0bd05631dff63a8202b84770f721d63b"
+    },
+    "repair_turn_1/transcript.json": {
+     "locations": [
+      "[16] tool read_source: output.content"
+     ],
+     "markers": {
+      "<redacted:studio>": 4
+     },
+     "public_sha256": "b22d83149dd7de8446512129c101c649c037a22f853f1baf48677a32d3fdad17",
+     "recorded_sha256": "2e60381b7e6e8a4412932a9d545272c5e30a70ab2d9b33b97e84782229013e2a"
+    }
+   },
+   "run_manifest.json": {
+    "locations": [
+     "anti_cheat.banned_terms[12]",
+     "anti_cheat.banned_terms[13]"
+    ],
+    "markers": {
+     "<redacted:studio>": 1,
+     "<redacted:volume>": 1
+    }
+   }
+  },
+  "run_20261030-135631_cda0ab": {
+   "files": {
+    "mcp_calls.jsonl": {
+     "locations": [
+      "line 1 (godot_environment_audit): result_preview"
+     ],
+     "markers": {
+      "<redacted:studio>": 1
+     },
+     "public_sha256": "72a97c50d3db6ed67fa476705ec06000ab830b44ec23783252c27f77aa87c3c2",
+     "recorded_sha256": "de30555d2a1b50885bae4a700d1f1eb595a2a4e9e6e5cffb7ac99f0f0381833d"
+    },
+    "repair_turn_1/prompt.json": {
+     "locations": [
+      "banned_terms_checked[12]",
+      "banned_terms_checked[13]"
+     ],
+     "markers": {
+      "<redacted:studio>": 1,
+      "<redacted:volume>": 1
+     },
+     "public_sha256": "fc1706ee858551764ccce135894a16efa0140689cebd1a6333d2ece291b281bc",
+     "recorded_sha256": "b9c45b14f034a0d9ae3b27e5a553cf3ecd5641d17571cfdf8695a9aac8cdecd3"
+    }
+   },
+   "run_manifest.json": {
+    "locations": [
+     "anti_cheat.banned_terms[12]",
+     "anti_cheat.banned_terms[13]"
+    ],
+    "markers": {
+     "<redacted:studio>": 1,
+     "<redacted:volume>": 1
+    }
+   }
+  },
+  "run_20261030-135822_cfbb17": {
+   "files": {
+    "mcp_calls.jsonl": {
+     "locations": [
+      "line 1 (godot_environment_audit): result_preview"
+     ],
+     "markers": {
+      "<redacted:studio>": 1
+     },
+     "public_sha256": "10e085963917f853d8b8826f53b03505b0a035605db3d7d6fc48bc3187e0fde4",
+     "recorded_sha256": "8b14af9f383ea755472d2e421aaea6c5a14d3ecfd1cdf92c6e05fecdb5708d88"
+    },
+    "repair_turn_1/prompt.json": {
+     "locations": [
+      "banned_terms_checked[12]",
+      "banned_terms_checked[13]"
+     ],
+     "markers": {
+      "<redacted:studio>": 1,
+      "<redacted:volume>": 1
+     },
+     "public_sha256": "b6db8a87670ab733f40fc68b755857d68990314e882c099ec45e84a014d998cd",
+     "recorded_sha256": "974e63f415f1bac104bae8553d851b6d4e9e3325c0218c61e1a18f5cc4bd3aa9"
+    }
+   },
+   "run_manifest.json": {
+    "locations": [
+     "anti_cheat.banned_terms[12]",
+     "anti_cheat.banned_terms[13]"
+    ],
+    "markers": {
+     "<redacted:studio>": 1,
+     "<redacted:volume>": 1
+    }
+   }
+  },
+  "run_20261030-140019_79d646": {
+   "files": {
+    "mcp_calls.jsonl": {
+     "locations": [
+      "line 1 (godot_environment_audit): result_preview"
+     ],
+     "markers": {
+      "<redacted:studio>": 1
+     },
+     "public_sha256": "e54c28295e1d3ed1328fc1c0cda19043c1a5f974f9485b4a29553aceff8fa666",
+     "recorded_sha256": "9c594ef9ad2afc9c152bb3f4e15116cd0c493e37ee378b3fef180c0566e89451"
+    },
+    "repair_turn_1/prompt.json": {
+     "locations": [
+      "banned_terms_checked[12]",
+      "banned_terms_checked[13]"
+     ],
+     "markers": {
+      "<redacted:studio>": 1,
+      "<redacted:volume>": 1
+     },
+     "public_sha256": "69dbbf2bdfe3d78de7096659d36611ca4c33e450846853d6192c67837dd899d8",
+     "recorded_sha256": "07cf4ead110a388e9fa830080ffb4c9a53c64d4769029c7671764313f65e8556"
+    },
+    "repair_turn_2/prompt.json": {
+     "locations": [
+      "banned_terms_checked[12]",
+      "banned_terms_checked[13]"
+     ],
+     "markers": {
+      "<redacted:studio>": 1,
+      "<redacted:volume>": 1
+     },
+     "public_sha256": "8fc7adf61f1f5beed3cabd7b8af9b3e97cefd879b49cf9efba9e6bdfa8e5b585",
+     "recorded_sha256": "56ca90faff70c8ca1946822c1691311dca817f30b4f9898010b20188d1fb2a04"
+    }
+   },
+   "run_manifest.json": {
+    "locations": [
+     "anti_cheat.banned_terms[12]",
+     "anti_cheat.banned_terms[13]"
+    ],
+    "markers": {
+     "<redacted:studio>": 1,
+     "<redacted:volume>": 1
+    }
+   }
+  }
+ },
+ "sanitizable_file_names": [
+  "mcp_calls.jsonl",
+  "prompt.json",
+  "transcript.json"
+ ],
+ "schema_version": "1.0"
+}

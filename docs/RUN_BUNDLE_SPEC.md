@@ -64,3 +64,12 @@ first frame of that run.
    `verification.json` (status, t_fail, residual series).
 3. Print a turn-by-turn table: pass → status/t_fail/max E/coverage; repair turn → model, tool calls, patches, anti-cheat screen.
 4. Exit 0 only if every hash matches and every recomputed verdict matches.
+
+## Redacted copies in the public release
+`runs/SANITIZATION_LEDGER.json` (copied to `web/public/runs/`) lists the bundle files this public copy publishes with
+identity strings replaced by `<redacted:…>` markers (`docs/SANITIZATION.md`). The manifest keeps the hash each run recorded,
+which is the hash of the private original. A file whose present hash differs is a *redacted copy* only if it is a
+`mcp_calls.jsonl`, `prompt.json` or `transcript.json` and the ledger names both its recorded and its present hash
+(`propriosam.artifacts.verify_bundle_hashes`). Anything else that differs is a failure, so replay inputs (SAM output, tracks,
+verifications, contracts, clips, overlays, hidden truth, API logs, patches, diffs) must match byte for byte.
+Regenerate or check the ledger with `python -m scripts.build_sanitization_ledger [--check]`.

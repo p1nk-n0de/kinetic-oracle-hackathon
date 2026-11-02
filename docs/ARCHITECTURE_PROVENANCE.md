@@ -8,11 +8,11 @@ New hackathon contributions: SAM 3.1 integration and temporal tracking; visual-s
 ## What exactly is pre-existing
 | Component | Where | Role in KINETIC-ORACLE |
 |---|---|---|
-| Godot MCP server (`godot-studio-mcp`, 22 tools) | `~/Projects/godot-studio` (separate repo, not included here) | Launches the game off-screen, delivers real input, steps physics ticks, captures real rendered frames, reads node/physics state. Used through the allowlisted bridge in `propriosam/mcp_adapter.py`. |
+| Godot MCP server (`godot-studio-mcp`, 22 tools) | `~/Projects/godot-studio` (separate repo, not included here; location and entry point set in `propriosam/local_config.py`) | Launches the game off-screen, delivers real input, steps physics ticks, captures real rendered frames, reads node/physics state. Used through the allowlisted bridge in `propriosam/mcp_adapter.py`. |
 | Hurdle test scene + deliberately defective fixture | same repo (`example_game/proving_ground`, `tests/fixtures/pg_defect_hurdle`) | The system under test. Its tree hashes are recorded in every bundle and re-checked after each run. |
 | Godot 4.6.2, ffmpeg, Python toolchain | this Mac | Runtime. |
 
-Everything under `propriosam/`, `scenarios/`, `scripts/`, `tests/`, `web/` and `docs/` in this repository, and every bundle under `runs/`, was produced during the hackathon window, on 2026-10-30, by Claude Code under the entrant's direction (see the git history and `docs/SANITIZATION.md`). None of it existed before the event.
+Everything under `propriosam/`, `scenarios/`, `scripts/`, `tests/`, `web/` and `docs/` in this repository, and every bundle under `runs/`, was produced during the hackathon window by Claude Code under the entrant's direction: the system and every run on 2026-10-30, and the documentation and publication changes listed in `docs/SANITIZATION.md` on 2026-11-02 (see the git history). None of it existed before the event.
 
 Two boundaries worth stating plainly:
 - Run bundles include excerpts of the pre-existing scene's source, because Muse read those files through its tools at runtime (`repair_turn_N/transcript.json`). That code is the system under test, not new work.

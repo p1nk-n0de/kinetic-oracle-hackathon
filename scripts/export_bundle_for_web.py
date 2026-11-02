@@ -154,6 +154,9 @@ def main(argv: list[str] | None = None) -> int:
              "runs": runs}
     out_root.mkdir(parents=True, exist_ok=True)
     index_path.write_text(json.dumps(index, indent=1, sort_keys=True) + "\n")
+    ledger = RUNS_DIR / "SANITIZATION_LEDGER.json"  # redacted files in this public copy (docs/SANITIZATION.md)
+    if ledger.exists():
+        copy_if_changed(ledger, out_root / ledger.name)
     print(f"index: {len(runs)} run(s) -> {index_path.relative_to(REPO_ROOT) if index_path.is_relative_to(REPO_ROOT) else index_path}")
     return 0
 

@@ -21,6 +21,8 @@ from typing import Any
 
 from pydantic import BaseModel, Field
 
+from .local_config import STUDIO
+
 REPO_ROOT = Path(__file__).resolve().parents[1]
 RUNS_DIR = REPO_ROOT / "runs"
 HASH_SKIP_DIRS = (".godot",)
@@ -77,9 +79,8 @@ def _default(o: Any):
 
 
 def _scrub_pairs() -> list[tuple[str, str]]:
-    studio = Path("~/Projects/godot-studio").expanduser()
     pairs = [(str(REPO_ROOT), "<repo>")]
-    pairs += [(p, "<godot-studio>") for p in sorted({os.path.realpath(studio), str(studio)}, key=len, reverse=True)]
+    pairs += [(p, "<godot-studio>") for p in sorted({os.path.realpath(STUDIO), str(STUDIO)}, key=len, reverse=True)]
     pairs.append((str(Path.home()), "~"))
     return pairs
 
@@ -101,7 +102,7 @@ def scrub(o: Any) -> Any:
 
 
 def unscrub(s: str) -> str:
-    return str(Path(s.replace("<repo>", str(REPO_ROOT)).replace("<godot-studio>", "~/Projects/godot-studio")).expanduser())
+    return str(Path(s.replace("<repo>", str(REPO_ROOT)).replace("<godot-studio>", str(STUDIO))).expanduser())
 
 
 def write_json(path: str | Path, obj: Any) -> Path:
@@ -204,15 +205,32 @@ def load_manifest(run_dir: str | Path) -> RunManifest:
     return RunManifest.model_validate_json((Path(run_dir) / "run_manifest.json").read_text())
 
 
-def verify_bundle_hashes(run_dir: str | Path) -> dict:
+# Bundle files a published copy may carry in redacted form (identity metadata only, see docs/SANITIZATION.md). Every
+# other bundle file, including every replay input, must match its recorded hash byte for byte.
+SANITIZABLE_NAMES = ("mcp_calls.jsonl", "prompt.json", "transcript.json")
+LEDGER_PATH = RUNS_DIR / "SANITIZATION_LEDGER.json"
+
+
+def load_ledger(path: str | Path | None = None) -> dict:
+    p = Path(path) if path else LEDGER_PATH
+    return read_json(p) if p.exists() else {"runs": {}}
+
+
+def verify_bundle_hashes(run_dir: str | Path, ledger: dict | None = None) -> dict:
     run_dir = Path(run_dir)
     m = load_manifest(run_dir)
     now = hash_bundle_files(run_dir)
+    redacted = (load_ledger() if ledger is None else ledger).get("runs", {}).get(m.run_id, {}).get("files", {})
     # Raw frame PNGs are not distributed with the repo (gitignored); their absence is reported, not failed.
     optional = lambda k: "/frames/" in k  # noqa: E731
     missing = sorted(k for k in m.files if k not in now and not optional(k))
     missing_optional = sorted(k for k in m.files if k not in now and optional(k))
-    changed = sorted(k for k in m.files if k in now and now[k] != m.files[k])
+    differs = sorted(k for k in m.files if k in now and now[k] != m.files[k])
+    # A difference is explained only by a ledger entry naming both the recorded and the present hash, for a file kind
+    # that may be redacted. The recorded hash is never edited: it remains the hash of the file as the run wrote it.
+    sanitized = [k for k in differs if Path(k).name in SANITIZABLE_NAMES
+                 and redacted.get(k, {}).get("recorded_sha256") == m.files[k] and redacted.get(k, {}).get("public_sha256") == now[k]]
+    changed = [k for k in differs if k not in sanitized]
     extra = sorted(k for k in now if k not in m.files)
     return {"ok": not missing and not changed, "missing": missing, "missing_optional_frames": len(missing_optional),
-            "changed": changed, "extra": extra, "checked": len(m.files)}
+            "changed": changed, "sanitized": sanitized, "extra": extra, "checked": len(m.files)}

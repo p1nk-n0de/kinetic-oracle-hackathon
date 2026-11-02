@@ -34,6 +34,28 @@ export async function sha256Hex(buf: ArrayBuffer): Promise<string | null> {
   }
 }
 
+/** Bundle files that a published copy may carry in redacted form (docs/SANITIZATION.md); never a replay input. */
+const SANITIZABLE = new Set(['mcp_calls.jsonl', 'prompt.json', 'transcript.json'])
+
+interface LedgerEntry {
+  recorded_sha256: string
+  public_sha256: string
+}
+
+let ledgerP: Promise<Record<string, Record<string, LedgerEntry>>> | null = null
+
+/** runs/SANITIZATION_LEDGER.json, per run: redacted file -> recorded (original) and published hash. */
+function loadLedger(): Promise<Record<string, Record<string, LedgerEntry>>> {
+  ledgerP ??= fetchBytes(`${RUNS_BASE}SANITIZATION_LEDGER.json`)
+    .then((buf) => {
+      if (!buf) return {}
+      const runs = (JSON.parse(decode(buf)).runs ?? {}) as Record<string, { files?: Record<string, LedgerEntry> }>
+      return Object.fromEntries(Object.entries(runs).map(([id, r]) => [id, r.files ?? {}]))
+    })
+    .catch(() => ({}))
+  return ledgerP
+}
+
 async function fetchBytes(url: string): Promise<ArrayBuffer | null> {
   const res = await fetch(url, { cache: 'no-cache' })
   if (res.status === 404) return null
@@ -70,6 +92,7 @@ interface Loader {
   warnings: string[]
   manifest: RunManifest
   runId: string
+  ledger: Record<string, LedgerEntry>
 }
 
 /** Fetch one bundle file, hash it, record the result; null when the file is absent. */
@@ -87,7 +110,10 @@ async function pull(L: Loader, rel: string): Promise<ArrayBuffer | null> {
     return null
   }
   const sha = await sha256Hex(buf)
-  L.files.push({ path: rel, bytes: buf.byteLength, sha256: sha, manifest_sha256: expected, match: sha && expected ? sha === expected : null })
+  const match = sha && expected ? sha === expected : null
+  const e = L.ledger[rel]
+  const sanitized = match === false && !!e && SANITIZABLE.has(rel.split('/').pop() ?? '') && e.recorded_sha256 === expected && e.public_sha256 === sha
+  L.files.push({ path: rel, bytes: buf.byteLength, sha256: sha, manifest_sha256: expected, match, sanitized })
   return buf
 }
 
@@ -151,7 +177,7 @@ export async function loadRun(runId: string): Promise<LoadedRun> {
   const manifestBuf = await fetchBytes(runUrl(runId, 'run_manifest.json'))
   if (!manifestBuf) throw new Error(`run_manifest.json not found for ${runId}`)
   const manifest = JSON.parse(decode(manifestBuf)) as RunManifest
-  const L: Loader = { files: [], warnings: [], manifest, runId }
+  const L: Loader = { files: [], warnings: [], manifest, runId, ledger: (await loadLedger())[runId] ?? {} }
   L.files.push({ path: 'run_manifest.json', bytes: manifestBuf.byteLength, sha256: await sha256Hex(manifestBuf), manifest_sha256: null, match: null })
 
   const contractP = manifest.contract_path ? pullJson<SensoryContract>(L, manifest.contract_path) : Promise.resolve(null)

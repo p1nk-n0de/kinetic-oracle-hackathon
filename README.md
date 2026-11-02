@@ -10,9 +10,11 @@ blind, from the measurements and a handful of inspection tools, and patches the 
 The model never gets to declare success.
 
 ## What was built during the hackathon
-The hackathon ran 26 Oct – 4 Nov 2026. Everything in this repository was written on **30 Oct 2026**: the git history runs from
-12:03 to 15:23 UTC that day, and all 21 runs carry that date in their ids and manifests. The demo video was rendered from these
-run bundles on 2 Nov 2026.
+The hackathon ran 26 Oct – 4 Nov 2026. The system, its tests and all 21 runs were written and run on **30 Oct 2026**: the
+development history runs from 12:03 to 14:15 UTC that day, and all 21 runs carry that date in their ids and manifests. Later
+commits add no runs and do not touch the verifier, the tracker, the contract compiler or the repair loop's logic: release
+preparation (30 Oct), this provenance section (2 Nov) and the sanitisation of this public copy (2 Nov, `docs/SANITIZATION.md`).
+The demo video was rendered from these run bundles on 2 Nov 2026.
 
 | Component | Status | Evidence |
 |---|---|---|
@@ -24,6 +26,7 @@ run bundles on 2 Nov 2026.
 | 21 closed-loop runs, evaluation, hidden-truth audit (`runs/`, `docs/EVALUATION_REPORT.md`) | **Run during the hackathon** | run ids and manifests, 30 Oct |
 | Offline replay verifier, 306 tests, telemetry dashboard (`scripts/replay_run.py`, `tests/`, `web/`) | **Built during the hackathon** | git history, 30 Oct |
 | Demo video | **Made during the hackathon** | rendered 2 Nov from the run bundles |
+| Public-copy sanitisation: configurable studio location, redaction ledger and its checks, 27 tests (`propriosam/local_config.py`, `scripts/build_sanitization_ledger.py`, `tests/unit/test_sanitization.py`) | **Made during the hackathon**, after the runs | git history, 2 Nov |
 | The Godot test game (Proving Ground, with its deliberate-defect fixture) | **Pre-existing**: the system under test | separate private repository, committed 23 Oct 2026, unchanged since the event began |
 | The Godot MCP server that launches, drives and captures the game | **Pre-existing**: test infrastructure | same repository, committed 23 Oct 2026, unchanged since the event began |
 
@@ -80,7 +83,8 @@ cd web && npm install && npm run dev
 .venv/bin/python -m scripts.run_evaluation --reference run_20261030-140019_79d646
 .venv/bin/python -m scripts.build_demo_video
 ```
-The live loop needs the separate Godot MCP server and scenes (see provenance below). Replay, tests and the dashboard do not.
+The live loop needs the separate Godot MCP server and scenes (see provenance below); set their location in the untracked
+`scripts/env.local.sh` (variables in `propriosam/local_config.py`). Replay, tests and the dashboard do not.
 
 ## How it works
 `docs/ARCHITECTURE_PROVENANCE.md` has the dataflow and the honesty rules enforced in code. `docs/RUN_BUNDLE_SPEC.md` documents
@@ -105,4 +109,7 @@ New hackathon contributions: SAM 3.1 integration and temporal tracking; visual-s
 Every verdict in this repository comes from `propriosam/verifier.py` over SAM 3.1 tracks under a contract frozen before
 measurement. Tool statuses and model text are recorded but never consulted. Hidden engine ground truth is stored for evaluation
 only and is never shown to any model. This is one scene family with a small number of runs: it shows the mechanism, not a rate.
-Limitations are listed in the evaluation report. This history was sanitized once before publication: see `docs/SANITIZATION.md`.
+Limitations are listed in the evaluation report. This public copy is sanitised: identity metadata and the names of private
+tooling were replaced throughout its history, and 42 recorded files carry visible `<redacted:…>` markers. No verdict, measurement,
+model decision or replay input changed. What changed, what did not, and which checks need the private originals:
+`docs/SANITIZATION.md`.

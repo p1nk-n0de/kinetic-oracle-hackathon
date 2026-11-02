@@ -12,7 +12,7 @@ from pathlib import Path
 
 import pytest
 
-from propriosam.artifacts import RUNS_DIR
+from propriosam.artifacts import RUNS_DIR, SANITIZABLE_NAMES
 from scripts.replay_run import VERDICT_BASIS, main, render_report, replay
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -32,6 +32,8 @@ def test_replay_reproduces_every_committed_bundle(bundle: Path):
     rep = replay(bundle)
     assert rep["ok"], json.dumps({k: rep[k] for k in ("hashes", "contract", "checks", "warnings")}, indent=1, default=str)
     assert rep["hashes"]["ok"] and not rep["hashes"]["missing_required"] and not rep["hashes"]["changed"]
+    # Redacted copies (docs/SANITIZATION.md) are never replay inputs.
+    assert all(Path(k).name in SANITIZABLE_NAMES for k in rep["hashes"]["sanitized"])
     assert rep["contract"]["frozen_intact"] and rep["contract"]["matches_manifest"]
     assert rep["passes"] and all(p["ok"] for p in rep["passes"])
     for p in rep["passes"]:

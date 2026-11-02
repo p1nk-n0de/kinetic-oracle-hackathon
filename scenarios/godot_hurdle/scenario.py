@@ -3,9 +3,8 @@ Everything Muse is told about the scene lives here, so it can be audited for
 ground-truth leakage. Nothing below names the fault."""
 from __future__ import annotations
 
-from pathlib import Path
+from propriosam.local_config import EXTRA_BANNED_TERMS, STUDIO
 
-STUDIO = Path("~/Projects/godot-studio").expanduser()
 DEFECT_BASELINE = STUDIO / "tests/fixtures/pg_defect_hurdle"      # path never shown to Muse
 KNOWN_GOOD_BASELINE = STUDIO / "example_game/proving_ground"
 
@@ -40,4 +39,4 @@ SOURCE_DENY_DIRS = ("scenarios", "addons", ".godot", "assets")
 # filename is banned; the anti-cheat test additionally asserts that the turn-1 prompt names no source file at all.)
 BANNED_PROMPT_TERMS = ("defect", "defective", "pg_defect", "DEFECT_FIXTURE", "collision_layer", "collision_mask",
                        "layer 2", '"layer": 2', "hurdle_blocks_walking", "truth_hidden", "truth.json",
-                       str(DEFECT_BASELINE), "godot-studio", "<external-volume>")
+                       str(DEFECT_BASELINE), STUDIO.name, *EXTRA_BANNED_TERMS)

@@ -76,7 +76,8 @@ closing text labelled as model text, and the **outcome**: the verifier's verdict
 **Provenance.** Models used; every Meta request from `api_calls.jsonl` (purpose, model, request id, HTTP status,
 latency, usage, estimated cost) with a check that the ids match `manifest.request_ids`; **bundle file hashes** from the
 manifest with a status per entry — JSON files the page fetched are re-hashed in the browser with WebCrypto and marked
-*verified* or *MISMATCH*, media can be re-verified on demand, raw frames and the workspace are marked *not
+*verified* or *MISMATCH* (or *redacted copy* when `SANITIZATION_LEDGER.json` names both hashes, see
+`docs/RUN_BUNDLE_SPEC.md`), media can be re-verified on demand, raw frames and the workspace are marked *not
 distributed*; baseline/workspace tree hashes with the **baseline unchanged** and **copy matched baseline at stage**
 flags; the spend meter by model; the environment record. At the bottom, clearly fenced: **Hidden ground truth
 (evaluation only, never shown to any model)** — the engine's player `z` per frame from `truth_hidden.json` (both on-disk

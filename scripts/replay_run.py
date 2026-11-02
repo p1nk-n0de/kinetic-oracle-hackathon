@@ -74,7 +74,8 @@ def classify_hashes(run_dir: Path) -> dict:
     changed_godot = [k for k in r["changed"] if "/.godot/" in k]
     changed = [k for k in r["changed"] if "/.godot/" not in k]
     return {"ok": not missing_required and not changed, "checked": r["checked"],
-            "verified_present": r["checked"] - len(r["missing"]) - r["missing_optional_frames"],
+            "verified_present": r["checked"] - len(r["missing"]) - r["missing_optional_frames"] - len(r["changed"]) - len(r["sanitized"]),
+            "sanitized": r["sanitized"],
             "missing_required": missing_required, "missing_optional_frames": r["missing_optional_frames"],
             "missing_optional_workspace": len(missing_ws), "changed": changed, "ignored_changed_godot_cache": changed_godot,
             "extra_untracked": r["extra"]}
@@ -218,13 +219,17 @@ def render_report(rep: dict) -> str:
           f"verdict basis: {rep['verdict_basis']}", ""]
     h = rep["hashes"]
     L += ["[1] BUNDLE INTEGRITY (sha256 of every present file vs run_manifest.json: files)",
-          f"  entries in manifest: {h['checked']}   verified present & matching: {h['verified_present']}   "
+          f"  entries in manifest: {h['checked']}   verified byte-original: {h['verified_present']}   "
           f"changed: {len(h['changed'])}   missing (required): {len(h['missing_required'])}",
           f"  optional, not distributed (gitignored): frames/ {h['missing_optional_frames']}   workspace/ {h['missing_optional_workspace']}"]
     if h["ignored_changed_godot_cache"]:
         L.append(f"  ignored: {len(h['ignored_changed_godot_cache'])} changed file(s) under workspace/.godot/ (editor cache, excluded from tree hashes)")
     if h["extra_untracked"]:
         L.append(f"  extra files not in manifest (not hashed at write time): {h['extra_untracked']}")
+    if h["sanitized"]:
+        L.append(f"  redacted copies (identity metadata only; the manifest hash is of the private original, the present hash is in "
+                 f"runs/SANITIZATION_LEDGER.json): {len(h['sanitized'])}")
+        L += [f"    redacted: {k}" for k in h["sanitized"]]
     for k in h["changed"]:
         L.append(f"  CHANGED: {k}")
     for k in h["missing_required"]:

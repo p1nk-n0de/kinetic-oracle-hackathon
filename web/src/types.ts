@@ -404,6 +404,8 @@ export interface FetchedFile {
   sha256: string | null
   manifest_sha256: string | null
   match: boolean | null
+  /** Differs from the manifest only as a published redacted copy: runs/SANITIZATION_LEDGER.json names both hashes. */
+  sanitized?: boolean
 }
 
 export interface LoadedPass {

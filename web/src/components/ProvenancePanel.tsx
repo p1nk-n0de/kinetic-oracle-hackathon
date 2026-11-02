@@ -5,7 +5,7 @@ import { hashMedia } from '../lib/load'
 import { Btn, Check, Collapsible, Hash, Kv, Pill, Section, SubHead } from './ui'
 import { TruthChart } from './TruthChart'
 
-type HashState = 'verified' | 'mismatch' | 'not-fetched' | 'not-distributed' | 'absent' | 'no-webcrypto'
+type HashState = 'verified' | 'sanitized' | 'mismatch' | 'not-fetched' | 'not-distributed' | 'absent' | 'no-webcrypto'
 
 function classify(path: string, fetched: Map<string, FetchedFile>): HashState {
   const f = fetched.get(path)
@@ -13,12 +13,13 @@ function classify(path: string, fetched: Map<string, FetchedFile>): HashState {
   if (!f) return 'not-fetched'
   if (f.bytes === 0 && f.sha256 === null) return 'absent'
   if (f.match === true) return 'verified'
-  if (f.match === false) return 'mismatch'
+  if (f.match === false) return f.sanitized ? 'sanitized' : 'mismatch'
   return 'no-webcrypto'
 }
 
 const STATE_LABEL: Record<HashState, [string, string]> = {
   verified: ['✓ verified in browser', 'text-ok'],
+  sanitized: ['redacted copy · matches the sanitisation ledger', 'text-warn'],
   mismatch: ['✗ MISMATCH', 'text-bad'],
   'not-fetched': ['not fetched (media streams via <video>)', 'text-ink-3'],
   'not-distributed': ['not distributed (gitignored; hashed at write time)', 'text-ink-3'],
@@ -42,7 +43,7 @@ export function ProvenancePanel({ run }: { run: LoadedRun }) {
 
   const files = useMemo(() => Object.entries(m.files).sort(([a], [b]) => a.localeCompare(b)), [m.files])
   const counts = useMemo(() => {
-    const c: Record<HashState, number> = { verified: 0, mismatch: 0, 'not-fetched': 0, 'not-distributed': 0, absent: 0, 'no-webcrypto': 0 }
+    const c: Record<HashState, number> = { verified: 0, sanitized: 0, mismatch: 0, 'not-fetched': 0, 'not-distributed': 0, absent: 0, 'no-webcrypto': 0 }
     for (const [p] of files) c[classify(p, fetched)] += 1
     return c
   }, [files, fetched])
@@ -207,7 +208,7 @@ export function ProvenancePanel({ run }: { run: LoadedRun }) {
                 </div>
               }
             >
-              Bundle file hashes ({files.length} entries · {counts.verified} verified here{counts.mismatch ? ` · ${counts.mismatch} MISMATCH` : ''})
+              Bundle file hashes ({files.length} entries · {counts.verified} verified here{counts.sanitized ? ` · ${counts.sanitized} redacted` : ''}{counts.mismatch ? ` · ${counts.mismatch} MISMATCH` : ''})
             </SubHead>
             <div className="max-h-72 overflow-auto rounded-lg border border-line">
               <table className="w-full text-left text-[11px]">
@@ -235,6 +236,13 @@ export function ProvenancePanel({ run }: { run: LoadedRun }) {
                 </tbody>
               </table>
             </div>
+            {counts.sanitized > 0 && (
+              <p className="mt-1.5 text-[11px] leading-snug text-ink-3">
+                Redacted copies: this public copy replaces the private studio's name and a drive label with <span className="mono">&lt;redacted:…&gt;</span> markers in
+                tool results, MCP log previews and banned-term lists. The manifest hash is of the original file; <span className="mono">runs/SANITIZATION_LEDGER.json</span> records
+                the published hash and every marker's location. Replay inputs are never redacted (docs/SANITIZATION.md).
+              </p>
+            )}
             <p className="mt-1.5 text-[11px] leading-snug text-ink-3">
               {counts['not-distributed']} entries are raw frames or the staged workspace: hashed when the bundle was written, gitignored since. The offline replay (<span className="mono">scripts/replay_run.py</span>) performs the
               same check over the full bundle.
