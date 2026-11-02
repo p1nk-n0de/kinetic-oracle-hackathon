@@ -25,8 +25,8 @@ modified. Every rule was applied to every commit, so no earlier version of a fil
 ### Commit metadata
 - Author and committer: `p1nk-n0de` with the account's GitHub noreply address, on every commit.
 - Dates, messages, order and merge structure are unchanged. The 16 development commits, which contain the system and all
-  21 runs, date from 30 Oct 2026, 12:03 to 14:15 UTC. Three later commits contain no new runs: release preparation (30 Oct,
-  15:23 UTC), a README provenance section (2 Nov) and this sanitisation (2 Nov).
+  21 runs, date from 30 Oct 2026, 12:03 to 14:15 UTC. Four later commits contain no new runs: release preparation (30 Oct,
+  15:23 UTC), a README provenance section (2 Nov), this sanitisation (2 Nov) and the licence files (2 Nov).
 - Commit ids differ from the private repository. The mapping is kept privately.
 - Three commits made by a cloud coding session were signed. The rewrite removed those signatures.
 - A `Claude-Session:` trailer linking to a private session was removed from three commit messages.

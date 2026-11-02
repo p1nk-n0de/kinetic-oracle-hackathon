@@ -13,7 +13,8 @@ The model never gets to declare success.
 The hackathon ran 26 Oct – 4 Nov 2026. The system, its tests and all 21 runs were written and run on **30 Oct 2026**: the
 development history runs from 12:03 to 14:15 UTC that day, and all 21 runs carry that date in their ids and manifests. Later
 commits add no runs and do not touch the verifier, the tracker, the contract compiler or the repair loop's logic: release
-preparation (30 Oct), this provenance section (2 Nov) and the sanitisation of this public copy (2 Nov, `docs/SANITIZATION.md`).
+preparation (30 Oct), this provenance section (2 Nov), the sanitisation of this public copy (2 Nov, `docs/SANITIZATION.md`) and the
+licence files (2 Nov).
 The demo video was rendered from these run bundles on 2 Nov 2026.
 
 | Component | Status | Evidence |
@@ -113,3 +114,12 @@ Limitations are listed in the evaluation report. This public copy is sanitised: 
 tooling were replaced throughout its history, and 42 recorded files carry visible `<redacted:…>` markers. No verdict, measurement,
 model decision or replay input changed. What changed, what did not, and which checks need the private originals:
 `docs/SANITIZATION.md`.
+
+## License
+- **Code, tests and documentation:** MIT. See `LICENSE`.
+- **Run evidence and media:** `runs/`, `web/public/runs/`, `tests/fixtures/` and the demo video are covered by
+  `EVIDENCE_AND_MEDIA.md`, not by the MIT licence. You may review, replay, verify, quote and redistribute them unmodified.
+  They include outputs of Meta models, which the author holds under the Meta Model API Terms of Service, and recordings and
+  source excerpts of a pre-existing test game that is not part of the entry.
+- **Dependencies and services:** see `THIRD_PARTY_NOTICES.md`. This project uses Meta's SAM Materials (SAM 3.1 and
+  `meta-sam-parser`). `meta-sam-parser` is under Meta's SAM License, which is not an open-source licence.
